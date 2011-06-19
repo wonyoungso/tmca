@@ -1,0 +1,9 @@
+<%= form_tag admin_installs_path do %>
+  <div>
+    <%= label_tag 'password', '비밀번호' %>
+    <%= password_field_tag 'password' %>
+  </div>
+  <div>
+    <%= submit_tag '관리자 계정을 생성합니다' %>
+  </div>
+<% end %>
