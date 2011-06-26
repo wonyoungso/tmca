@@ -1,0 +1,41 @@
+<div>
+  <h2>current education</h2>
+  <% if @current != nil %>
+    <%= image_tag @current.bigphoto.url(:thumb) %>
+    <%= @current.title %>
+    <%= @current.start_date.strftime("%Y.%m.%d")%>-<%= @current.end_date.strftime("%Y.%m.%d")%>
+  <% else %>
+    현재 교육프로그램이 없습니다.
+  <% end %>
+</div>
+
+<div>
+  <h2>upcoming education</h2>
+  <% if @upcoming != nil %>
+    <%= @upcoming.bigphoto.url(:thumb) %>
+    <%= @upcoming.title %>
+    <%= @upcoming.start_date.strftime("%Y.%m.%d")%>-
+    <%= @upcoming.end_date.strftime("%Y.%m.%d")%>
+  <% else %>
+    예정 교육프로그램이 없습니다.
+  <% end %>
+</div>
+
+<div>
+  <h2>past education</h2>
+  
+    <% for year in [2011, 2010, 2009, 2008] do %>
+      <div>
+        <%= year.to_s %>
+      </div>
+      <% if @educations[year.to_s] != nil %>
+        <div>
+          <% @educations[year.to_s].each do |education| %>
+            <div>
+              <%= education.title %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+</div>

@@ -1,0 +1,41 @@
+<div>
+  <h2>current exhibition</h2>
+  <% if @current != nil %>
+    <%= image_tag @current.bigphoto.url(:thumb) %>
+    <%= @current.title %>
+    <%= @current.start_date.strftime("%Y.%m.%d")%>-<%= @current.end_date.strftime("%Y.%m.%d")%>
+  <% else %>
+    현재 전시가 없습니다.
+  <% end %>
+</div>
+
+<div>
+  <h2>upcoming exhibition</h2>
+  <% if @upcoming != nil %>
+    <%= @upcoming.bigphoto.url(:thumb) %>
+    <%= @upcoming.title %>
+    <%= @upcoming.start_date.strftime("%Y.%m.%d")%>-
+    <%= @upcoming.end_date.strftime("%Y.%m.%d")%>
+  <% else %>
+    예정 전시가 없습니다.
+  <% end %>
+</div>
+
+<div>
+  <h2>past exhibitions</h2>
+  
+    <% for year in [2011, 2010, 2009, 2008] do %>
+      <div>
+        <%= year.to_s %>
+      </div>
+      <% if @exhibitions[year.to_s] != nil %>
+        <div>
+          <% @exhibitions[year.to_s].each do |exhibition| %>
+            <div>
+              <%= exhibition.title %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+</div>

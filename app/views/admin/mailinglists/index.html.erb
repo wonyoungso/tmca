@@ -1,0 +1,26 @@
+<div id="list" class="block">
+  <%= render 'admin/mailinglists/tabs' %>
+  <div class="content">
+    <h2 class="title">
+      메일링리스트 가입자
+    </h2>
+    <div class="inner">
+    
+        <table class="table">
+          <tbody><tr>
+            <th class="first"><input type="checkbox" class="checkbox toggle"></th>
+            <th>E-mail</th>
+            <th class="last">&nbsp;</th>
+          </tr>
+          <% @mailinglists.each_with_index do |mailinglist, index| %>
+            <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %>">
+              <td><%= check_box_tag 'id', mailinglist.id %></td>
+              <td><%= mailinglist.id %></td>
+              <td><%= mailinglist.title %></td>
+              <td><%= link_to '탈퇴', admin_mailinglist_path(mailinglist), :method => :delete, :confirm => '정말 뉴스를 삭제하시겠습니까?' %></td>
+            </tr>
+          <% end %>
+        </tbody></table>
+    </div>
+  </div>
+</div>

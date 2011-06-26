@@ -1,3 +1,95 @@
 # -*- encoding : utf-8 -*-
 class Admin::EducationsController < ApplicationController
+  before_filter :login_required
+  layout 'admin'
+  
+  def index
+    @educations = Education.order('start_date DESC')
+  end
+  
+  def set_current
+    @educations = Education.all
+    @education = Education.find(params[:id])
+    @educations.each do |education|
+      if education.id != @education.id
+        education.current = false
+        education.save
+      end
+    end
+    
+    if !@education.upcoming
+      @education.current = !@education.current
+      respond_to do |format|
+        if @education.save
+          format.html {redirect_to admin_educations_path, :notice => '성공적으로 변경하였습니다.'}
+        else
+          format.html {redirect_to admin_educations_path, :notice => '오류가 발생하였습니다.'}
+        end
+      end
+    end
+  end
+  
+  def set_upcoming
+    @educations = Education.all
+    @education = Education.find(params[:id])
+    @educations.each do |education|
+      if education.id != @education.id
+        education.upcoming = false
+        education.save
+      end
+    end
+    
+    
+    
+    if !@education.current 
+      @education.upcoming =!@education.upcoming
+      respond_to do |format|
+        if @education.save
+          format.html {redirect_to admin_educations_path, :notice => '성공적으로 변경하였습니다.'}
+        else
+          format.html {redirect_to admin_educations_path, :notice => '오류가 발생하였습니다.'}
+        end
+      end
+    end
+    
+  end
+  
+  def create
+    @education = Education.new(params[:education])
+    respond_to do |format|
+      if @education.save
+        format.html {redirect_to admin_educations_path, :notice => '교육프로그램이 성공적으로 생성되었습니다.'}
+      else
+        format.html {redirect_to admin_educations_path, :alert => '교육프로그램 생성이 실패하였습니다.'}
+      end
+    end
+  end
+  
+  def show
+  end
+  
+  def edit
+    @education = Education.find(params[:id])
+  end
+  
+  def update
+    @education = Education.find(params[:id])        
+    @education.bigphoto.reprocess!
+    respond_to do |format|
+      if @education.update_attributes(params[:education])
+        format.html {redirect_to admin_educations_path, :notice => '교육프로그램이 성공적으로 수정되었습니다.' }
+      else
+        format.html {redirect_to admin_educations_path, :alert => '교육프로그램 수정 중 오류가 발생하였습니다.'}
+      end
+    end
+  end
+  
+  def destroy
+    @education = Education.find(params[:id])
+    @education.destroy
+    
+    respond_to do |format|
+      format.html {redirect_to admin_educations_path, :notice => '성공적으로 삭제하였습니다.'}
+    end
+  end
 end

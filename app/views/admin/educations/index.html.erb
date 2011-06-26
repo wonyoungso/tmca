@@ -1,0 +1,55 @@
+<div id="list" class="block">
+  <%= render 'admin/educations/tabs' %>
+  <div class="content">
+    <h2 class="title">
+      교육프로그램 목록
+    </h2>
+    <div class="inner">
+    <div>
+      <div class="current" style="float:left;width:100px;height:20px;padding:5px">
+        현재 교육프로그램
+      </div>
+    
+      <div class="upcoming" style="float:left;width:100px;height:20px;padding:5px">
+        예정 교육프로그램
+      </div>
+      <div class="CB"></div>
+    </div>
+    <div class="CB"></div>
+
+        <table class="table">
+          <tbody><tr>
+            <th class="first"><input type="checkbox" class="checkbox toggle"></th>
+            <th></th>
+            <th>ID</th>
+            <th>교육프로그램 제목</th>
+            <th>&nbsp;</th>
+            <th class="last">&nbsp;</th>
+          </tr>
+          <% @educations.each_with_index do |education, index| %>
+            <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %> <% if education.current %>current<% elsif education.upcoming %>upcoming<% end %>">
+              <td><%= check_box_tag 'id', education.id %></td>
+              <td><%= image_tag education.bigphoto.url(:thumb) %> </td>
+              <td><%= education.id %></td>
+              <td><%= education.title %></td>
+              <td>
+                 <% if !education.current %>
+                    <%= link_to '현재 교육프로그램 지정', set_current_admin_education_path(education), :method => :put, :confirm => '현재 교육프로그램로 지정하시겠습니까?' %>
+                 <% else %> 
+                  <%= link_to '현재 교육프로그램 취소', set_current_admin_education_path(education), :method => :put, :confirm => '현재 교육프로그램 지정을 취소하시겠습니까?' %>
+                 <% end %>
+                 <% if !education.upcoming %>
+                    <%= link_to '예정 교육프로그램 지정', set_upcoming_admin_education_path(education), :method => :put, :confirm => '예정 교육프로그램로 지정하시겠습니까?' %>
+                 <% else %>
+                    <%= link_to '예정 교육프로그램 쥐소', set_upcoming_admin_education_path(education), :method => :put, :confirm => '예정 교육프로그램 지정을 취소하시겠습니까?' %>
+                 <% end %>
+              </td>
+              <td><%= link_to '미리보기', admin_education_path(education) %> | 
+             
+              <%= link_to '수정', edit_admin_education_path(education) %> | <%= link_to '삭제', admin_education_path(education), :method => :delete, :confirm => '정말 교육프로그램을 삭제하시겠습니까?' %></td>
+            </tr>
+          <% end %>
+        </tbody></table>
+    </div>
+  </div>
+</div>

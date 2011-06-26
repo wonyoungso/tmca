@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   helper :all
+  before_filter :get_first_news
+  
+  def get_first_news
+    @news_header = News.order("created_at DESC").first
+  end
   
   
   def login_required

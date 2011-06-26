@@ -1,0 +1,35 @@
+
+<div id="list" class="block">
+  <%= render 'admin/news/tabs' %>
+  <div class="content">
+    <h2 class="title">
+      뉴스 수정
+    </h2>
+    <div class="inner">
+      <%= form_tag admin_education_path(@education), :multipart => true, :class => 'form' do %>
+        <%= hidden_field_tag '_method', 'put'%>
+          
+        <div class="group">
+          <%= label_tag 'education[title]', '제목' %>
+          <%= text_field_tag 'education[title]', @education.title, :class => 'text_field' %>
+        </div>
+        
+        
+        <div class="group">
+          <%= label_tag 'education[description]', '내용' %>
+          <%= text_area_tag 'education[description]', @education.description, :class => 'text_area', :id => 'educationNewTextArea' %>
+        </div>
+        <div class="group navform wat-cf">
+          <button type="submit" class="button">
+            <img alt="Save" src="/images/web-app-theme/icons/tick.png"> 저장
+          </button>
+          <a class="button" href="<%= admin_exhibitions_path %>">
+            <img alt="Cancel" src="/images/web-app-theme/icons/cross.png"> 취소
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'admin/educations/new' %>

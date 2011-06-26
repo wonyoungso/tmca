@@ -1,0 +1,30 @@
+<div id="list" class="block">
+  <%= render 'admin/news/tabs' %>
+  <div class="content">
+    <h2 class="title">
+      새 뉴스 생성
+    </h2>
+    <div class="inner">
+      <%= form_tag admin_news_index_path, :multipart => true, :class => 'form' do %>
+        <div class="group">
+          <%= label_tag 'news[title]', '제목' %>
+          <%= text_field_tag 'news[title]',  '', :class => 'text_field' %>
+        </div>        
+        <div class="group">
+          <%= label_tag 'news[description]', '내용' %>
+          <%= text_area_tag 'news[description]', '', :class => 'text_area', :id => 'newsNewTextArea' %>
+        </div>
+        <div class="group navform wat-cf">
+          <button type="submit" class="button">
+            <img alt="Save" src="/images/web-app-theme/icons/tick.png"> 저장
+          </button>
+          <a class="button" href="#header">
+            <img alt="Cancel" src="/images/web-app-theme/icons/cross.png"> 취소
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'admin/news/new' %>

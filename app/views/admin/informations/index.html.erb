@@ -1,0 +1,13 @@
+<div id="list" class="block">
+  <%= render 'admin/informations/tabs' %>
+  <div class="content">
+    <h2 class="title">
+      소개 내용
+    </h2>
+    <div class="inner">
+      <p>
+        <%= auto_link(@information.description) %>
+      </p>
+    </div>
+  </div>
+</div>

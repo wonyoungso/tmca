@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Paperclip  
   class Cropper < Thumbnail  
     def transformation_command  
@@ -10,9 +11,13 @@ module Paperclip
   
     def crop_command  
       target = @attachment.instance  
-      logger.info target
       if target.cropping?  
-        " -crop #{target.width_medium}x#{target.height_medium}+#{target.x1_medium}+#{target.y1_medium}"  
+        logger.info 'sdflisjfliwejilwejfliewifljewlijfweilfwejilfwijlefilj'
+        if @attachment.style == 'medium'
+          " -crop #{target.crop_medium_width}x#{target.crop_medium_height}+#{target.crop_medium_x}+#{target.crop_medium_y}"  
+        elsif @attachment.style == 'thumb'
+          " -crop #{target.crop_thumb_width}x#{target.crop_thumb_height}+#{target.crop_thumb_x}+#{target.crop_thumb_y}"
+        end  
       end  
     end  
   end  

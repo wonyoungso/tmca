@@ -26,12 +26,54 @@
       </div>
       <div id="main-navigation">
         <ul class="wat-cf">
-          <li class="first active"><%= link_to 'Main Page', admin_login_path %></li>
-          <li><%= link_to 'News', admin_news_index_path %></li>
-          <li><%= link_to 'Exhibitions', admin_exhibitions_path %></li>
-          <li><%= link_to 'Educations', admin_educations_path %></li>
-          <li><%= link_to 'Events', admin_events_path %></li>
-          <li><%= link_to 'Information', admin_informations_path %></li>
+          <% if params[:controller] == 'admin/sessions' %>
+            <li class="first active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'Main Page', admin_login_path %></li>
+          
+          <% if params[:controller] == 'admin/news' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'News', admin_news_index_path %></li>
+          
+          <% if params[:controller] == 'admin/exhibitions' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'Exhibitions', admin_exhibitions_path %></li>
+          
+          <% if params[:controller] == 'admin/educations' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'Educations', admin_educations_path %></li>
+          
+          <% if params[:controller] == 'admin/events' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'Events', admin_events_path %></li>
+          
+          <% if params[:controller] == 'admin/mailinglists' || params[:controller] == 'admin/mailingtemplates' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'Mailing List', admin_mailinglists_path %></li>
+          
+          <% if params[:controller] == 'admin/informations' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'Information', admin_informations_path %></li>
         </ul>
       </div>
     </div>    

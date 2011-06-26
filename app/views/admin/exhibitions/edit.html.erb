@@ -40,21 +40,32 @@
       <%= form_tag admin_exhibition_path(@exhibition), :multipart => true, :class => 'form' do %>
         
         <%= hidden_field_tag '_method', 'put' %>
-        
-          <%= hidden_field_tag 'exhibition[x1medium]', @exhibition.x1medium %>
-          <%= hidden_field_tag 'exhibition[y1medium]', @exhibition.y1medium %>
-          <%= hidden_field_tag 'exhibition[widthmedium]', @exhibition.widthmedium %>
-          <%= hidden_field_tag 'exhibition[heightmedium]', @exhibition.heightmedium %>
-          <%= hidden_field_tag 'exhibition[x1thumb]', @exhibition.x1thumb %>
-          <%= hidden_field_tag 'exhibition[y1thumb]', @exhibition.y1thumb %>
-          <%= hidden_field_tag 'exhibition[widththumb]', @exhibition.widththumb %>
-          <%= hidden_field_tag 'exhibition[heightthumb]', @exhibition.heightthumb %>
+          <%= hidden_field_tag 'exhibition[x1medium]', nil %>
+          <%= hidden_field_tag 'exhibition[y1medium]', nil %>
+          <%= hidden_field_tag 'exhibition[widthmedium]', nil %>
+          <%= hidden_field_tag 'exhibition[heightmedium]', nil %>
+          <%= hidden_field_tag 'exhibition[x1thumb]', nil %>
+          <%= hidden_field_tag 'exhibition[y1thumb]', nil %>
+          <%= hidden_field_tag 'exhibition[widththumb]', nil %>
+          <%= hidden_field_tag 'exhibition[heightthumb]', nil %>
+          
+          <%= hidden_field_tag 'crop_medium_x', nil %>
+          <%= hidden_field_tag 'crop_medium_y', nil %>
+          <%= hidden_field_tag 'crop_medium_width', nil %>
+          <%= hidden_field_tag 'crop_medium_height', nil %>
+          
+          <%= hidden_field_tag 'crop_thumb_x', nil %>
+          <%= hidden_field_tag 'crop_thumb_y', nil %>
+          <%= hidden_field_tag 'crop_thumb_width', nil %>
+          <%= hidden_field_tag 'crop_thumb_height', nil %>
+          
         <div class="group">
           <%= label_tag 'exhibition[title]', '제목' %>
           <%= text_field_tag 'exhibition[title]', @exhibition.title, :class => 'text_field' %>
         </div>
         
         <div class="group">
+          <%= image_tag @exhibition.bigphoto.url(:thumb) %>
           <%= label_tag 'exhibition[bigphoto]', '대표 이미지' %>
           <%= file_field_tag 'exhibition[bigphoto]' %>
         </div>
@@ -75,32 +86,32 @@
         </div>
         
         
-        <div class="group">
-          <div class="image_preview" id="mediumPreview">
-            <h4>메인 이미지 크롭(320x500)</h4>      
-            <div class="original">
-              <%= image_tag @exhibition.bigphoto.url, :class => 'targetPhoto', :id => 'bigPhotoMedium' %>
-            </div>
-            <div class="preview">
-              <div style="float: left; position: relative; overflow: hidden; width: 320px; height:540px" >
-                
-                <%= image_tag @exhibition.bigphoto.url, :style => 'position:absolute' %>
-              </div>
-            </div>
-            <div class="CB"></div>
-          </div>
-          <div class="image_preview"  id="thumbPreview">
-            <h4>썸네일 이미지 크롭(100x100)</h4>
-            <div class="original">
-              <%= image_tag @exhibition.bigphoto.url, :class => 'targetPhoto', :id => 'bigPhotoThumb' %>
-            </div>
-            <div class="preview">
-              <div style="float: left; position: relative; overflow: hidden; width: 100px; height: 100px;">
-                <%= image_tag @exhibition.bigphoto.url, :style => 'position:absolute' %>
-              </div>
-            </div>
-            <div class="CB"></diva>
-        </div>
+       <!--         <div class="group">
+                 <div class="image_preview" id="mediumPreview">
+                   <h4>메인 이미지 크롭(320x500)</h4>      
+                   <div class="original">
+                     <%= image_tag @exhibition.bigphoto.url, :class => 'targetPhoto', :id => 'bigPhotoMedium' %>
+                   </div>
+                   <div class="preview">
+                     <div style="float: left; position: relative; overflow: hidden; width: 320px; height:540px" >
+                       
+                       <%= image_tag @exhibition.bigphoto.url, :style => 'position:absolute' %>
+                     </div>
+                   </div>
+                   <div class="CB"></div>
+                 </div>
+                 <div class="image_preview"  id="thumbPreview">
+                   <h4>썸네일 이미지 크롭(100x100)</h4>
+                   <div class="original">
+                     <%= image_tag @exhibition.bigphoto.url, :class => 'targetPhoto', :id => 'bigPhotoThumb' %>
+                   </div>
+                   <div class="preview">
+                     <div style="float: left; position: relative; overflow: hidden; width: 100px; height: 100px;">
+                       <%= image_tag @exhibition.bigphoto.url, :style => 'position:absolute' %>
+                     </div>
+                   </div>
+                   <div class="CB"></diva>
+               </div> -->
         
         <div class="group navform wat-cf">
           <button type="submit" class="button">

@@ -1,3 +1,9 @@
-<div>
+<footer>
   토탈미술관 푸터
-</div>
+  <%= form_tag mailinglists_path do %>
+    <div>
+      <%= text_field_tag 'email', '', :placeholder => 'e-mail' %>
+    </div>
+  <% end %>
+  <%= link_to 'Total Museum Old Homepage', 'http://old.totalmuseum.org', :target => '_blank' %>
+</footer>

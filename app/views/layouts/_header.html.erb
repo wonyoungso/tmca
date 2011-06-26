@@ -1,5 +1,32 @@
+<h1>
+  토탈미술관
+</h1>
+
+<header>
+  <nav>
+    <ul>
+      <li><%= link_to 'news', news_index_path%></li>
+      <li><%= link_to 'exhibitions', exhibitions_path %></li>
+      <li><%= link_to 'educations', educations_path %></li>
+      <li><%= link_to 'events', events_path %></li>
+      <li><%= link_to 'information', information_path %></li>
+    </ul>  
+    <ul>
+      <li><%= link_to 'blog', 'http://blog.naver.com/totalmuseum', :target => '_blank' %></li>
+      <li><%= link_to 'total academy', '#' %></li>
+      <li><%= link_to 'korean', '#' %></li>
+      <li><%= link_to 'twitter', 'http://twitter.com/totalmuseum', :target => '_blank' %></li>
+      <li><%= link_to 'facebook' , 'http://facebook.com/totalmuseum', :target => '_blank' %></li>
+    </ul>
+  </nav>
+</header>
+
 <div>
-  <h1>
-    토탈미술관
-  </h1>
+  <%= link_to @news_header.title, news_path(@news_header) %>
+</div>
+
+<div>
+  <%= form_tag search_path do %>
+    <%= text_field_tag 'search', '', :placeholder => 'search' %>
+  <% end %>
 </div>

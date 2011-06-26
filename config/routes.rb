@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 Tmca::Application.routes.draw do
+  match '/search', :to => 'searchs#index', :as => 'search', :via => :get
+  match '/information', :to => 'informations#index', :as => 'information', :via => :get
   
   namespace :admin do
     
@@ -15,10 +17,22 @@ Tmca::Application.routes.draw do
     end
     
     resources :news
-    resources :educations
+    resources :educations do
+      member do
+        put 'set_current'
+        put 'set_upcoming'
+      end
+    end
     resources :installs
-    resources :events
+    resources :events do
+      member do
+        put 'set_current'
+        put 'set_upcoming'
+      end
+    end
     resources :informations
+    resources :mailinglists
+    resources :mailingtemplates
     
   end
   
@@ -26,7 +40,7 @@ Tmca::Application.routes.draw do
   resources :exhibitions
   resources :news
   resources :educations
-  
+  resources :mailinglists
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -19,6 +19,12 @@ function mediumPreview(img, selection){
     $('#exhibition_widthmedium').val(selection.width);
     $('#exhibition_heightmedium').val(selection.height);
     
+    
+    $('#crop_medium_x').val(selection.x1);
+    $('#crop_medium_y').val(selection.y1);
+    $('#crop_medium_width').val(selection.width);
+    $('#crop_medium_height').val(selection.height);
+    
     var scaleX = 320 / (selection.width || 1); 
     var scaleY = 520 / (selection.height || 1); 
     
@@ -34,6 +40,12 @@ function thumbPreview(img, selection){
     $('#exhibition_y1thumb').val(selection.y1);
     $('#exhibition_widththumb').val(selection.width);
     $('#exhibition_heightthumb').val(selection.height);
+    
+    
+    $('#crop_thumb_x').val(selection.x1);
+    $('#crop_thumb_y').val(selection.y1);
+    $('#crop_thumb_width').val(selection.width);
+    $('#crop_thumb_height').val(selection.height);
     
     var scaleX = 100 / (selection.width || 1); 
     var scaleY = 100 / (selection.height || 1);

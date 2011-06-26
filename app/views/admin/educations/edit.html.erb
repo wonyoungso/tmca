@@ -1,0 +1,79 @@
+
+<div id="list" class="block">
+  <%= render 'admin/educations/tabs' %>
+  <div class="content">
+    <h2 class="title">
+      교육프로그램 수정
+    </h2>
+    <div class="inner">
+      <%= form_tag admin_education_path(@education), :multipart => true, :class => 'form' do %>
+        
+        <%= hidden_field_tag '_method', 'put' %>
+        <div class="group">
+          <%= label_tag 'education[title]', '제목' %>
+          <%= text_field_tag 'education[title]', @education.title, :class => 'text_field' %>
+        </div>
+        
+        <div class="group">
+          <%= image_tag @education.bigphoto.url(:thumb) %>
+          <%= label_tag 'education[bigphoto]', '대표 이미지' %>
+          <%= file_field_tag 'education[bigphoto]' %>
+        </div>
+        
+        <div class="group">
+          <%= label_tag 'education[start_date]', '교육프로그램 시작일' %>
+          <%= date_select 'education', 'start_date', :default => @education.start_date %>
+        </div>
+        
+        <div class="group">
+          <%= label_tag 'education[end_date]', '교육프로그램 종료일' %>
+          <%= date_select 'education', 'end_date', :default => @education.end_date %>
+        </div>
+        
+        <div class="group">
+          <%= label_tag 'education[description]', '내용' %>
+          <%= text_area_tag 'education[description]', @education.description, :class => 'text_area', :id => 'educationNewTextArea' %>
+        </div>
+        
+        
+       <!--         <div class="group">
+                 <div class="image_preview" id="mediumPreview">
+                   <h4>메인 이미지 크롭(320x500)</h4>      
+                   <div class="original">
+                     <%= image_tag @education.bigphoto.url, :class => 'targetPhoto', :id => 'bigPhotoMedium' %>
+                   </div>
+                   <div class="preview">
+                     <div style="float: left; position: relative; overflow: hidden; width: 320px; height:540px" >
+                       
+                       <%= image_tag @education.bigphoto.url, :style => 'position:absolute' %>
+                     </div>
+                   </div>
+                   <div class="CB"></div>
+                 </div>
+                 <div class="image_preview"  id="thumbPreview">
+                   <h4>썸네일 이미지 크롭(100x100)</h4>
+                   <div class="original">
+                     <%= image_tag @education.bigphoto.url, :class => 'targetPhoto', :id => 'bigPhotoThumb' %>
+                   </div>
+                   <div class="preview">
+                     <div style="float: left; position: relative; overflow: hidden; width: 100px; height: 100px;">
+                       <%= image_tag @education.bigphoto.url, :style => 'position:absolute' %>
+                     </div>
+                   </div>
+                   <div class="CB"></diva>
+               </div> -->
+        
+        <div class="group navform wat-cf">
+          <button type="submit" class="button">
+            <img alt="Save" src="/images/web-app-theme/icons/tick.png"> 저장
+          </button>
+          <a class="button" href="<%= admin_educations_path %>">
+            <img alt="Cancel" src="/images/web-app-theme/icons/cross.png"> 취소
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'admin/educations/new' %>

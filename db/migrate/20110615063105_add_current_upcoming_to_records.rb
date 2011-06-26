@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddCurrentUpcomingToRecords < ActiveRecord::Migration
   def self.up
     add_column :exhibitions, :current, :boolean, :default => false

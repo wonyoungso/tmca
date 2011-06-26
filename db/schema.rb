@@ -10,20 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110619091720) do
+ActiveRecord::Schema.define(:version => 20110619161839) do
 
-  create_table "educations", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "bigphoto_file_size"
-    t.string   "bigphoto_file_name"
-    t.string   "bigphoto_content_type"
-    t.datetime "bigphoto_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "current",               :default => false
-    t.boolean  "upcoming",              :default => false
-  end
+# Could not dump table "educations" because of following StandardError
+#   Unknown type 'booelan' for column 'published'
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -36,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20110619091720) do
     t.datetime "updated_at"
     t.boolean  "current",               :default => false
     t.boolean  "upcoming",              :default => false
+    t.datetime "start_date"
+    t.datetime "end_date"
   end
 
   create_table "exhibitions", :force => true do |t|

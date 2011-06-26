@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddPosToExhibition < ActiveRecord::Migration
   def self.up
     add_column :exhibitions, :x1medium, :string

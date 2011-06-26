@@ -1,0 +1,79 @@
+
+<div id="list" class="block">
+  <%= render 'admin/events/tabs' %>
+  <div class="content">
+    <h2 class="title">
+      이벤트 수정
+    </h2>
+    <div class="inner">
+      <%= form_tag admin_event_path(@event), :multipart => true, :class => 'form' do %>
+        
+        <%= hidden_field_tag '_method', 'put' %>
+        <div class="group">
+          <%= label_tag 'event[title]', '제목' %>
+          <%= text_field_tag 'event[title]', @event.title, :class => 'text_field' %>
+        </div>
+        
+        <div class="group">
+          <%= image_tag @event.bigphoto.url(:thumb) %>
+          <%= label_tag 'event[bigphoto]', '대표 이미지' %>
+          <%= file_field_tag 'event[bigphoto]' %>
+        </div>
+        
+        <div class="group">
+          <%= label_tag 'event[start_date]', '교육프로그램 시작일' %>
+          <%= date_select 'event', 'start_date', :default => @event.start_date %>
+        </div>
+        
+        <div class="group">
+          <%= label_tag 'event[end_date]', '교육프로그램 종료일' %>
+          <%= date_select 'event', 'end_date', :default => @event.end_date %>
+        </div>
+        
+        <div class="group">
+          <%= label_tag 'event[description]', '내용' %>
+          <%= text_area_tag 'event[description]', @event.description, :class => 'text_area', :id => 'eventNewTextArea' %>
+        </div>
+        
+        
+       <!--         <div class="group">
+                 <div class="image_preview" id="mediumPreview">
+                   <h4>메인 이미지 크롭(320x500)</h4>      
+                   <div class="original">
+                     <%= image_tag @event.bigphoto.url, :class => 'targetPhoto', :id => 'bigPhotoMedium' %>
+                   </div>
+                   <div class="preview">
+                     <div style="float: left; position: relative; overflow: hidden; width: 320px; height:540px" >
+                       
+                       <%= image_tag @event.bigphoto.url, :style => 'position:absolute' %>
+                     </div>
+                   </div>
+                   <div class="CB"></div>
+                 </div>
+                 <div class="image_preview"  id="thumbPreview">
+                   <h4>썸네일 이미지 크롭(100x100)</h4>
+                   <div class="original">
+                     <%= image_tag @event.bigphoto.url, :class => 'targetPhoto', :id => 'bigPhotoThumb' %>
+                   </div>
+                   <div class="preview">
+                     <div style="float: left; position: relative; overflow: hidden; width: 100px; height: 100px;">
+                       <%= image_tag @event.bigphoto.url, :style => 'position:absolute' %>
+                     </div>
+                   </div>
+                   <div class="CB"></diva>
+               </div> -->
+        
+        <div class="group navform wat-cf">
+          <button type="submit" class="button">
+            <img alt="Save" src="/images/web-app-theme/icons/tick.png"> 저장
+          </button>
+          <a class="button" href="<%= admin_events_path %>">
+            <img alt="Cancel" src="/images/web-app-theme/icons/cross.png"> 취소
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'admin/events/new' %>

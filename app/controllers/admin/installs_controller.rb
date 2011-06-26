@@ -19,6 +19,11 @@ class Admin::InstallsController < ApplicationController
     
     respond_to do |format|
       if @user.save
+        
+        @information = Information.new
+        @information.description = '토탈미술관 홈페이지입니다.'
+        @information.save
+        
         format.html {redirect_to admin_login_path, :notice => '성공적으로 관리자 계정을 생성하였습니다.'}
       else
         format.html {redirect_to request.referer, :alert => '관리자 계정 생성이 실패하였습니다.'}

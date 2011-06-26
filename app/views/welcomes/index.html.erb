@@ -1,3 +1,11 @@
 <div>
-  
+  <%= @latest_news.title %>
+  <%= @latest_news.description %>
 </div>
+
+<% @news_chunks.each do |news| %>
+  <div>
+    <%= news.title %>
+    <%= news.description %>    
+  </div>
+<% end %>
