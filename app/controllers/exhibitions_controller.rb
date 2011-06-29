@@ -18,6 +18,6 @@ class ExhibitionsController < ApplicationController
   
   
   def show
-    @exhibition = Exhibition.find_by_permalink(params[:permalink])
+    @exhibition = Exhibition.find(params[:id])
   end
 end

@@ -58,7 +58,7 @@
             <div>
               <% @educations[year.to_s].each do |education| %>
                 <div>
-                  <%= link_to education.title %>
+                  <%= link_to education.title, education_path(education), :class => 'HV' %>
                 </div>
               <% end %>
             </div>

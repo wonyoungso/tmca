@@ -1,0 +1,17 @@
+<div>
+  <%= link_to 'Back', exhibitions_path %>
+</div>
+
+<div>
+  <%= image_tag @exhibition.bigphoto.url(:thumb) %>
+  <%= @exhibition.title %>
+  <%= @exhibition.start_date.strftime("%Y.%m.%d")%>-<%= @exhibition.end_date.strftime("%Y.%m.%d")%>
+</div>
+
+<div>
+  <%= @exhibition.description %>
+</div>
+
+<div>
+  <%= image_tag @exhibition.bigphoto.url(:original) %>
+</div>

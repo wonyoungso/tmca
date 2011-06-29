@@ -84,8 +84,8 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#searchWrap input:hover, #searchWrap input:focus { color:#fff; }
 
 	/* Footer */
-	#footer { width:100%; position:relative; }
-	.footerColumn { width:320px; float:left; position:relative; margin-bottom:30px; }
+	#footer { width:100%; position:relative; margin-bottom:50px; }
+	.footerColumn { width:320px; float:left; position:relative; }
 	.footerColumn .bar { height:20px; padding:8px 10px 2px; position:relative; border-right:1px solid #fff; background:#fff200; }
 	.footerColumn .bar h4 { font-size:14px; color:#555;  }
 	.footerColumn .bar a.linkOld { font-size:14px; color:#555; padding-left:20px; background-image:url(../images/yellow_link.png); background-position:0 0; background-repeat:no-repeat;  }
@@ -99,6 +99,17 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	.footerColumn .desc { font-size:12px; color:#666; padding:0 0 0 10px; }
 	.footerColumn .copyright { text-align:right; }
 
+/* Welcome */
+  .content .welcome {width:319px; float:left; position:relative;padding: 40px 0; border-right:1px solid #f0f0f0;}
+  .content .welcome .welcomeback {width:319px; height:510px;opacity:0.7;filter:alpha(opacity=70);position:absolute;left:0;top:40px;}
+  .content .welcome .welcomeback.yellow {background-color:#FFF600;}
+  .content .welcome .welcomeback.black {background-color:black;}
+  .content .welcome .info {width:300px;background-color:black;opacity:0.9;filter:alpha(opacity=90);position:absolute;bottom:50px;height:130px;padding:10px;}
+  .content .welcome .info .category {color:#FFF600;font-size:16px;}
+  .content .welcome .info h2 {color:white;font-size:18px;margin-top:5px;}
+  .content .welcome .info .date {color:#AAA;font-size:14px;margin-top:10px;display:block;}
+  .content .welcome .info .detailBtn {position:absolute;right:0;top:0;background-color:#FFF600;width:35px;height:35px;text-indent:-9999px;}
+  
 /* Contents */
   .exhibitions { border-top:1px solid #F0F0F0;margin-bottom:40px;}
   .exhibitions h2 { font-size:20px; color:#999999; padding-top:10px;}
@@ -114,6 +125,10 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .exhibitions .pastRight .yearLeft {float:left; padding:10px;}
   .exhibitions .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
   .exhibitions .pastRight .yearRight {float:right; padding:13px; width:500px;}
+  
+  .pastRight .yearRight a {font-size:16px;}
+  .pastRight .yearRight a:link, .exhibitions .pastRight .yearRight a:visited{color:#AAA;}
+  .pastRight .yearRight a:hover {background-color:#FDF252;}
 
 
   .events { border-top:1px solid #F0F0F0;margin-bottom:40px;}
@@ -147,5 +162,5 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .educations .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
   .educations .pastRight .yearRight {float:right; padding:13px; width:500px;}
   
-  
+
 

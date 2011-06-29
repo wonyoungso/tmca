@@ -58,7 +58,7 @@
             <div>
               <% @events[year.to_s].each do |event| %>
                 <div>
-                  <%= link_to event.title %>
+                  <%= link_to event.title, event_path(event), :class => 'HV' %>
                 </div>
               <% end %>
             </div>

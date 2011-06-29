@@ -1,1 +1,53 @@
-Welcome!!
+<div class="content">
+  <div class="welcome">    
+    <%= image_tag @current_exhibition.bigphoto.url(:medium) %>
+    <div class="welcomeback black"></div>
+    <div class="info">
+      <span class="HV category">exhibition</span>
+      <h2 class="HV">
+        <%= @current_exhibition.title %>
+      </h2>
+      <span class="date">
+        <%= @current_exhibition.start_date.strftime("%Y.%m.%d")%>-<%= @current_exhibition.end_date.strftime("%Y.%m.%d")%>
+      </span>
+      <div class="detailBtn">
+        <%= link_to '더 보기', exhibition_path(@current_exhibition)%>
+      </div>
+    </div>
+  </div>
+  
+  <div class="welcome">    
+    <%= image_tag @current_education.bigphoto.url(:medium) %>
+    <div class="welcomeback yellow"></div>
+    <div class="info">
+      <span class="HV category">education</span>
+      <h2 class="HV">
+        <%= @current_education.title %>
+      </h2>
+      <span class="date">
+        <%= @current_education.start_date.strftime("%Y.%m.%d")%>-<%= @current_education.end_date.strftime("%Y.%m.%d")%>
+      </span>
+      <div class="detailBtn">
+        <%= link_to '더 보기', education_path(@current_education)%>
+      </div>
+    </div>
+  </div>
+  
+  <div class="welcome">    
+    <%= image_tag @current_event.bigphoto.url(:medium) %>
+    <div class="welcomeback black"></div>
+    <div class="info">
+      <span class="HV category">event</span>
+      <h2 class="HV">
+        <%= @current_event.title %>
+      </h2>
+      <span class="date">
+        <%= @current_event.start_date.strftime("%Y.%m.%d")%>-<%= @current_event.end_date.strftime("%Y.%m.%d")%>
+      </span>    
+      <div class="detailBtn">
+        <%= link_to '더 보기', event_path(@current_event)%>
+      </div>
+    </div>
+  </div>
+  <div class="CB"></div>
+</div>
