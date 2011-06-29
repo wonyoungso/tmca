@@ -22,9 +22,11 @@
 				<h4 class="HV">Join Our Mailing List</h4>
 			</div>
 			<div class="content">
+				<div class="mailing">
 				<%= form_tag mailinglists_path do %>
 					<%= text_field_tag 'email', '', :placeholder => 'e-mail' %>
 				<% end %>
+				</div>
 			</div>
 			<p class="desc RG">
 				이메일을 남기시면 전시일정과 뉴스를 전해 드립니다.
