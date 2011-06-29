@@ -1,32 +1,45 @@
-<h1>
-  토탈미술관
-</h1>
+<div id="bodyWrap">
 
-<header>
-  <nav>
-    <ul>
-      <li><%= link_to 'news', news_index_path%></li>
-      <li><%= link_to 'exhibitions', exhibitions_path %></li>
-      <li><%= link_to 'educations', educations_path %></li>
-      <li><%= link_to 'events', events_path %></li>
-      <li><%= link_to 'information', information_path %></li>
-    </ul>  
-    <ul>
-      <li><%= link_to 'blog', 'http://blog.naver.com/totalmuseum', :target => '_blank' %></li>
-      <li><%= link_to 'total academy', '#' %></li>
-      <li><%= link_to 'korean', '#' %></li>
-      <li><%= link_to 'twitter', 'http://twitter.com/totalmuseum', :target => '_blank' %></li>
-      <li><%= link_to 'facebook' , 'http://facebook.com/totalmuseum', :target => '_blank' %></li>
-    </ul>
-  </nav>
-</header>
+	<div id="header">
+		<h1 id="logoWrap">
+			<a href="#">TMCA</a>
+		</h1>
 
-<div>
-  <%= link_to @news_header.title, news_path(@news_header) %>
-</div>
+		<header>
+		<nav>
+			<ul id="mainNav">
+				<li><%= link_to 'news', news_index_path%></li>
+				<li><%= link_to 'exhibitions', exhibitions_path %></li>
+				<li><%= link_to 'educations', educations_path %></li>
+				<li><%= link_to 'events', events_path %></li>
+				<li class="last"><%= link_to 'information', information_path %></li>
+			</ul>  
+			<div id="extraWrap">
+				<ul id="extraNav">
+					<li><%= link_to 'blog', 'http://blog.naver.com/totalmuseum', :target => '_blank' %></li>
+					<li><span>/</span><%= link_to 'total academy', '#' %></li>
+					<li><span>/</span><%= link_to 'korean', '#' %></li>
+				</ul>
+				<ul id="snsBtn">
+					<li><%= link_to 'twitter', 'http://twitter.com/totalmuseum', :target => '_blank' , :class => 'twitter' %></li>
+					<li><%= link_to 'facebook' , 'http://facebook.com/totalmuseum', :target => '_blank', :class => 'facebook' %></li>
+				</ul>
+			</div>
+		</nav>
+		</header>
 
-<div>
-  <%= form_tag search_path do %>
-    <%= text_field_tag 'search', '', :placeholder => 'search' %>
-  <% end %>
-</div>
+		<div id="headerBar">
+			<div id="headerNews">
+			<%= link_to @news_header.title, news_path(@news_header) %>
+			</div>
+
+			<div id="searchWrap">
+				<%= form_tag search_path do %>
+					<%= text_field_tag 'search', '', :placeholder => 'search' %>
+				<% end %>
+			</div>
+			<div class="CB"></div>
+		</div>
+	</div>
+
+	<div id="contentWrap">

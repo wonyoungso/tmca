@@ -1,9 +1,51 @@
-<footer>
-  토탈미술관 푸터
-  <%= form_tag mailinglists_path do %>
-    <div>
-      <%= text_field_tag 'email', '', :placeholder => 'e-mail' %>
-    </div>
-  <% end %>
-  <%= link_to 'Total Museum Old Homepage', 'http://old.totalmuseum.org', :target => '_blank' %>
-</footer>
+
+		<div class="CB"></div>
+	</div>
+
+
+	<div id="footer">
+		<footer>
+		<div class="footerColumn">
+			<div class="bar">
+				<h4 class="HV">Project Page</h4>
+			</div>
+			<div class="content">
+				<img src="./images/tumblbug.png" alt="토탈미술관 후원 프로젝트 페이지" />
+			</div>
+			<p class="desc RG">
+				토탈미술관 후원 프로젝트 페이지
+			</p>
+			<div class="CB"></div>
+		</div>
+		<div class="footerColumn">
+			<div class="bar">
+				<h4 class="HV">Join Our Mailing List</h4>
+			</div>
+			<div class="content">
+				<%= form_tag mailinglists_path do %>
+					<%= text_field_tag 'email', '', :placeholder => 'e-mail' %>
+				<% end %>
+			</div>
+			<p class="desc RG">
+				이메일을 남기시면 전시일정과 뉴스를 전해 드립니다.
+			</p>
+			<div class="CB"></div>
+		</div>
+		<div class="footerColumn">
+			<div class="bar">
+				<%= link_to 'Total Museum Old Homepage', 'http://old.totalmuseum.org', :target => '_blank', :class => 'linkOld' %>
+				<%= link_to 'Page Top', 'http://old.totalmuseum.org', :target => '_blank', :class => 'upBtn'  %>
+			</div>
+			<div class="content">
+				&nbsp;
+			</div>
+			<p class="desc copyright HV">
+				(c) Total Museum of Contemporary Art.
+			</p>
+			<div class="CB"></div>
+		</div>
+		<div class="CB"></div>
+		</footer>
+	</div>
+
+</div>
