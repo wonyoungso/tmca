@@ -44,6 +44,8 @@ input, select, textarea { font-family: "Trebuchet MS", "Lucida Grande", "Tahoma"
 
 div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 
+.w320 { width:320px; }
+.w640 { width:640px; }
 .dpNone { display:none; }
 
 
@@ -58,6 +60,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#logoWrap a { display:block; background-image:url(../images/logo.png); width:230px; height:70px; overflow:hidden; text-indent:-9999px; }
 	#mainNav { float:left; padding:28px 0 0 10px;}
 	#mainNav li { padding:0 17px 0 10px; background:url(../images/slush.png) right top no-repeat; float:left;  }
+	#mainNav li.active {background-color: #FDF052;}
 	#mainNav li.last { background:none; }
 	#mainNav li a { font-weight:bold; color:#333; font-size:14px; }
 	#extraWrap { float:right; width:230px; padding-top:27px; border-top:2px solid #ddd;}
@@ -97,7 +100,52 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	.footerColumn .copyright { text-align:right; }
 
 /* Contents */
+  .exhibitions { border-top:1px solid #F0F0F0;margin-bottom:40px;}
+  .exhibitions h2 { font-size:20px; color:#999999; padding-top:10px;}
+  .exhibitions .left {float:left;width:320px;}
+  .exhibitions .right {float:right;width:640px; background-color:#464646; position:relative; height:100px;}
+  .exhibitions .right img {float:left;}
+  .exhibitions .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:400px;}
+  .exhibitions .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
+  .exhibitions .right .detailBtn {position:absolute; right:0; top:0; width:30px; height:30px; background-color:#FFF200; text-indent:-9999px;}
+  .exhibitions .noExhibition {padding:10px; color:#FFF;display:block;}
+  .exhibitions .pastRight {float:right;width:640px;padding-top:10px;}
+  .exhibitions .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
+  .exhibitions .pastRight .yearLeft {float:left; padding:10px;}
+  .exhibitions .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
+  .exhibitions .pastRight .yearRight {float:right; padding:13px; width:500px;}
 
 
-
+  .events { border-top:1px solid #F0F0F0;margin-bottom:40px;}
+  .events h2 { font-size:20px; color:#999999; padding-top:10px;}
+  .events .left {float:left;width:320px;}
+  .events .right {float:right;width:640px; background-color:#464646; position:relative; height:100px;}
+  .events .right img {float:left;}
+  .events .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:400px;}
+  .events .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
+  .events .right .detailBtn {position:absolute; right:0; top:0; width:30px; height:30px; background-color:#FFF200; text-indent:-9999px;}
+  .events .noEvent {padding:10px; color:#FFF;display:block;}
+  .events .pastRight {float:right;width:640px;padding-top:10px;}
+  .events .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
+  .events .pastRight .yearLeft {float:left; padding:10px;}
+  .events .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
+  .events .pastRight .yearRight {float:right; padding:13px; width:500px;}
+  
+  
+  .educations { border-top:1px solid #F0F0F0;margin-bottom:40px;}
+  .educations h2 { font-size:20px; color:#999999; padding-top:10px;}
+  .educations .left {float:left;width:320px;}
+  .educations .right {float:right;width:640px; background-color:#464646; position:relative; height:100px;}
+  .educations .right img {float:left;}
+  .educations .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:400px;}
+  .educations .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
+  .educations .right .detailBtn {position:absolute; right:0; top:0; width:30px; height:30px; background-color:#FFF200; text-indent:-9999px;}
+  .educations .noEducation {padding:10px; color:#FFF;display:block;}
+  .educations .pastRight {float:right;width:640px;padding-top:10px;}
+  .educations .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
+  .educations .pastRight .yearLeft {float:left; padding:10px;}
+  .educations .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
+  .educations .pastRight .yearRight {float:right; padding:13px; width:500px;}
+  
+  
 

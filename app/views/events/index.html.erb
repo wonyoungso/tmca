@@ -1,41 +1,73 @@
-<div>
-  <h2>current event</h2>
-  <% if @current != nil %>
-    <%= image_tag @current.bigphoto.url(:thumb) %>
-    <%= @current.title %>
-    <%= @current.start_date.strftime("%Y.%m.%d")%>-<%= @current.end_date.strftime("%Y.%m.%d")%>
-  <% else %>
-    현재 이벤트가 없습니다.
-  <% end %>
-</div>
 
-<div>
-  <h2>upcoming event</h2>
-  <% if @upcoming != nil %>
-    <%= @upcoming.bigphoto.url(:thumb) %>
-    <%= @upcoming.title %>
-    <%= @upcoming.start_date.strftime("%Y.%m.%d")%>-
-    <%= @upcoming.end_date.strftime("%Y.%m.%d")%>
-  <% else %>
-    예정 이벤트가 없습니다.
-  <% end %>
-</div>
-
-<div>
-  <h2>past events</h2>
+<div id="cEvent" class="events">
+  <div class="left">
+    <h2 class="HV">current event</h2>
+  </div>
   
-    <% for year in [2011, 2010, 2009, 2008] do %>
-      <div>
-        <%= year.to_s %>
+  <div class="right">
+    <% if @current != nil %>
+      <%= image_tag @current.bigphoto.url(:thumb) %>
+      <h3 class="HV"><%= @current.title %></h3>
+      <div class="date">
+        <%= @current.start_date.strftime("%Y.%m.%d")%>-<%= @current.end_date.strftime("%Y.%m.%d")%>
       </div>
-      <% if @events[year.to_s] != nil %>
-        <div>
-          <% @events[year.to_s].each do |event| %>
+      <div class="detailBtn">
+        <%= link_to '자세히보기', event_path(@current) %>
+      </div>
+    <% else %>
+       <span class="noEvent">현재 이벤트가 없습니다.</span>
+    <% end %>
+  </div>
+  <div class="CB"></div>
+</div>
+
+<div id="uEvent" class="events">
+  <div class="left">
+    <h2 class="HV">upcoming event</h2>
+  </div>
+  
+  <div class="right">
+    <% if @upcoming != nil %>
+      <%= image_tag @upcoming.bigphoto.url(:thumb) %>
+      <h3 class="HV"><%= @upcoming.title %></h3>
+      <div class="date">
+        <%= @upcoming.start_date.strftime("%Y.%m.%d")%>-<%= @upcoming.end_date.strftime("%Y.%m.%d")%>
+      </div>
+      <div class="detailBtn">
+        <%= link_to '자세히보기', event_path(@upcoming) %>
+      </div>
+    <% else %>
+     <span class="noEvent">예정 이벤트가 없습니다.</span>
+    <% end %>
+  </div>
+  <div class="CB"></div>
+</div>
+<div id="pEvent" class="events">
+  <div class="left">
+    <h2 class="HV">past events</h2>
+  </div>
+  
+  <div class="pastRight">  
+    <% for year in [2011, 2010, 2009, 2008] do %>
+      <div class="yearBook" <% if year == 2011 %>style="border:none"<% end %>>
+        <div class="yearLeft">
+          <h3 class="HV"><%= year.to_s %></h3>
+        </div>
+        <div class="yearRight">
+          <% if @events[year.to_s] != nil %>
             <div>
-              <%= event.title %>
+              <% @events[year.to_s].each do |event| %>
+                <div>
+                  <%= link_to event.title %>
+                </div>
+              <% end %>
             </div>
           <% end %>
         </div>
-      <% end %>
+        <div class="CB"></div>
+      </div>
     <% end %>
+  </div>
+  <div class="CB"></div>
 </div>
+

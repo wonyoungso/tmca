@@ -2,17 +2,46 @@
 
 	<div id="header">
 		<h1 id="logoWrap">
-			<a href="#">TMCA</a>
+		  <%= link_to 'Total Museum of Contemporary Art', root_path %>
 		</h1>
 
 		<header>
 		<nav>
 			<ul id="mainNav">
-				<li><%= link_to 'news', news_index_path%></li>
-				<li><%= link_to 'exhibitions', exhibitions_path %></li>
-				<li><%= link_to 'educations', educations_path %></li>
-				<li><%= link_to 'events', events_path %></li>
-				<li class="last"><%= link_to 'information', information_path %></li>
+				<% if params[:controller] == 'news' %>
+				  <li class="active">
+				<% else %>
+				  <li>
+				<% end %>
+        <%= link_to 'news', news_index_path, :class => 'HV' %></li>
+				
+				<% if params[:controller] == 'exhibitions' %>
+				  <li class="active">
+				<% else %>
+				  <li>
+				<% end %>
+				<%= link_to 'exhibitions', exhibitions_path, :class => 'HV' %></li>
+				
+				<% if params[:controller] == 'educations' %>
+				  <li class="active">
+				<% else %>
+				  <li>
+				<% end %>
+				<%= link_to 'educations', educations_path, :class => 'HV' %></li>
+				
+				<% if params[:controller] == 'events' %>
+				  <li class="active">
+				<% else %>
+				  <li>
+				<% end %>
+				<%= link_to 'events', events_path, :class => 'HV' %></li>
+				
+				<% if params[:controller] == 'informations' %>
+				  <li class="active last">
+				<% else %>
+				  <li class="last">
+				<% end %>
+				<%= link_to 'information', information_path, :class => 'HV' %></li>
 			</ul>  
 			<div id="extraWrap">
 				<ul id="extraNav">
