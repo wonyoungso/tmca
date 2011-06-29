@@ -50,22 +50,33 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 /* Layout */
 
 	#bodyWrap { width:960px; margin:0 auto; }
-	#contentWrap { width:100%; position:relative; }
+	#contentWrap { width:100%; position:relative; padding:30px 0 50px;}
 
 	/* Header */
 	#header { width:100%; position:relative; }
+	#logoWrap { float:left; } 
+	#logoWrap a { display:block; background-image:url(../images/logo.png); width:230px; height:70px; overflow:hidden; text-indent:-9999px; }
+	#mainNav { float:left; padding:28px 0 0 10px;}
+	#mainNav li { padding:0 17px 0 10px; background:url(../images/slush.png) right top no-repeat;   }
+	#mainNav li.last { background:none; }
+	#mainNav li a { font-weight:bold; color:#333; font-size:14px; }
+	#extraWrap { float:right; width:230px; padding-top:28px; }
+	#headerBar { clear:both; height:30px; width:100%; background:#ddd; overflow:hidden; position:relative; }
+	#headerNews { padding:5px 0 0 60px;  background:url(../images/header_news.png) left top no-repeat;   }
+	#searchWrap { background:#555; height:30px; width:230px;  }
+	#searchWrap input { background:transparent; border:none; padding:5px; width:190px; height:20px; }
 
 	/* Footer */
 	#footer { width:100%; position:relative; }
 	.footerColumn { width:320px; float:left; position:relative;  }
 	.footerColumn .bar { height:20px; padding:5px 10px; position:relative; border-right:1px solid #fff; background:#fff200; }
 	.footerColumn .bar h4 { font-size:14px; color:#555;  }
-	.footerColumn .bar a.linkOld { font-size:14px; color:#555; padding-left:20px; background-image:url(../images/up_btn.png); background-position:0 0; background-repeat:no-repeat;  }
+	.footerColumn .bar a.linkOld { font-size:14px; color:#555; padding-left:20px; background-image:url(../images/yellow_link.png); background-position:0 0; background-repeat:no-repeat;  }
 	.footerColumn .bar a.linkOld:hover { background-position:0 -16px; }
-	.footerColumn .bar a.upBtn { display:block; overflow:hidden; text-indent:-9999px; height:30px; width:29px; background-image:url(../images/up_btn.png); background-position:0 0;   }
+	.footerColumn .bar a.upBtn { display:block; position:absolute; right:0px; top:1px; overflow:hidden; text-indent:-9999px; height:30px; width:29px; background-image:url(../images/up_btn.png); background-position:0 0;   }
 	.footerColumn .bar a.upBtn:hover {  background-position:0 -30px; }
-	.footerColumn .content { height:30px; padding:10px; }
-	.footerColumn .desc { font-size:12px; color:#666; padding:10px; }
+	.footerColumn .content { height:30px; padding:15px 10px 5px; }
+	.footerColumn .desc { font-size:12px; color:#666; padding:0 10px; }
 	.footerColumn .copyright { text-align:right; }
 
 /* Contents */
