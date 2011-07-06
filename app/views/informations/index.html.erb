@@ -1,3 +1,94 @@
-<div>
-  <%= raw(@information.description) %>
+<div id="museumImage">
+  <%= image_tag 'info_image.jpg' %>
 </div>
+
+<div class="w320 infoUnit">
+  <h2 class="HV">location</h2>
+  <div class="description location">
+    <p>
+      서울시 종로구 평창동 465-16<br/>
+      <span class="postalCode">우편번호 110-848</span> 
+    </p>
+    <p>
+      465-16 Pyeongchang-dong, Jongno-gu,<br/>
+      Seoul, Korea <span class="postalCode">(110-848)</span>
+    </p>
+    <p>
+      465-16 ソウル市鍾路区平倉洞<br/> 
+      <span class="postalCode">110-848</span>
+    </p>
+  </div>
+  
+  <h2 class="HV">direction</h2>
+  <div class="description direction">
+    
+    <h3>지하철- 버스</h3>
+    <p>
+      3호선 경복궁역 3번출구 →<br/>
+      버스 1020, 1711 롯데.삼성아파트에서 하차<br/>
+      4호선 길음역 3번출구 →<br/>
+       버스 7211,110 롯데.삼성아파트에서 하차
+    </p>
+    <h3>Subway-Bus</h3>
+    <p>
+      Line 3 Gyeongbokgung Station, Exit 3 → <br/>Bus 1020, 1711 Lotte,Samsung Apartment Stop
+      Line 4 Gireum Station, Exit 3 → <br/>Bus 7211, 110 Lotte,Samsung Apartment Stop
+    </p>
+    <h3>地下鉄- バス</h3>
+    <p>
+      ３号線 景福宮駅 3番出口　→　バス1020,1711 ロッテ∙サムスンアパート前で下車。
+      ４号線　吉音駅 3番出口　→　バス7211,110 ロッテ∙サムスンアパート前で下車。
+    </p>
+  </div>
+  
+  
+</div>
+<div class="w640 totalMap">
+</div>
+
+<div class="w320 infoUnit">
+  <h2 class="HV">museum hour</h2>
+  <div class="description museumhour">
+    <p>
+      화~일: 오전 11시-오후 6시<br/>
+     Tue-Sun: 11am - 6pm<br/>
+      観覧時間 火～日：午前11時-午後6時
+    </p>
+    <p>
+      매주 월요일, 공휴일, 전시 준비 기간은 휴관<br/>
+      Closed Every Monday<br/>
+      休館日 毎週　月曜日、公休日、<br/>展示準備期間は休館。
+    </p>
+  </div>
+
+</div>
+
+
+<div class="w320 infoUnit">
+  <h2 class="HV">admission</h2>
+  <div class="description admission">
+    <p>
+      관람료 3,000원 (변동가능)<br/>
+      Admission Fee 3,000 won (variable)<br/>
+      観覧料3,000ウォン（変動可能 ）
+    </p>
+  </div>
+
+</div>
+
+
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+  var map;
+  $(document).ready(function(e){
+    var latlng = new google.maps.LatLng(37.61215526157749, 126.97582156085969);
+    var myOptions = {
+      zoom: 17,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    map = new google.maps.Map($('.totalMap').get(0), myOptions);
+    
+  });
+</script>

@@ -9,6 +9,6 @@ class AddSomethingToEducations < ActiveRecord::Migration
   def self.down
     remove_column :educations, :start_date
     remove_column :educations, :end_date
-    remov_column :educations, :published
+    remove_column :educations, :published
   end
 end
