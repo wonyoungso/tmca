@@ -1,0 +1,37 @@
+<div id="cNews" class="cNews">
+  <div class="left">
+    <h2 class="HV">current news</h2>
+  </div>
+  
+  <div class="right">
+    <% if @latest_news != nil %>
+      <h3><%= @latest_news.title %></h3>
+      <div class="date">
+        <p><%= @latest_news.created_at.strftime("%Y년 %m월 %d일 / %H시 %M분") %></p>
+      </div>
+      <div class="description">
+        <%= simple_format(@latest_news.description) %>
+      </div>
+      <div class="CB"></div>
+    <% else %>
+      최근 뉴스가 없습니다.
+    <% end %>
+  </div>
+  <div class="CB"></div>
+</div>
+<div id="news_chunks" class="newsChunk">
+  <div class="left">
+    <h2 class="HV">news</h2>
+  </div>
+  
+  <div class="right">
+    
+    <% @news_chunks.each do |news| %>
+      <div class="pastNews">
+        <%= link_to news.title, '#', :rel => news.id, %>
+      </div>
+    <% end %>
+  </div>
+  <div class="CB"></div>
+</div>
+

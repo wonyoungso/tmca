@@ -6,18 +6,18 @@
       뉴스 수정
     </h2>
     <div class="inner">
-      <%= form_tag admin_education_path(@education), :multipart => true, :class => 'form' do %>
+      <%= form_tag admin_news_path(@news), :multipart => true, :class => 'form' do %>
         <%= hidden_field_tag '_method', 'put'%>
           
         <div class="group">
-          <%= label_tag 'education[title]', '제목' %>
-          <%= text_field_tag 'education[title]', @education.title, :class => 'text_field' %>
+          <%= label_tag 'news[title]', '제목' %>
+          <%= text_field_tag 'news[title]', @news.title, :class => 'text_field' %>
         </div>
         
         
         <div class="group">
-          <%= label_tag 'education[description]', '내용' %>
-          <%= text_area_tag 'education[description]', @education.description, :class => 'text_area', :id => 'educationNewTextArea' %>
+          <%= label_tag 'news[description]', '내용' %>
+          <%= text_area_tag 'news[description]', @news.description, :class => 'text_area', :id => 'newsNewTextArea' %>
         </div>
         <div class="group navform wat-cf">
           <button type="submit" class="button">
@@ -32,4 +32,4 @@
   </div>
 </div>
 
-<%= javascript_include_tag 'admin/educations/new' %>
+<%= javascript_include_tag 'admin/newss/new' %>
