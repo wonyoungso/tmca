@@ -48,9 +48,9 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 .w320 { width:320px; }
 .w640 { width:640px; }
 .dpNone { display:none; }
-.backBtn { display:block; width:30px;height:30px; background-image:(../images/back_btn.png); background-position:0 0; text-indent:-9999px; overflow:hidden; }
+.backBtn { display:block; width:30px;height:30px; background-image:url(../images/back_btn.png); background-position:0 0; text-indent:-9999px; overflow:hidden; }
 .backBtn:hover { background-position:0 -30px; }
-.downloadBtn { display:block; width:120px;height:30px; background-image:(../images/down_btn.png); background-position:0 0; text-indent:-9999px; overflow:hidden; }
+.downloadBtn { display:block; width:120px;height:30px; background-image:url(../images/down_btn.png); background-position:0 0; text-indent:-9999px; overflow:hidden; }
 .downloadBtn:hover { background-position:0 -30px; }
 
 
@@ -70,8 +70,9 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#mainNav li.active {background-color: #FDF052;}
 	#mainNav li.last { background:none; }
 	#mainNav li a { font-weight:bold; color:#333; font-size:14px; }
-  #mainNav li a:hover { background-color:#FDF052; }
+	#mainNav li a:hover { background-color:#FDF052; }
 	
+
 	#extraWrap { float:right; width:230px; padding-top:27px; border-top:2px solid #ddd;}
 	#extraNav { float:left; }
 	#extraNav li { float:left; }
@@ -93,6 +94,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#searchWrap input:hover, #searchWrap input:focus { color:#fff; }
 	#searchWrap .searchBtn { width:30px; height:30px; text-indent:-999px; overflow:hidden; display:block; background-image:url(../images/search_btn.png); background-position:0 0; position:absolute; right:0px; top:0px; }
 	#searchWrap .searchBtn:hover { background-position:0 -30px; }
+
 
 	/* Footer */
 	#footer { width:100%; position:relative; margin-bottom:50px; }
@@ -121,7 +123,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .content .welcome .info .category {color:#FFF600;font-size:16px;}
   .content .welcome .info h2 {color:white;font-size:18px;margin-top:5px;}
   .content .welcome .info .date {color:#AAA;font-size:14px;margin-top:10px;display:block;}
-  .content .welcome .info .detailBtn {position:absolute;right:0;top:0; width:30px;height:30px; background-image:(../images/more_btn.png); background-position:0 0; overflow:hidden; }
+  .content .welcome .info .detailBtn {position:absolute;right:0;top:0; width:30px;height:30px; background-image:url(../images/more_btn.png); background-position:0 0; overflow:hidden; }
   .content .welcome .info .detailBtn:hover { background-position:0 -30px; }
   
 /* Contents */
