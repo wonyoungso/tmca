@@ -115,8 +115,9 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .content .welcome .info .category {color:#FFF600;font-size:16px;}
   .content .welcome .info h2 {color:white;font-size:18px;margin-top:5px;}
   .content .welcome .info .date {color:#AAA;font-size:14px;margin-top:10px;display:block;}
-  .content .welcome .info .detailBtn {position:absolute;right:0;top:0; background-image:(../images/more_btn.png); background-position:0 0; width:30px;height:30px; text-indent:-9999px; }
-  .content .welcome .info .detailBtn:hover { background-position:0 -30px; }
+  .content .welcome .info .detailBtn {position:absolute;right:0;top:0; width:30px;height:30px; }
+  .content .welcome .info .detailBtn a{background-image:(../images/more_btn.png); background-position:0 0; width:30px;height:30px; display:block; overflow:hidden; text-indent:-9999px; }
+  .content .welcome .info .detailBtn a:hover { background-position:0 -30px; }
   
 /* Contents */
   .exhibitions { border-top:1px solid #F0F0F0;margin-bottom:40px;display:none;}
