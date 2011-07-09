@@ -17,6 +17,6 @@ class EducationsController < ApplicationController
   end
   
   def show
-    @education = Education.find_by_permalink(params[:permalink])
+    @education = Education.find(params[:id])
   end
 end

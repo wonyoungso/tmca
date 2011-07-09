@@ -63,6 +63,8 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#mainNav li.active {background-color: #FDF052;}
 	#mainNav li.last { background:none; }
 	#mainNav li a { font-weight:bold; color:#333; font-size:14px; }
+  #mainNav li a:hover { background-color:#FDF052; }
+	
 	#extraWrap { float:right; width:230px; padding-top:27px; border-top:2px solid #ddd;}
 	#extraNav { float:left; }
 	#extraNav li { float:left; }
@@ -100,7 +102,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	.footerColumn .copyright { text-align:right; }
 
 /* Welcome */
-  .content .welcome {width:319px; float:left; position:relative;padding: 40px 0; border-right:1px solid #f0f0f0;}
+  .content .welcome {width:319px; cursor:pointer;float:left; position:relative;padding: 40px 0; border-right:1px solid #f0f0f0;display:none;}
   .content .welcome .welcomeback {width:319px; height:510px;opacity:0.7;filter:alpha(opacity=70);position:absolute;left:0;top:40px;}
   .content .welcome .welcomeback.yellow {background-color:#FFF600;}
   .content .welcome .welcomeback.black {background-color:black;}
@@ -111,11 +113,12 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .content .welcome .info .detailBtn {position:absolute;right:0;top:0;background-color:#FFF600;width:35px;height:35px;text-indent:-9999px;}
   
 /* Contents */
-  .exhibitions { border-top:1px solid #F0F0F0;margin-bottom:40px;}
+  .exhibitions { border-top:1px solid #F0F0F0;margin-bottom:40px;display:none;}
   .exhibitions h2 { font-size:20px; color:#999999; padding-top:10px;}
   .exhibitions .left {float:left;width:320px;}
-  .exhibitions .right {float:right;width:640px; background-color:#464646; position:relative; height:100px;}
+  .exhibitions .right {float:right;width:640px; cursor:pointer;background-color:#464646; position:relative; height:100px;overflow:hidden;}
   .exhibitions .right img {float:left;}
+  .exhibitions .right .description {position:absolute;background-color:black;opacity:0.9;padding:10px;color:white;line-height:160%;filter:alpha(opacity=90);height:100px;width:490px;left:100px;top:100px;}
   .exhibitions .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:400px;}
   .exhibitions .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
   .exhibitions .right .detailBtn {position:absolute; right:0; top:0; width:30px; height:30px; background-color:#FFF200; text-indent:-9999px;}
@@ -193,5 +196,14 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .infoUnit .direction, .infoUnit .museumhour, .infoUnit .admission {font-size:14px; line-height:160%;}
   .totalMap {float:left;height:250px;margin-bottom:13px;}
    
-
-
+  /* Exhibitions */
+  .titleSection {background-color:#454547;height:100px;}
+  .titleSection img {float:left;}
+  .titleSection .title {float:right;width:850px;}
+  .titleSection .title h2{font-size:30px;color:white;margin-top:13px;}
+  .titleSection .title .date{margin-top:10px;color:#BBB;}
+  
+  .descriptionSection {margin-top:20px;}
+  .descriptionSection .description {float:left;width:320px;height:400px;font-size:12px;line-height:160%;}
+  .descriptionSection .description p{margin-bottom:20px;}
+  .descriptionSection .photo {float:right;width:640px;}

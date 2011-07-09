@@ -17,6 +17,6 @@ class EventsController < ApplicationController
   end
   
   def show
-    @event = Event.find_by_permalink(params[:permalink])
+    @event = Event.find(params[:id])
   end
 end

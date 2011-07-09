@@ -1,4 +1,8 @@
 <div class="content">
+  <div class="indicator">
+    <%= image_tag 'indicator.gif' %>
+  </div>
+  
   <div class="welcome">    
     <%= image_tag @current_exhibition.bigphoto.url(:medium) %>
     <div class="welcomeback black"></div>
@@ -51,3 +55,4 @@
   </div>
   <div class="CB"></div>
 </div>
+<%= javascript_include_tag 'welcomes/index' %>

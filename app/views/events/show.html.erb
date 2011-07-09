@@ -1,9 +1,9 @@
 <div class="titleSection">
-  <%= image_tag @exhibition.bigphoto.url(:thumb) %>
+  <%= image_tag @event.bigphoto.url(:thumb) %>
   <div class="title">
-    <h2 class="HV"><%= @exhibition.title %></h2>
+    <h2 class="HV"><%= @event.title %></h2>
     <div class="date">
-      <%= @exhibition.start_date.strftime("%Y.%m.%d")%>-<%= @exhibition.end_date.strftime("%Y.%m.%d")%>
+      <%= @event.start_date.strftime("%Y.%m.%d")%>-<%= @event.end_date.strftime("%Y.%m.%d")%>
     </div>
   </div>
 </div>
@@ -11,13 +11,13 @@
 <div class="descriptionSection">
   <div class="description">
     <div style="margin-right:10px">
-      <%= raw(@exhibition.description) %>
+      <%= raw(@event.description) %>
     </div>
     <%= link_to 'Back', exhibitions_path, :class => 'backBtn' %>
-    <%= link_to 'Download PDF', %>
+    <%= link_to 'Download PDF', '#' %>
   </div>
 
   <div class="photo">
-    <%= image_tag @exhibition.bigphoto.url(:original) %>
+    <%= image_tag @event.bigphoto.url(:original) %>
   </div>
 </div>
