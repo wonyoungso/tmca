@@ -132,9 +132,9 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .exhibitions h2 { font-size:20px; color:#999999; padding-top:10px;}
   .exhibitions .left {float:left;width:320px;}
   .exhibitions .right {float:right;width:640px; cursor:pointer;background-color:#464646; position:relative; height:100px;overflow:hidden; }
-  .exhibitions .right img {float:left;}
-  .exhibitions .right .description {position:absolute;background-color:black;opacity:0.9; padding:10px;color:white; line-height:160%; filter:alpha(opacity=90); height:100px; width:490px; left:100px; top:100px;}
-  .exhibitions .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:400px;}
+  .exhibitions .right img {float:left; opacity:0.7; }
+  .exhibitions .right .description {position:absolute;background-color:black;opacity:0.9; padding:10px;color:white; line-height:160%; filter:alpha(opacity=90); height:100px; width:520px; left:100px; top:100px;}
+  .exhibitions .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:530px;}
   .exhibitions .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
   .exhibitions .right .detailBtn {position:absolute; right:0; top:0; width:30px; height:30px; background-color:#FFF200; text-indent:-9999px;}
   .exhibitions .noExhibition {padding:10px; color:#FFF;display:block;}
@@ -142,9 +142,9 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .exhibitions .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
   .exhibitions .pastRight .yearLeft {float:left; padding:10px;}
   .exhibitions .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
-  .exhibitions .pastRight .yearRight {float:right; padding:13px; width:500px;}
+  .exhibitions .pastRight .yearRight {float:right; padding:10px; width:500px; font-size:14px; }
   
-  .pastRight .yearRight a {font-size:16px;}
+  .pastRight .yearRight a {font-size:14px;}
   .pastRight .yearRight a:link, .exhibitions .pastRight .yearRight a:visited{color:#AAA;}
   .pastRight .yearRight a:hover {background-color:#FDF252;}
 
