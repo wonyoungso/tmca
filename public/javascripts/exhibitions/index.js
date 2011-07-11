@@ -4,7 +4,7 @@ var exhibitionsController = {
   currentIndex: 0,
   intervalId: null,
   init: function(){
-    this.exhibitions = $(".exhibitions");
+    this.exhibitions = $(".contentList");
     this.exhibitions.find(".right").hover(function(e){
     $(this).find(".detailBtn").animate({backgroundColor:'black'});
       $(this).find(".description").animate({top:0}, 400);
