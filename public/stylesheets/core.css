@@ -102,8 +102,8 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#footer { width:100%; position:relative; margin-bottom:50px; }
 	.footerColumn { width:320px; float:left; position:relative; }
 	.footerColumn .bar { height:20px; padding:8px 10px 2px; position:relative; border-right:1px solid #fff; background:#fff200; }
-	.footerColumn .bar h4 { font-size:12px; color:#555;  }
-	.footerColumn .bar a.linkOld { font-size:14px; color:#555; padding-left:20px; background-image:url(../images/yellow_link.png); background-position:0 0; background-repeat:no-repeat;  }
+	.footerColumn .bar h4 { font-size:12px; color:#555; line-height:16px; }
+	.footerColumn .bar a.linkOld { font-size:12px; color:#555; padding-left:20px; line-height:16px; background-image:url(../images/yellow_link.png); background-position:0 0; background-repeat:no-repeat;  }
 	.footerColumn .bar a.linkOld:hover { background-position:0 -16px; }
 	.footerColumn .bar a.upBtn { display:block; position:absolute; right:-1px; top:0px; overflow:hidden; text-indent:-9999px; height:30px; width:29px; background-image:url(../images/up_btn.png); background-position:0 0;   }
 	.footerColumn .bar a.upBtn:hover {  background-position:0 -30px; }
@@ -126,60 +126,32 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .content .welcome .info h2 {color:white;font-size:18px;margin-top:5px;}
   .content .welcome .info .date {color:#AAA;font-size:14px;margin-top:10px;display:block;}
   
+
+
+
   
 /* Contents */
-  .exhibitions { border-top:1px solid #F0F0F0;margin-bottom:40px;display:none;}
-  .exhibitions h2 { font-size:20px; color:#999999; padding-top:10px;}
-  .exhibitions .left {float:left;width:320px;}
-  .exhibitions .right {float:right;width:640px; cursor:pointer;background-color:#464646; position:relative; height:100px;overflow:hidden; }
-  .exhibitions .right img {float:left; opacity:0.9; }
-  .exhibitions .right .description {position:absolute;background-color:black;opacity:0.9; padding:10px;color:white; line-height:160%; filter:alpha(opacity=90); height:100px; width:520px; left:100px; top:100px;}
-  .exhibitions .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:530px;}
-  .exhibitions .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
-  .exhibitions .right:hover .detailBtn { background-position:0 -30px; }
-  .exhibitions .right:hover img { opacity:1.0; }
-  .exhibitions .noExhibition {padding:10px; color:#FFF;display:block;}
-  .exhibitions .pastRight {float:right;width:640px;padding-top:10px;}
-  .exhibitions .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
-  .exhibitions .pastRight .yearLeft {float:left; padding:10px 0;}
-  .exhibitions .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
-  .exhibitions .pastRight .yearRight {float:right; padding:12px 0; width:540px; font-size:14px; }
+  .contentList { border-top:1px solid #F0F0F0;margin-bottom:40px;display:none;}
+  .contentList h2 { font-size:20px; color:#999999; padding-top:10px;}
+  .contentList .left {float:left;width:320px;}
+  .contentList .right {float:right;width:640px; cursor:pointer;background-color:#464646; position:relative; height:100px;overflow:hidden; }
+  .contentList .right img {float:left; opacity:0.9; }
+  .contentList .right .description {position:absolute;background-color:black;opacity:0.9; padding:10px;color:white; line-height:160%; filter:alpha(opacity=90); height:100px; width:520px; left:100px; top:100px;}
+  .contentList .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:530px;}
+  .contentList .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
+  .contentList .right:hover .detailBtn { background-position:0 -30px; }
+  .contentList .right:hover img { opacity:1.0; }
+  .contentList .noExhibition {padding:10px; color:#FFF;display:block;}
+  .contentList .pastRight {float:right;width:640px;padding-top:10px;}
+  .contentList .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
+  .contentList .pastRight .yearLeft {float:left; padding:10px 0;}
+  .contentList .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
+  .contentList .pastRight .yearRight {float:right; padding:12px 0; width:540px; font-size:14px; }
   
   .pastRight .yearRight a {font-size:14px;}
   .pastRight .yearRight a:link, .exhibitions .pastRight .yearRight a:visited{color:#AAA;}
   .pastRight .yearRight a:hover {background-color:#FDF252;}
 
-
-  .events { border-top:1px solid #F0F0F0;margin-bottom:40px;}
-  .events h2 { font-size:20px; color:#999999; padding-top:10px;}
-  .events .left {float:left;width:320px;}
-  .events .right {float:right;width:640px; background-color:#464646; position:relative; height:100px;}
-  .events .right img {float:left;}
-  .events .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:400px;}
-  .events .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
-  .events .right .detailBtn {position:absolute; right:0; top:0; width:30px; height:30px; background-color:#FFF200; text-indent:-9999px;}
-  .events .noEvent {padding:10px; color:#FFF;display:block;}
-  .events .pastRight {float:right;width:640px;padding-top:10px;}
-  .events .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
-  .events .pastRight .yearLeft {float:left; padding:10px;}
-  .events .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
-  .events .pastRight .yearRight {float:right; padding:13px; width:500px;}
-  
-  
-  .educations { border-top:1px solid #F0F0F0;margin-bottom:40px;}
-  .educations h2 { font-size:20px; color:#999999; padding-top:10px;}
-  .educations .left {float:left;width:320px;}
-  .educations .right {float:right;width:640px; background-color:#464646; position:relative; height:100px;}
-  .educations .right img {float:left;}
-  .educations .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:400px;}
-  .educations .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
-  .educations .right .detailBtn {position:absolute; right:0; top:0; width:30px; height:30px; background-color:#FFF200; text-indent:-9999px;}
-  .educations .noEducation {padding:10px; color:#FFF;display:block;}
-  .educations .pastRight {float:right;width:640px;padding-top:10px;}
-  .educations .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
-  .educations .pastRight .yearLeft {float:left; padding:10px;}
-  .educations .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
-  .educations .pastRight .yearRight {float:right; padding:13px; width:500px;}
   
   /* news */
   
@@ -187,8 +159,8 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .cNews h2 { font-size:20px; padding-top:10px;}
   .cNews .left {float:left;width:320px;}
   .cNews .right {float:right;width:640px;  position:relative }
-  .cNews .right h3 { padding-top:10px; font-size:22px; color:#999999;margin-bottom:15px;}
-  .cNews .right .date {font-size:12px; color:#777;border-bottom:1px dashed #AAA; padding-bottom:10px; margin-bottom:10px; }
+  .cNews .right h3 { padding-top:10px; font-size:18px; color:#666;margin-bottom:15px;}
+  .cNews .right .date {font-size:12px; color:#777; border-bottom:1px dotted #eee; padding-bottom:10px; margin-bottom:10px; }
   .cNews .right .description {margin-top:10px; line-height:160%;}
     
   .newsChunk { border-top:1px solid #F0F0F0;margin-bottom:40px;}
@@ -203,15 +175,14 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   
   /* information */
   #museumImage {margin-bottom:30px;}
-  .infoUnit {float:left;}
-  .infoUnit h2{font-size:18px; margin-bottom:5px; margin-top:10px; padding-bottom:5px; border-bottom:1px solid #eee;}
-  .infoUnit .location {font-size:16px; line-height:160%;margin-bottom:55px;}
-  .infoUnit .description p{margin-bottom:10px;padding-right:15px; font-size:14px;}  
-  .infoUnit .description.direction p{color:#777;}
-  .infoUnit .location .postalCode {font-size:0.8em;color:#888}
-  .infoUnit .direction, .infoUnit .museumhour, .infoUnit .admission {font-size:14px; line-height:160%;}
-  .totalMap {float:left;height:250px;margin-bottom:13px;}
-   
+  .infoUnit {float:left; width:319px; padding-right:1px;}
+  .infoUnit h2{font-size:16px; margin:5px 0 10px; padding-bottom:5px; border-bottom:1px solid #eee;}
+  .infoUnit .description { padding-bottom:20px; }
+  .infoUnit .description h3 { font-size:14px; font-weight:bold; color:#333; } 
+  .infoUnit .description p { font-size:12px; color:#777; line-height:160%; padding-bottom:20px; }
+  .infoUnit .description p span { font-size:10px; color:#999; font-weight:bold; }
+
+
   /* Exhibitions */
   .titleSection {background-color:#454547;height:100px;}
   .titleSection img {float:left;}
