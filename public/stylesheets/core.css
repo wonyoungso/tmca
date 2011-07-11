@@ -168,19 +168,20 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .newsChunk .left {float:left;width:320px;}
   .newsChunk .right {float:right;width:640px;  position:relative }
   .newsChunk .right h3 { padding-top:10px; font-size:25px; color:#999999;margin-bottom:15px;}
-  .newsChunk .right .date {font-size:12px; color:#777;border-bottom:1px dashed #AAA; padding-bottom:10px; margin-bottom:10px; }
-  .newsChunk .right .description {margin-top:10px; line-height:160%;}
+  .newsChunk .right .date {font-size:11px; color:#777;border-bottom:1px dashed #AAA; padding-bottom:10px; margin-bottom:10px; }
+  .newsChunk .right .description {margin-top:10px; line-height:160%; font-size:14px; }
   .newsChunk .right .pastNews {margin-top:15px; border-bottom:1px solid #eee;padding-bottom:15px; margin-bottom:15px; font-size:14px;}
-  .newsChunk .right .pastNews a {text-decoration:none; color:#333;}
+  .newsChunk .right .pastNews a {text-decoration:none; color:#999; font-weight:bold;}
+  .newsChunk .right .pastNews a:hover { color:#333; }
   
   /* information */
   #museumImage {margin-bottom:30px;}
   .infoUnit {float:left; width:319px; padding-right:1px;}
-  .infoUnit h2{font-size:16px; margin:5px 0 10px; padding-bottom:5px; border-bottom:1px solid #eee;}
+  .infoUnit h2{font-size:18px; margin:5px 0 10px; padding-bottom:5px; border-bottom:1px solid #eee;}
   .infoUnit .description { padding-bottom:20px; }
-  .infoUnit .description h3 { font-size:12px; font-weight:bold; color:#333; padding-bottom:7px;} 
-  .infoUnit .description p { font-size:12px; color:#777; line-height:160%; padding-bottom:20px; }
-  .infoUnit .description p span { font-size:10px; color:#999; font-weight:bold; }
+  .infoUnit .description h3 { font-size:14px; font-weight:bold; color:#333; padding-bottom:7px;} 
+  .infoUnit .description p { font-size:14px; color:#777; line-height:160%; padding:0 20px 20px 0; }
+  .infoUnit .description p span { font-size:11px; color:#999; font-weight:bold; }
   .totalMap { height:240px; margin-bottom:30px; }
 
   /* Exhibitions */
@@ -193,5 +194,5 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .descriptionSection {margin-top:20px;}
   .descriptionSection .description {float:left;width:320px;height:400px;font-size:12px;line-height:160%;}
   .descriptionSection .description div { padding-bottom:20px; }
-  .descriptionSection .description p{margin-bottom:20px; font-size:14px;}
-  .descriptionSection .photo {float:right;width:640px;}
+  .descriptionSection .description p{margin-bottom:20px; font-size:14px; line-height:160%: }
+  .descriptionSection .photo {float:right;width:639px; border-left:1px solid #eee;}
