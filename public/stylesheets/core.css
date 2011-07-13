@@ -31,7 +31,8 @@ img::-moz-selection {background: transparent;}
 	html {-webkit-text-size-adjust: none}
 	a {-webkit-tap-highlight-color: rgba(200,0,0,0.4);}
 
-	}
+}
+
 /*-------------------------------------------------*/
 
 
@@ -47,6 +48,14 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 .w320 { width:320px; }
 .w640 { width:640px; }
 .dpNone { display:none; }
+.backBtn { display:block; width:30px;height:30px; background-image:url(../images/back_btn.png); background-position:0 0; text-indent:-9999px; overflow:hidden; float:left; margin-right:2px;  }
+.backBtn:hover { background-position:0 -30px; }
+.downloadBtn { display:block; width:120px;height:30px; background-image:url(../images/down_btn.png); background-position:0 0; text-indent:-9999px; overflow:hidden; }
+.downloadBtn:hover { background-position:0 -30px; }
+.detailBtn {position:absolute;right:0;top:0; width:30px;height:30px; background-image:url(../images/more_btn.png); background-position:0 0; overflow:hidden; }
+.detailBtn:hover { background-position:0 -30px; }
+.detailBtn a { display:block; width:30px; height:30px; text-indent:-9999px; overflow:hidden; }
+
 
 
 /* Layout */
@@ -60,11 +69,12 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#logoWrap a { display:block; background-image:url(../images/logo.png); width:230px; height:70px; overflow:hidden; text-indent:-9999px; }
 	#mainNav { float:left; padding:28px 0 0 10px;}
 	#mainNav li { padding:0 17px 0 10px; background:url(../images/slush.png) right top no-repeat; float:left;  }
-	#mainNav li.active {background-color: #FDF052;}
+	#mainNav li.active a {background-color: #FDF052;}
 	#mainNav li.last { background:none; }
 	#mainNav li a { font-weight:bold; color:#333; font-size:14px; }
-  #mainNav li a:hover { background-color:#FDF052; }
+	#mainNav li a:hover { background-color:#FDF052; }
 	
+
 	#extraWrap { float:right; width:230px; padding-top:27px; border-top:2px solid #ddd;}
 	#extraNav { float:left; }
 	#extraNav li { float:left; }
@@ -81,24 +91,29 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#headerNews { float:left; padding:8px 0 0 50px;  background:url(../images/header_news.png) left top no-repeat; color:#666; height:22px;  }
 	#headerNews a { color:#666; }
 	#headerNews a:hover { text-decoration:underline; }
-	#searchWrap { float:right; background:#555; height:30px; width:230px;  }
+	#searchWrap { float:right; background:#555; height:30px; width:230px; position:relative;  }
 	#searchWrap input { background:transparent; border:none; padding:5px; width:190px; height:20px; color:#999; line-height:20px;}
 	#searchWrap input:hover, #searchWrap input:focus { color:#fff; }
+	#searchWrap .searchBtn { width:30px; height:30px; text-indent:-999px; overflow:hidden; display:block; background-image:url(../images/search_btn.png); background-position:0 0; position:absolute; right:0px; top:0px; }
+	#searchWrap .searchBtn:hover { background-position:0 -30px; }
+
 
 	/* Footer */
 	#footer { width:100%; position:relative; margin-bottom:50px; }
 	.footerColumn { width:320px; float:left; position:relative; }
 	.footerColumn .bar { height:20px; padding:8px 10px 2px; position:relative; border-right:1px solid #fff; background:#fff200; }
-	.footerColumn .bar h4 { font-size:14px; color:#555;  }
-	.footerColumn .bar a.linkOld { font-size:14px; color:#555; padding-left:20px; background-image:url(../images/yellow_link.png); background-position:0 0; background-repeat:no-repeat;  }
+	.footerColumn .bar h4 { font-size:12px; color:#555; line-height:16px; }
+	.footerColumn .bar a.linkOld { font-size:12px; color:#555; padding-left:20px; line-height:16px; background-image:url(../images/yellow_link.png); background-position:0 0; background-repeat:no-repeat;  }
 	.footerColumn .bar a.linkOld:hover { background-position:0 -16px; }
 	.footerColumn .bar a.upBtn { display:block; position:absolute; right:-1px; top:0px; overflow:hidden; text-indent:-9999px; height:30px; width:29px; background-image:url(../images/up_btn.png); background-position:0 0;   }
 	.footerColumn .bar a.upBtn:hover {  background-position:0 -30px; }
 	.footerColumn .content { height:30px; padding:15px 10px 7px; }
-	.footerColumn .mailing { background:#555; height:30px; width:230px;  }
+	.footerColumn .mailing { background:#555; height:30px; width:230px; position:relative; }
 	.footerColumn .mailing input { background:transparent; border:none; padding:5px; width:190px; height:17px; color:#999; line-height:17px; }
 	.footerColumn .mailing input:hover, .footerColumn .mailing input:focus { color:#fff; }
-	.footerColumn .desc { font-size:12px; color:#666; padding:0 0 0 10px; }
+	.footerColumn .mailing .agreeBtn { width:27px; height:27px; text-indent:-999px; overflow:hidden; display:block; background-image:url(../images/check_btn.png); background-position:0 0; position:absolute; right:1px; top:1px; }
+	.footerColumn .mailing .agreeBtn:hover { background-position:0 -27px; }
+	.footerColumn .desc { font-size:11px; color:#666; padding:0 0 0 10px; }
 	.footerColumn .copyright { text-align:right; }
 
 /* Welcome */
@@ -110,60 +125,33 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .content .welcome .info .category {color:#FFF600;font-size:16px;}
   .content .welcome .info h2 {color:white;font-size:18px;margin-top:5px;}
   .content .welcome .info .date {color:#AAA;font-size:14px;margin-top:10px;display:block;}
-  .content .welcome .info .detailBtn {position:absolute;right:0;top:0;background-color:#FFF600;width:35px;height:35px;text-indent:-9999px;}
+  
+
+
+
   
 /* Contents */
-  .exhibitions { border-top:1px solid #F0F0F0;margin-bottom:40px;display:none;}
-  .exhibitions h2 { font-size:20px; color:#999999; padding-top:10px;}
-  .exhibitions .left {float:left;width:320px;}
-  .exhibitions .right {float:right;width:640px; cursor:pointer;background-color:#464646; position:relative; height:100px;overflow:hidden;}
-  .exhibitions .right img {float:left;}
-  .exhibitions .right .description {position:absolute;background-color:black;opacity:0.9;padding:10px;color:white;line-height:160%;filter:alpha(opacity=90);height:100px;width:490px;left:100px;top:100px;}
-  .exhibitions .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:400px;}
-  .exhibitions .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
-  .exhibitions .right .detailBtn {position:absolute; right:0; top:0; width:30px; height:30px; background-color:#FFF200; text-indent:-9999px;}
-  .exhibitions .noExhibition {padding:10px; color:#FFF;display:block;}
-  .exhibitions .pastRight {float:right;width:640px;padding-top:10px;}
-  .exhibitions .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
-  .exhibitions .pastRight .yearLeft {float:left; padding:10px;}
-  .exhibitions .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
-  .exhibitions .pastRight .yearRight {float:right; padding:13px; width:500px;}
+  .contentList { border-top:1px solid #F0F0F0;margin-bottom:40px; display:none; }
+  .contentList h2 { font-size:20px; color:#999999; padding-top:10px;}
+  .contentList .left {float:left;width:320px;}
+  .contentList .right {float:right;width:640px; cursor:pointer;background-color:#464646; position:relative; height:100px;overflow:hidden; }
+  .contentList .right img {float:left; opacity:0.9; }
+  .contentList .right .description {position:absolute;background-color:black;opacity:0.9; padding:10px;color:white; line-height:160%; filter:alpha(opacity=90); height:100px; width:520px; left:100px; top:100px;}
+  .contentList .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:530px;}
+  .contentList .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
+  .contentList .right:hover .detailBtn { background-position:0 -30px; }
+  .contentList .right:hover img { opacity:1.0; }
+  .contentList .noExhibition {padding:10px; color:#FFF;display:block;}
+  .contentList .pastRight {float:right;width:640px;padding-top:10px;}
+  .contentList .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
+  .contentList .pastRight .yearLeft {float:left; padding:10px 0;}
+  .contentList .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
+  .contentList .pastRight .yearRight {float:right; padding:12px 0; width:540px; font-size:14px; }
   
-  .pastRight .yearRight a {font-size:16px;}
+  .pastRight .yearRight a {font-size:14px;}
   .pastRight .yearRight a:link, .exhibitions .pastRight .yearRight a:visited{color:#AAA;}
   .pastRight .yearRight a:hover {background-color:#FDF252;}
 
-
-  .events { border-top:1px solid #F0F0F0;margin-bottom:40px;}
-  .events h2 { font-size:20px; color:#999999; padding-top:10px;}
-  .events .left {float:left;width:320px;}
-  .events .right {float:right;width:640px; background-color:#464646; position:relative; height:100px;}
-  .events .right img {float:left;}
-  .events .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:400px;}
-  .events .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
-  .events .right .detailBtn {position:absolute; right:0; top:0; width:30px; height:30px; background-color:#FFF200; text-indent:-9999px;}
-  .events .noEvent {padding:10px; color:#FFF;display:block;}
-  .events .pastRight {float:right;width:640px;padding-top:10px;}
-  .events .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
-  .events .pastRight .yearLeft {float:left; padding:10px;}
-  .events .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
-  .events .pastRight .yearRight {float:right; padding:13px; width:500px;}
-  
-  
-  .educations { border-top:1px solid #F0F0F0;margin-bottom:40px;}
-  .educations h2 { font-size:20px; color:#999999; padding-top:10px;}
-  .educations .left {float:left;width:320px;}
-  .educations .right {float:right;width:640px; background-color:#464646; position:relative; height:100px;}
-  .educations .right img {float:left;}
-  .educations .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:400px;}
-  .educations .right .date {padding:5px; font-size:12px; color:#FFF;float:left;}
-  .educations .right .detailBtn {position:absolute; right:0; top:0; width:30px; height:30px; background-color:#FFF200; text-indent:-9999px;}
-  .educations .noEducation {padding:10px; color:#FFF;display:block;}
-  .educations .pastRight {float:right;width:640px;padding-top:10px;}
-  .educations .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
-  .educations .pastRight .yearLeft {float:left; padding:10px;}
-  .educations .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
-  .educations .pastRight .yearRight {float:right; padding:13px; width:500px;}
   
   /* news */
   
@@ -171,8 +159,8 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .cNews h2 { font-size:20px; padding-top:10px;}
   .cNews .left {float:left;width:320px;}
   .cNews .right {float:right;width:640px;  position:relative }
-  .cNews .right h3 { padding-top:10px; font-size:22px; color:#999999;margin-bottom:15px;}
-  .cNews .right .date {font-size:12px; color:#777;border-bottom:1px dashed #AAA; padding-bottom:10px; margin-bottom:10px; }
+  .cNews .right h3 { padding-top:10px; font-size:18px; color:#666;margin-bottom:15px;}
+  .cNews .right .date {font-size:12px; color:#777; border-bottom:1px dotted #eee; padding-bottom:10px; margin-bottom:10px; }
   .cNews .right .description {margin-top:10px; line-height:160%;}
     
   .newsChunk { border-top:1px solid #F0F0F0;margin-bottom:40px;}
@@ -180,22 +168,22 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .newsChunk .left {float:left;width:320px;}
   .newsChunk .right {float:right;width:640px;  position:relative }
   .newsChunk .right h3 { padding-top:10px; font-size:25px; color:#999999;margin-bottom:15px;}
-  .newsChunk .right .date {font-size:12px; color:#777;border-bottom:1px dashed #AAA; padding-bottom:10px; margin-bottom:10px; }
-  .newsChunk .right .description {margin-top:10px; line-height:160%;}
+  .newsChunk .right .date {font-size:11px; color:#777;border-bottom:1px dashed #AAA; padding-bottom:10px; margin-bottom:10px; }
+  .newsChunk .right .description {margin-top:10px; line-height:160%; font-size:14px; }
   .newsChunk .right .pastNews {margin-top:15px; border-bottom:1px solid #eee;padding-bottom:15px; margin-bottom:15px; font-size:14px;}
-  .newsChunk .right .pastNews a {text-decoration:none; color:#333;}
+  .newsChunk .right .pastNews a {text-decoration:none; color:#999; font-weight:bold;}
+  .newsChunk .right .pastNews a:hover { color:#333; }
   
   /* information */
   #museumImage {margin-bottom:30px;}
-  .infoUnit {float:left;}
-  .infoUnit h2{font-size:18px; margin-bottom:5px; margin-top:10px; padding-bottom:5px; border-bottom:1px solid #eee;}
-  .infoUnit .location {font-size:16px; line-height:160%;margin-bottom:55px;}
-  .infoUnit .description p{margin-bottom:10px;padding-right:15px;}  
-  .infoUnit .description.direction p{color:#777;}
-  .infoUnit .location .postalCode {font-size:0.8em;color:#888}
-  .infoUnit .direction, .infoUnit .museumhour, .infoUnit .admission {font-size:14px; line-height:160%;}
-  .totalMap {float:left;height:250px;margin-bottom:13px;}
-   
+  .infoUnit {float:left; width:319px; padding-right:1px;}
+  .infoUnit h2{font-size:18px; margin:5px 0 10px; padding-bottom:5px; border-bottom:1px solid #eee;}
+  .infoUnit .description { padding-bottom:20px; }
+  .infoUnit .description h3 { font-size:14px; font-weight:bold; color:#333; padding-bottom:7px;} 
+  .infoUnit .description p { font-size:14px; color:#777; line-height:160%; padding:0 20px 20px 0; }
+  .infoUnit .description p span { font-size:11px; color:#999; font-weight:bold; }
+  .totalMap { height:240px; margin-bottom:30px; }
+
   /* Exhibitions */
   .titleSection {background-color:#454547;height:100px;}
   .titleSection img {float:left;}
@@ -205,5 +193,6 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   
   .descriptionSection {margin-top:20px;}
   .descriptionSection .description {float:left;width:320px;height:400px;font-size:12px;line-height:160%;}
-  .descriptionSection .description p{margin-bottom:20px;}
-  .descriptionSection .photo {float:right;width:640px;}
+  .descriptionSection .description div { padding-bottom:20px; color:#777;}
+  .descriptionSection .description p{margin-bottom:20px; font-size:14px; line-height:160%: color:#777;}
+  .descriptionSection .photo {float:right;width:639px; border-left:1px solid #eee;}
