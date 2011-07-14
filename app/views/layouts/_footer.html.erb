@@ -7,37 +7,33 @@
 		<footer>
 		<div class="footerColumn">
 			<div class="bar">
-				<h4 class="HV">Project Page</h4>
+  				<div class="mailing">
+  				<%= form_tag mailinglists_path do %>
+  					<%= text_field_tag 'email', '', :placeholder => '뉴스레터 가입 이메일' %>
+  				<% end %>
+  				<%= link_to 'agree', '#', :class => 'agreeBtn' %>
+  				</div>
 			</div>
-			<div class="content">
-				<img src="./images/tumblbug.png" alt="토탈미술관 후원 프로젝트 페이지" />
-			</div>
-			<p class="desc RG">
-				토탈미술관 후원 프로젝트 페이지
-			</p>
+			
 			<div class="CB"></div>
 		</div>
 		<div class="footerColumn">
 			<div class="bar">
-				<h4 class="HV">Join Our Mailing List</h4>
+			  <div class="search">
+				  <%= form_tag '/search' do %>
+  					<%= text_field_tag 'query', '', :placeholder => '검색' %>
+  				<% end %>
+  				<%= link_to 'agree', '#', :class => 'agreeBtn' %>
+			  </div>
 			</div>
-			<div class="content">
-				<div class="mailing">
-				<%= form_tag mailinglists_path do %>
-					<%= text_field_tag 'email', '', :placeholder => 'e-mail' %>
-				<% end %>
-				<%= link_to 'agree', '#', :class => 'agreeBtn' %>
-				</div>
-			</div>
-			<p class="desc RG">
-				이메일을 남기시면 전시일정과 뉴스를 전해 드립니다.
-			</p>
 			<div class="CB"></div>
 		</div>
 		<div class="footerColumn">
 			<div class="bar">
-				<%= link_to 'Total Museum Old Homepage', 'http://old.totalmuseum.org', :target => '_blank', :class => 'linkOld HV' %>
-				<%= link_to 'Page Top', '#', :class => 'upBtn'  %>
+			  <div style="padding:5px;padding-top:7px">
+			    <%= link_to @news_header.title, news_path(@news_header) %>
+				  <%= link_to 'Page Top', '#', :class => 'upBtn'  %>
+			  </div>
 			</div>
 			<div class="content">
 				&nbsp;

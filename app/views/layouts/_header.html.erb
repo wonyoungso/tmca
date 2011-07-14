@@ -43,7 +43,7 @@
 				<% end %>
 				<%= link_to 'information', information_path, :class => 'HV' %></li>
 			</ul>  
-			<div id="extraWrap">
+			<div id="extraWrap" style="display:none">
 				<ul id="extraNav">
 					<li><%= link_to 'blog', 'http://blog.naver.com/totalmuseum', :target => '_blank' %></li>
 					<li><span>/</span><%= link_to 'total academy', '#' %></li>
@@ -57,7 +57,7 @@
 		</nav>
 		</header>
 
-		<div id="headerBar">
+		<div id="headerBar" style="display:none">
 			<div id="headerNews">
 			<%= link_to @news_header.title, news_path(@news_header) %>
 			</div>
@@ -70,6 +70,7 @@
 			</div>
 			<div class="CB"></div>
 		</div>
+		<div class="CB"></div>
 	</div>
 
 	<div id="contentWrap">
