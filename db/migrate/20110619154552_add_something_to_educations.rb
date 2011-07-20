@@ -3,7 +3,7 @@ class AddSomethingToEducations < ActiveRecord::Migration
   def self.up
     add_column :educations, :start_date, :datetime
     add_column :educations, :end_date, :datetime
-    add_column :educations, :published, :booelan, :default => false
+    add_column :educations, :published, :boolean, :default => false
   end
 
   def self.down
