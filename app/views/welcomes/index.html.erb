@@ -6,7 +6,7 @@
   <% if @current_exhibition != nil %>
     <div class="welcome">    
       <%= image_tag @current_exhibition.bigphoto.url(:medium) %>
-      <div class="welcomeback black"></div>
+      <div class="welcomeback"></div>
       <div class="info">
         <span class="HV category">exhibition</span>
         <h2 class="HV">
@@ -25,7 +25,7 @@
   <% if @current_education != nil %>
     <div class="welcome">    
       <%= image_tag @current_education.bigphoto.url(:medium) %>
-      <div class="welcomeback yellow"></div>
+      <div class="welcomeback"></div>
       <div class="info">
         <span class="HV category">education</span>
         <h2 class="HV">
@@ -44,7 +44,7 @@
   <% if @current_event != nil %>
     <div class="welcome">    
       <%= image_tag @current_event.bigphoto.url(:medium) %>
-      <div class="welcomeback black"></div>
+      <div class="welcomeback"></div>
       <div class="info">
         <span class="HV category">event</span>
         <h2 class="HV">
