@@ -164,6 +164,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .contentList .pastRight .yearLeft h3 {font-size:20px; color:#5A5A5C;}
   .contentList .pastRight .yearRight {float:right; padding:12px 0; width:540px; font-size:14px; }
   
+  .postRight .yearRight div.list {margin-top:5px;}
   .pastRight .yearRight a {font-size:14px;}
   .pastRight .yearRight a:link, .exhibitions .pastRight .yearRight a:visited{color:#AAA;}
   .pastRight .yearRight a:hover {background-color:#FDF252;}
