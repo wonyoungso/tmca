@@ -31,11 +31,11 @@ var welcomeController = {
   setWidth: function(index, item){
     if (index % 2 == 0)
     {
-      $(item).find(".welcomback").addClass("black");
+      $(item).find(".welcomeback").addClass("black");
     }
     else
     {
-      $(item).find(".welcomback").addClass("yellow");
+      $(item).find(".welcomeback").addClass("yellow");
     }
     $(item).css('width', this.basicWidth + 'px');    
   },
