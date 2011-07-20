@@ -5,43 +5,67 @@
 
 	<div id="footer">
 		<footer>
-		<div class="footerColumn">
-			<div class="bar">
-  				<div class="mailing">
-  				<%= form_tag mailinglists_path do %>
-  					<%= text_field_tag 'email', '', :placeholder => '뉴스레터 가입 이메일' %>
-  				<% end %>
-  				<%= link_to 'agree', '#', :class => 'agreeBtn' %>
-  				</div>
-			</div>
-			
-			<div class="CB"></div>
-		</div>
-		<div class="footerColumn">
-			<div class="bar">
-			  <div class="search">
-				  <%= form_tag '/search' do %>
-  					<%= text_field_tag 'query', '', :placeholder => '검색' %>
-  				<% end %>
-  				<%= link_to 'agree', '#', :class => 'agreeBtn' %>
-			  </div>
-			</div>
-			<div class="CB"></div>
-		</div>
-		<div class="footerColumn">
-			<div class="bar">
-			  <div style="padding:5px;padding-top:7px">
-			    <%= link_to @news_header.title, news_path(@news_header) %>
-				  <%= link_to 'Page Top', '#', :class => 'upBtn'  %>
-			  </div>
-			</div>
-			<div class="content">
-				&nbsp;
-			</div>
-			<p class="desc copyright HV">
-				(c) Total Museum of Contemporary Art.
-			</p>
-			<div class="CB"></div>
+		<!-- <div class="footerColumn">
+		      <div class="bar">
+		          <div class="mailing">
+		          <%= form_tag mailinglists_path do %>
+		            <%= text_field_tag 'email', '', :placeholder => '뉴스레터 가입 이메일' %>
+		          <% end %>
+		          <%= link_to 'agree', '#', :class => 'agreeBtn' %>
+		          </div>
+		      </div>
+		      
+		      <div class="CB"></div>
+		    </div>
+		    <div class="footerColumn">
+		      <div class="bar">
+		        <div class="search">
+		          <%= form_tag '/search' do %>
+		            <%= text_field_tag 'query', '', :placeholder => '검색' %>
+		          <% end %>
+		          <%= link_to 'agree', '#', :class => 'agreeBtn' %>
+		        </div>
+		      </div>
+		      <div class="CB"></div>
+		    </div>
+		    <div class="footerColumn">
+		      <div class="bar">
+		        <div style="padding:5px;padding-top:7px">
+		          <%= link_to @news_header.title, news_path(@news_header) %>
+		          <%= link_to 'Page Top', '#', :class => 'upBtn'  %>
+		        </div>
+		      </div>
+		      <div class="content">
+		        &nbsp;
+		      </div>
+		      <p class="desc copyright HV">
+		        (c) Total Museum of Contemporary Art.
+		      </p>
+		      <div class="CB"></div>
+		    </div> -->
+		<div class="footerFullColumn">
+		  <div style="float:right">
+  		  <ul>
+  		    <li>
+  		      <%= link_to '토탈미술관 페이스북', 'http://facebook.com/totalmuseum', :class => 'snsBtn facebook', :target => '_blank' %>
+      		  <%= link_to '토탈미술관 트위터', 'http://twitter.com/totalmuseum', :class => 'snsBtn twitter', :target => '_blank' %>
+      		  <div class="CB"></div>
+    		  </li>
+    		  <li>
+    		    <%= link_to 'blog', 'http://blog.naver.com/totalmuseum', :target => '_blank', :class => 'HV' %>
+    		  </li>
+    		  <li>
+    		    <%= link_to 'total academy', '#', :target => '_blank', :class => 'HV' %>
+    	    </li>
+    	    <li>
+      		  <%= link_to 'mailing list', '#', :class => 'HV' %>
+    	    </li>
+    	    <li style="border:none">
+    	        (c) Total Museum of Contemporary Art.
+    	    </li>
+    	  </ul>
+  	  </div>
+		  <div class="CB"></div>
 		</div>
 		<div class="CB"></div>
 		</footer>
