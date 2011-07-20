@@ -22,7 +22,7 @@ var welcomeController = {
       document.location.href = $(this).find(".detailBtn a").attr("href");
     });
   
-    this.basicWidth = 960 / this.welcomes.length;
+    this.basicWidth = 960 / this.welcomes.length - 1;
     
     this.welcomes.each($.proxy(this.setWidth, this));
     
