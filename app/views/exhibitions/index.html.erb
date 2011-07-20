@@ -65,9 +65,9 @@
         </div>
         <div class="yearRight">
           <% if @exhibitions[year.to_s] != nil %>
-            <div class="list">
+            <div>
               <% @exhibitions[year.to_s].each do |exhibition| %>
-                <div>
+                <div class="list">
                   <%= link_to exhibition.title, exhibition_path(exhibition), :class => 'HV' %>
                 </div>
               <% end %>
