@@ -29,6 +29,14 @@ var welcomeController = {
   },
   
   setWidth: function(index, item){
+    if (index % 2 == 0)
+    {
+      $(item).find(".welcomback").addClass("black");
+    }
+    else
+    {
+      $(item).find(".welcomback").addClass("yellow");
+    }
     $(item).css('width', this.basicWidth + 'px');    
   },
   
