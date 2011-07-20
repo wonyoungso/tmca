@@ -137,7 +137,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .content .welcome .welcomeback {width:100%; height:510px;position:absolute;left:0;top:40px;}
   .content .welcome .welcomeback.yellow {background-color:#FFF600;}
   .content .welcome .welcomeback.black {background-color:#454548;}
-  .content .welcome .info {width:300px;background-color:black;opacity:0.9;filter:alpha(opacity=90);position:absolute;bottom:50px;height:130px;padding:10px;}
+  .content .welcome .info {width:100%;background-color:black;opacity:0.9;filter:alpha(opacity=90);position:absolute;bottom:50px;height:130px;padding:10px;}
   .content .welcome .info .category {color:#FFF600;font-size:16px;}
   .content .welcome .info h2 {color:white;font-size:18px;margin-top:5px;}
   .content .welcome .info .date {color:#AAA;font-size:14px;margin-top:10px;display:block;}
