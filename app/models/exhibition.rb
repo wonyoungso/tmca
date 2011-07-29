@@ -12,4 +12,5 @@ class Exhibition < ActiveRecord::Base
     # def reprocess_bigphoto
     #   bigphoto.reprocess!  
     # end
+  def img_url()
 end
