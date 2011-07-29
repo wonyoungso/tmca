@@ -5,6 +5,25 @@ class Admin::EventsController < ApplicationController
 
     def index
       @events = Event.order('start_date DESC')
+      
+      @titles = ExpWeblogTitle.all
+      @titles.each do |title|
+        ex = Event.find_by_title(title.title)
+        if ex == nil
+          ex = Event.new
+          
+          ex.title = title.title
+          ex.permalink = title.url_title
+          ex.description = ExpWeblogData.find_by_entry_id(title.entry_id).field_id_1 + ExpWeblogData.find_by_entry_id(title.entry_id).field_id_2 + ExpWeblogData.find_by_entry_id(title.entry_id).field_id_3
+          ex.start_date = Date.new(title.year.to_i, title.month.to_i, title.day.to_i)
+          ex.end_date = Date.new(title.year.to_i, title.month.to_i, title.day.to_i)
+          ex.save
+
+        end
+
+
+      end
+      
     end
 
     def set_current

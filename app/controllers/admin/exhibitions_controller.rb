@@ -5,6 +5,7 @@ class Admin::ExhibitionsController < ApplicationController
   
   def index
     @exhibitions = Exhibition.order('start_date DESC')
+  
   end
   
   def set_current

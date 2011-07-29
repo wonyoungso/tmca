@@ -14,6 +14,7 @@ class EventsController < ApplicationController
       @events[year.to_s] << ev
     end
     
+    
   end
   
   def show
