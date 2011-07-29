@@ -12,7 +12,7 @@ class Admin::ExhibitionsController < ApplicationController
         ex = Exhibition.new
       
         ex.title = title.title
-        ex.permalink = url_title
+        ex.permalink = title.url_title
         ex.description = ExpWeblogData.find_by_entry_id(title.entry_id).field_id_1 + xpWeblogData.find_by_entry_id(title.entry_id).field_id_2 + xpWeblogData.find_by_entry_id(title.entry_id).field_id_3
         ex.start_date = Date.new(title.year, title.month, title.day)
         ex.end_date = Date.new(title.year, title.month, title.day)
