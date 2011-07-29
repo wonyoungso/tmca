@@ -16,6 +16,7 @@ class ExhibitionsController < ApplicationController
       @exhibitions[year.to_s] << ex
     end
     
+    @years.uniq!
     @years.sort!
   end
   
