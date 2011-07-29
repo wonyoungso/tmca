@@ -12,7 +12,8 @@ class Admin::EventsController < ApplicationController
         if ex == nil
           categoryPost = ExpCategoryPost.find_by_entry_id(title.entry_id.to_i)
           logger.info categoryPost
-          if categoryPost.cat_id == 6
+          begin
+          if categoryPost.cat_id.to_i == 6
             ex = Event.new
             ex.title = title.title
             ex.permalink = title.url_title
@@ -20,6 +21,8 @@ class Admin::EventsController < ApplicationController
             ex.start_date = Date.new(title.year.to_i, title.month.to_i, title.day.to_i)
             ex.end_date = Date.new(title.year.to_i, title.month.to_i, title.day.to_i)
             ex.save
+          end
+          rescue
           end
 
         end
