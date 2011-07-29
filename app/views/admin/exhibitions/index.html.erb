@@ -29,7 +29,7 @@
           <% @exhibitions.each_with_index do |exhibition, index| %>
             <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %> <% if exhibition.current %>current<% elsif exhibition.upcoming %>upcoming<% end %>">
               <td><%= check_box_tag 'id', exhibition.id %></td>
-              <td><%= image_tag exhibition.bigphoto.url(:thumb) %> </td>
+              <td></td>
               <td><%= exhibition.id %></td>
               <td><%= exhibition.title %></td>
               <td>
