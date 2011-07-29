@@ -6,13 +6,18 @@ class EventsController < ApplicationController
     
     @events = {}
     @evs = Event.where("current = ? AND upcoming = ?", false, false).order("start_date DESC")
+     @years = []
     @evs.each do |ev|
       year = ev.start_date.strftime("%Y")
+      @years << year.to_i
       if @events[year.to_s] == nil
         @events[year.to_s] =[]
       end
       @events[year.to_s] << ev
     end
+    
+    @years.uniq!
+    @years.sort! {|a, b| b <=> a}
     
     
   end
