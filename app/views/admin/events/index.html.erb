@@ -29,7 +29,7 @@
           <% @events.each_with_index do |event, index| %>
             <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %> <% if event.current %>current<% elsif event.upcoming %>upcoming<% end %>">
               <td><%= check_box_tag 'id', event.id %></td>
-              <td><%= image_tag event.bigphoto.url(:thumb) %> </td>
+              <td> </td>
               <td><%= event.id %></td>
               <td><%= event.title %></td>
               <td>
