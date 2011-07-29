@@ -341,7 +341,7 @@ $(document).ready(function(e){
   
   
   
-  Cufon.set('fontFamily', 'Helvetica');
+  Cufon.set('fontFamily', 'rixgo');
   Cufon.now();
 
   Cufon.replace('.HV');
