@@ -14,8 +14,8 @@ class Admin::ExhibitionsController < ApplicationController
         ex.title = title.title
         ex.permalink = title.url_title
         ex.description = ExpWeblogData.find_by_entry_id(title.entry_id).field_id_1 + ExpWeblogData.find_by_entry_id(title.entry_id).field_id_2 + ExpWeblogData.find_by_entry_id(title.entry_id).field_id_3
-        ex.start_date = Date.new(title.year, title.month, title.day)
-        ex.end_date = Date.new(title.year, title.month, title.day)
+        ex.start_date = Date.new(title.year.to_i, title.month.to_i, title.day.to_i)
+        ex.end_date = Date.new(title.year.to_i, title.month.to_i, title.day.to_i)
         ex.save
         
       end
