@@ -63,8 +63,8 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 
 	/* Header */
 	#header { width:100%; position:relative; }
-	#logoWrap { display:block; width:960px;margin:0 auto; } 
-	#logoWrap a { display:block; background-image:url(../images/logo.png); width:320px; height:70px; overflow:hidden; text-indent:-9999px; }
+	#logoWrap { display:block; width:960px; } 
+	#logoWrap a { display:block; margin:0 auto;background-image:url(../images/logo.png); width:320px; height:70px; overflow:hidden; text-indent:-9999px; }
 	#mainNav { float:left; padding:42px 0 0 0px;margin-left:-11px;}
 	#mainNav li { padding:0 17px 0 10px; background:url(../images/slush.png) right top no-repeat; float:left;  }
 	#mainNav li.active a {background-color: #FDF052;}
