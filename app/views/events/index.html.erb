@@ -48,7 +48,7 @@
   </div>
   
   <div class="pastRight">  
-    <% for year in [2011, 2010, 2009, 2008] do %>
+    <% for year in @years do %>
       <div class="yearBook" <% if year == 2011 %>style="border:none"<% end %>>
         <div class="yearLeft">
           <h3 class="HV"><%= year.to_s %></h3>
