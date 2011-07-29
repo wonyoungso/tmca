@@ -18,6 +18,9 @@ class ExhibitionsController < ApplicationController
     
     @years.uniq!
     @years.sort! {|a, b| b <=> a}
+    
+    
+    
   end
   
   

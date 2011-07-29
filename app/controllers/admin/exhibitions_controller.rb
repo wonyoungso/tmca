@@ -5,6 +5,23 @@ class Admin::ExhibitionsController < ApplicationController
   
   def index
     @exhibitions = Exhibition.order('start_date DESC')
+    @titles = ExpWeblogTitle.all
+    @titles.each do |title|
+      ex = Exhibition.find_by_title(title.title)
+      if ex == nil
+        ex = Exhibition.new
+      
+        ex.title = title.title
+        ex.permalink = url_title
+        ex.description = ExpWeblogData.find_by_entry_id(title.entry_id).field_id_1 + xpWeblogData.find_by_entry_id(title.entry_id).field_id_2 + xpWeblogData.find_by_entry_id(title.entry_id).field_id_3
+        ex.start_date = Date.new(title.year, title.month, title.day)
+        ex.end_date = Date.new(title.year, title.month, title.day)
+        ex.save
+        
+      end
+      
+      
+    end
   end
   
   def set_current
