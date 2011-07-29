@@ -10,7 +10,7 @@ class Admin::EventsController < ApplicationController
       @titles.each do |title|
         ex = Event.find_by_title(title.title)
         if ex == nil
-          categoryPost = ExpCategoryPost.find_by_entry_id(title.entry_id)
+          categoryPost = ExpCategoryPost.find_by_entry_id(title.entry_id.to_i)
           
           if categoryPost.cat_id == 6
             ex = Event.new
