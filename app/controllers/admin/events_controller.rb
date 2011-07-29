@@ -11,7 +11,7 @@ class Admin::EventsController < ApplicationController
         ex = Event.find_by_title(title.title)
         if ex == nil
           categoryPost = ExpCategoryPost.find_by_entry_id(title.entry_id.to_i)
-          
+          logger.info categoryPost
           if categoryPost.cat_id == 6
             ex = Event.new
             ex.title = title.title
