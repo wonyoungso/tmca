@@ -36,17 +36,17 @@
               <td><%= exhibition.title %></td>
               <td>
                  <% if !exhibition.current %>
-                    <%= link_to '현재 전시로 지정', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 전시로 지정하시겠습니까?' %>
+                    <%= link_to '현재 전시 지정', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 전시로 지정하시겠습니까?' %>
                  <% else %> 
                   <%= link_to '현재 전시 지정 취소', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 전시 지정을 취소하시겠습니까?' %>
                  <% end %>
                  <% if !exhibition.upcoming %>
-                    <%= link_to '예정 전시로 지정', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 전시로 지정하시겠습니까?' %>
+                    <%= link_to '예정 전시 지정', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 전시로 지정하시겠습니까?' %>
                  <% else %>
                     <%= link_to '예정 전시 지정 쥐소', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 전시 지정을 취소하시겠습니까?' %>
                  <% end %>
               </td>
-              <td><%= link_to '미리보기', admin_exhibition_path(exhibition) %> | 
+              <td><%= link_to '미리보기', exhibition_path(exhibition) %> | 
              
               <%= link_to '수정', edit_admin_exhibition_path(exhibition) %> | <%= link_to '삭제', admin_exhibition_path(exhibition), :method => :delete, :confirm => '정말 전시를 삭제하시겠습니까?' %></td>
             </tr>
