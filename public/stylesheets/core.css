@@ -148,7 +148,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   
 /* Contents */
   .contentList { border-top:1px solid #F0F0F0;margin-bottom:40px; display:none; }
-  .contentList h2 { font-size:20px; color:#555; padding-top:10px;}
+  .contentList h2 { font-size:20px; color:#333; padding-top:10px;}
   .contentList .left {float:left;width:320px;}
   .contentList .right {float:right;width:640px; cursor:pointer;background-color:#464646; position:relative; height:100px;overflow:hidden; }
   .contentList .right img {float:left; opacity:0.9; }
@@ -165,8 +165,8 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .contentList .pastRight .yearRight {float:right; padding:12px 0; width:540px; font-size:14px; }
   .contentList .pastRight .yearRight .list {margin-bottom:8px;}
   .pastRight .yearRight a {font-size:14px;}
-  .pastRight .yearRight a:link, .exhibitions .pastRight .yearRight a:visited{color:#AAA;}
-  .pastRight .yearRight a:hover {background-color:#FDF252;}
+  .pastRight .yearRight a:link, .exhibitions .pastRight .yearRight a:visited{color:#555;padding:5px;}
+  .pastRight .yearRight a:hover {background-color:#FDF252;padding:5px;}
 
   
   /* news */
