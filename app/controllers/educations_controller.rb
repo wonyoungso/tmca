@@ -6,13 +6,19 @@ class EducationsController < ApplicationController
     
     @educations = {}
     @eds = Education.where("current = ? AND upcoming = ?", false, false).order("start_date DESC")
+    @years = []
+    
     @eds.each do |ed|
       year = ed.start_date.strftime("%Y")
+      @years << year.to_i
       if @educations[year.to_s] == nil
         @educations[year.to_s] =[]
       end
       @educations[year.to_s] << ed
     end
+    
+    @years.uniq!
+    @years.sort! {|a, b| b <=> a}
     
   end
   

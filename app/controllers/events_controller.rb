@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     
     @events = {}
     @evs = Event.where("current = ? AND upcoming = ?", false, false).order("start_date DESC")
-     @years = []
+    @years = []
     @evs.each do |ev|
       year = ev.start_date.strftime("%Y")
       @years << year.to_i
