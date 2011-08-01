@@ -64,11 +64,9 @@
           <%= text_field_tag 'exhibition[title]', @exhibition.title, :class => 'text_field' %>
         </div>
         
-        <div class="group">
-          <%= image_tag @exhibition.bigphoto.url(:thumb) %>
-          <%= label_tag 'exhibition[bigphoto]', '대표 이미지' %>
-          <%= file_field_tag 'exhibition[bigphoto]' %>
+        <div id="uploader">
         </div>
+        
         
         <div class="group">
           <%= label_tag 'exhibition[start_date]', '전시 시작일' %>
@@ -121,6 +119,8 @@
             <img alt="Cancel" src="/images/web-app-theme/icons/cross.png"> 취소
           </a>
         </div>
+        
+        
       <% end %>
     </div>
   </div>
