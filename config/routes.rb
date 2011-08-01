@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 Tmca::Application.routes.draw do
-  match '/search', :to => 'searchs#index', :as => 'search', :via => :get
+  match '/search', :to => 'search#index', :as => 'search', :via => :get
   match '/information', :to => 'informations#index', :as => 'information', :via => :get
   
   namespace :admin do
