@@ -15,8 +15,7 @@
           <% @mailinglists.each_with_index do |mailinglist, index| %>
             <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %>">
               <td><%= check_box_tag 'id', mailinglist.id %></td>
-              <td><%= mailinglist.id %></td>
-              <td><%= mailinglist.title %></td>
+              <td><%= mailinglist.email %></td>
               <td><%= link_to '탈퇴', admin_mailinglist_path(mailinglist), :method => :delete, :confirm => '정말 뉴스를 삭제하시겠습니까?' %></td>
             </tr>
           <% end %>
