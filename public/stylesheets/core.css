@@ -201,7 +201,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .totalMap { height:240px; margin-bottom:30px; }
 
   /* Exhibitions */
-  .titleSection {background-color:#454547;padding-bottom:10px;}
+  .titleSection {background-color:#454547;padding-bottom:13px;}
   .titleSection img {float:left;}
   .titleSection .title {float:right;width:850px;}
   .titleSection .title h2{font-size:24px;color:white;margin-top:13px;line-height:145%;}
