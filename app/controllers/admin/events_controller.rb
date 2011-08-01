@@ -4,9 +4,14 @@ class Admin::EventsController < ApplicationController
     layout 'admin'
 
     def index
-      @events = Event.order('start_date DESC')
       
-
+      if params[:page]
+        @page = params[:page]
+      else
+        @page = 1
+      end
+      
+      @events = Event.paginate(:page => @page).order('start_date DESC')
     end
 
     def set_current
