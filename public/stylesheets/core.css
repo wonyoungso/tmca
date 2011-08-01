@@ -150,7 +150,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .contentList { border-top:1px solid #F0F0F0;margin-bottom:40px; display:none; }
   .contentList h2 { font-size:20px; color:#333; padding-top:10px;}
   .contentList .left {float:left;width:320px;}
-  .contentList .right {float:right;width:640px; cursor:pointer;background-color:#464646; position:relative; height:100px;overflow:hidden; }
+  .contentList .right {float:right;width:640px; cursor:pointer;background-color:#FDF243; position:relative; height:100px;overflow:hidden; }
   .contentList .right img {float:left; opacity:0.9; }
   .contentList .right .description {position:absolute;background-color:black;opacity:0.9; padding:10px;color:white; line-height:160%; filter:alpha(opacity=90); height:100px; width:520px; left:100px; top:100px;}
   .contentList .right h3 { padding:5px; font-size:30px; color:#999999; float:left;width:530px;}
