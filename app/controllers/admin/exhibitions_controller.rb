@@ -4,7 +4,12 @@ class Admin::ExhibitionsController < ApplicationController
   layout 'admin'
   
   def index
-    @exhibitions = Exhibition.order('start_date DESC')
+    if params[:page]
+      @page = 
+    else
+    end
+    
+    @exhibitions = Exhibition.paginate(:page => params[:page]).order('start_date DESC')
   
   end
   
