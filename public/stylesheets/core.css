@@ -157,7 +157,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .contentList .right .date {padding:5px; font-size:12px; color:#666;float:left;}
   .contentList .right:hover .detailBtn { background-position:0 -30px; }
   .contentList .right:hover img { opacity:1.0; }
-  .contentList .noExhibition {padding:10px; color:#FFF;display:block;}
+  .contentList .noExhibition {padding:10px; color:#333;display:block;}
   .contentList .pastRight {float:right;width:640px;padding-top:10px;}
   .contentList .pastRight .yearBook{border-top:1px solid #F0F0F0; margin-bottom:10px;}
   .contentList .pastRight .yearLeft {float:left; padding:10px 0;}
