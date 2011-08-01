@@ -11,7 +11,6 @@ class Admin::ExhibitionsController < ApplicationController
     end
     
     @exhibitions = Exhibition.paginate(:page => @page).order('start_date DESC')
-    WillPaginate.per_page = 12
   end
   
   def set_current
