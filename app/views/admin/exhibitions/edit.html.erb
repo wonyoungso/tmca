@@ -40,32 +40,19 @@
       <%= form_tag admin_exhibition_path(@exhibition), :multipart => true, :class => 'form' do %>
         
         <%= hidden_field_tag '_method', 'put' %>
-          <%= hidden_field_tag 'exhibition[x1medium]', nil %>
-          <%= hidden_field_tag 'exhibition[y1medium]', nil %>
-          <%= hidden_field_tag 'exhibition[widthmedium]', nil %>
-          <%= hidden_field_tag 'exhibition[heightmedium]', nil %>
-          <%= hidden_field_tag 'exhibition[x1thumb]', nil %>
-          <%= hidden_field_tag 'exhibition[y1thumb]', nil %>
-          <%= hidden_field_tag 'exhibition[widththumb]', nil %>
-          <%= hidden_field_tag 'exhibition[heightthumb]', nil %>
-          
-          <%= hidden_field_tag 'crop_medium_x', nil %>
-          <%= hidden_field_tag 'crop_medium_y', nil %>
-          <%= hidden_field_tag 'crop_medium_width', nil %>
-          <%= hidden_field_tag 'crop_medium_height', nil %>
-          
-          <%= hidden_field_tag 'crop_thumb_x', nil %>
-          <%= hidden_field_tag 'crop_thumb_y', nil %>
-          <%= hidden_field_tag 'crop_thumb_width', nil %>
-          <%= hidden_field_tag 'crop_thumb_height', nil %>
           
         <div class="group">
           <%= label_tag 'exhibition[title]', '제목' %>
           <%= text_field_tag 'exhibition[title]', @exhibition.title, :class => 'text_field' %>
         </div>
         
-        <div id="uploader">
+        <div id="img_uploader">
         </div>
+        
+        
+        <div id="pdf_uploader">
+        </div>
+        
         
         
         <div class="group">
