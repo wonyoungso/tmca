@@ -5,8 +5,9 @@ class Admin::ExhibitionsController < ApplicationController
   
   def index
     if params[:page]
-      @page = 
+      @page = params[:page]
     else
+      @page = 1
     end
     
     @exhibitions = Exhibition.paginate(:page => params[:page]).order('start_date DESC')
