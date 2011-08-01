@@ -33,6 +33,8 @@ Tmca::Application.routes.draw do
     resources :informations
     resources :mailinglists
     resources :mailingtemplates
+    resources :pictures
+    resources :pdfs
     
   end
   
