@@ -21,7 +21,9 @@
           <tbody><tr>
             <th class="first"><input type="checkbox" class="checkbox toggle"></th>
             <th></th>
-            <th>ID</th>
+            <th>
+              시작일
+            </th>
             <th>전시 제목</th>
             <th>&nbsp;</th>
             <th class="last">&nbsp;</th>
@@ -30,7 +32,7 @@
             <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %> <% if exhibition.current %>current<% elsif exhibition.upcoming %>upcoming<% end %>">
               <td><%= check_box_tag 'id', exhibition.id %></td>
               <td></td>
-              <td><%= exhibition.id %></td>
+              <td><%= exhibition.start_date.strftime("%Y/%m/%d") %></td>
               <td><%= exhibition.title %></td>
               <td>
                  <% if !exhibition.current %>
