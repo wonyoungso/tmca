@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddPermalinkToExhibitions < ActiveRecord::Migration
   def self.up
     add_column :exhibitions, :permalink, :string
