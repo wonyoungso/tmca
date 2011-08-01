@@ -8,7 +8,7 @@ gem 'rails', '3.0.8'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'web-app-theme', '>= 0.6.2'
 gem 'paperclip'
-
+gem 'mysql2'
 # Use unicorn as the web server
 # gem 'unicorn'
 
