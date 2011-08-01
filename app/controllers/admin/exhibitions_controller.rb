@@ -10,7 +10,7 @@ class Admin::ExhibitionsController < ApplicationController
       @page = 1
     end
     
-    @exhibitions = Exhibition.paginate(:page => params[:page]).order('start_date DESC')
+    @exhibitions = Exhibition.paginate(:page => @page).order('start_date DESC')
   
   end
   
