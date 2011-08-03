@@ -437,6 +437,7 @@ button.button:active, a.button:active {
 .uploader .control {  }
 .uploader .control .status { line-height:20px; float:right; text-align:right; padding-right:5px;  }     
 .uploader .docuUploaderTable {height:170px;overflow-y:scroll;background-color:#eee;}
+.uploader .docuPdfUploaderTable {height:170px;overflow-y:scroll;background-color:#eee;}
 
 
 
