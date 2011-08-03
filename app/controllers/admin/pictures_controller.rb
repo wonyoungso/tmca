@@ -25,12 +25,8 @@ class Admin::PicturesController < ApplicationController
      failed_id = []
      params[:picture_ids].each do |pic_id|
        @picture = Picture.find(pic_id)
-       if logged_in?
          @picture.destroy
-       else
-         failed_id << pic_id
-       end
-     end
+    end
 
      respond_to do |format|
        format.json { render :json => {:success => true}}
