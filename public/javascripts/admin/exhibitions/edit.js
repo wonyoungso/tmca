@@ -2,6 +2,7 @@ var docuImgUploader;
 var docuPdfUploader;
 
 $(document).ready(function(e){
+  $("#exhibitionNewTextArea").cleditor({width: 870, height:500}); 
   
   docuImgUploader = new plupload.Uploader({
       runtimes: 'flash, html5, gears',
