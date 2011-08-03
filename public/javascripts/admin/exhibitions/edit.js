@@ -227,8 +227,8 @@ $(document).ready(function(e){
       container: 'docuPdfUploadContainer',
       multipart_params: {
           'authenticity_token': $("#editDescriptionForm input[name='authenticity_token']").val(),
-          'pictureable_id': exhibition_id,
-          'pictureable_type': 'Exhibition'
+          'pdfable_id': exhibition_id,
+          'pdfable_type': 'Exhibition'
       }
   });
 
