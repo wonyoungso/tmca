@@ -283,7 +283,6 @@ $(document).ready(function(e){
           }
           else
           {
-            $.errorMessage("파일이름이 한글일 경우 에러가 발생할 수 있습니다.");
           }
 
 
