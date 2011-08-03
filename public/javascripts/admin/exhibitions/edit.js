@@ -218,9 +218,7 @@ $(document).ready(function(e){
 
       //Specify what files to browse for
       filters : [
-        {title: "Image files(jpg)", extensions: "jpg"},
-        {title: "Image Files(png)", extensions: 'png'},
-        {title: "Image Files(gif)", extensions: 'gif'}
+        {title: "PDF files", extensions: "pdf"}
       ],
 
 
