@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 class Exhibition < ActiveRecord::Base
   has_attached_file :bigphoto, :styles => {:medium => '320x500#', :thumb => '100x100#'}, :dependent => :destroy 
-  
+  belongs_to :category
   has_many :pictures, :as => :pictureable, :dependent => :destroy
   has_many :pdfs, :as => :pdfable, :dependent => :destroy
     # attr_accessor :crop_medium_x, :crop_medium_y, :crop_medium_width, :crop_medium_height, :crop_thumb_x, :crop_thumb_y, :crop_thumb_width, :crop_thumb_height
