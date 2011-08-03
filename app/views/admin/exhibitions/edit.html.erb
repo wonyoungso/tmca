@@ -1,35 +1,3 @@
-<script>
-  <% if @exhibition.x1medium != nil && @exhibition.x1medium != '' %>
-    var mediumPos = { 
-      x1: <%= @exhibition.x1medium %>,
-      y1: <%= @exhibition.y1medium %>,
-      x2: <%= @exhibition.x1medium.to_i + @exhibition.widthmedium.to_i %>,
-      y2: <%= @exhibition.y1medium.to_i + @exhibition.heightmedium.to_i %>
-    };
-  <% else %>  
-    var mediumPos = { 
-      x1: 0,
-      y1: 0,
-      x2: 320,
-      y2: 540
-    };
-  <% end %>
-  <% if @exhibition.x1thumb != nil && @exhibition.x1thumb != '' %>
-    var thumbPos = { 
-      x1: <%= @exhibition.x1thumb %>,
-      y1: <%= @exhibition.y1thumb %>,
-      x2: <%= @exhibition.x1thumb.to_i + @exhibition.widththumb.to_i %>,
-      y2: <%= @exhibition.y1thumb.to_i + @exhibition.heightthumb.to_i %>
-    };
-  <% else %>  
-    var thumbPos = { 
-      x1: 0,
-      y1: 0,
-      x2: 100,
-      y2: 100
-    };
-  <% end %>
-</script>
 <div id="list" class="block">
   <%= render 'admin/exhibitions/tabs' %>
   <div class="content">
@@ -46,13 +14,83 @@
           <%= text_field_tag 'exhibition[title]', @exhibition.title, :class => 'text_field' %>
         </div>
         
-        <div id="img_uploader">
-        </div>
-        
-        
-        <div id="pdf_uploader">
-        </div>
-        
+        <div id="uploader_image">
+  				<table>
+  					<thead>
+  						<tr>
+  							<th class="select"><%= check_box_tag 'descUploaderChkToggle', '1' %></th>
+  							<th class="title">filename</th>
+  							<th class="status">
+  							 status
+  							</th>
+  							<th class="size">size</th>
+  							<th class="statusIcon"></th>
+  						</tr>
+  					</thead>
+  				</table>
+  				<div class="docuUploaderTable">
+  					<table>
+  						<tbody>
+
+    						  <% @exhibitions.pictures.each do |picture| %>
+    							  <tr>
+    							    <td class="select"><%= check_box_tag 'picture_ids[]', 'picture-' + picture.id.to_s, false, :rel => picture.photo.url %>
+
+    							    <td class="title"><%= picture.photo_file_name%></td>
+    							    <td class="status">
+    					          <%= image_tag 'validate_ok.gif' %>
+    							    </td>
+    							    <td class="size"><%= (picture.photo_file_size / 1000).floor %> KB</td>
+    							    <td class="statusIcon"></td>
+    							  </tr>
+    							<% end %>
+  						</tbody>
+  					</table>
+  			  </div>
+  				<div class="control" id ="docuImgUploadContainer">
+  			    <%= link_to 'select file', '#', :class => 'upBtn pngFix', :id => 'docuImgSelectBtn' %>
+  			    <%= link_to 'delete', '#', :class => 'upBtn pngFix', :id => 'docuImgDeleteBtn' %>
+  				</div>
+  				
+  				
+          <div id="uploader_pdf">
+    				<table>
+    					<thead>
+    						<tr>
+    							<th class="select"><%= check_box_tag 'descUploaderPDFChkToggle', '1' %></th>
+    							<th class="title">filename</th>
+    							<th class="status">
+    							 status
+    							</th>
+    							<th class="size">size</th>
+    							<th class="statusIcon"></th>
+    						</tr>
+    					</thead>
+    				</table>
+    				<div class="docuPdfUploaderTable">
+    					<table>
+    						<tbody>
+
+      						  <% @exhibitions.pdfs.each do |pdf| %>
+      							  <tr>
+      							    <td class="select"><%= check_box_tag 'pdf_ids[]', 'pdf-' + picture.id.to_s, false, :rel => pdf.attachment.url %>
+
+      							    <td class="title"><%= pdf.attachment_file_name%></td>
+      							    <td class="status">
+      					          <%= image_tag 'validate_ok.gif' %>
+      							    </td>
+      							    <td class="size"><%= (pdf.attachment_file_size / 1000).floor %> KB</td>
+      							    <td class="statusIcon"></td>
+      							  </tr>
+      							<% end %>
+    						</tbody>
+    					</table>
+    			  </div>
+    				<div class="control" id ="docuPdfUploadContainer">
+    			    <%= link_to 'select file', '#', :class => 'upBtn pngFix', :id => 'docuPdfSelectBtn' %>
+    			    <%= link_to 'delete', '#', :class => 'upBtn pngFix', :id => 'docuPdfDeleteBtn' %>
+    				</div>
+    				
         
         
         <div class="group">
@@ -69,35 +107,7 @@
           <%= label_tag 'exhibition[description]', '내용' %>
           <%= text_area_tag 'exhibition[description]', @exhibition.description, :class => 'text_area', :id => 'exhibitionNewTextArea' %>
         </div>
-        
-        
-       <!--         <div class="group">
-                 <div class="image_preview" id="mediumPreview">
-                   <h4>메인 이미지 크롭(320x500)</h4>      
-                   <div class="original">
-                     <%= image_tag @exhibition.bigphoto.url, :class => 'targetPhoto', :id => 'bigPhotoMedium' %>
-                   </div>
-                   <div class="preview">
-                     <div style="float: left; position: relative; overflow: hidden; width: 320px; height:540px" >
-                       
-                       <%= image_tag @exhibition.bigphoto.url, :style => 'position:absolute' %>
-                     </div>
-                   </div>
-                   <div class="CB"></div>
-                 </div>
-                 <div class="image_preview"  id="thumbPreview">
-                   <h4>썸네일 이미지 크롭(100x100)</h4>
-                   <div class="original">
-                     <%= image_tag @exhibition.bigphoto.url, :class => 'targetPhoto', :id => 'bigPhotoThumb' %>
-                   </div>
-                   <div class="preview">
-                     <div style="float: left; position: relative; overflow: hidden; width: 100px; height: 100px;">
-                       <%= image_tag @exhibition.bigphoto.url, :style => 'position:absolute' %>
-                     </div>
-                   </div>
-                   <div class="CB"></diva>
-               </div> -->
-        
+                
         <div class="group navform wat-cf">
           <button type="submit" class="button">
             <img alt="Save" src="/images/web-app-theme/icons/tick.png"> 저장
