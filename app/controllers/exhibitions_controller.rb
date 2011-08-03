@@ -1,8 +1,8 @@
 # -*- encoding : utf-8 -*-
 class ExhibitionsController < ApplicationController
   def index
-    @current = Exhibition.where("current = ?", true).first
-    @upcoming = Exhibition.where("upcoming = ?", true).first
+    @current = Exhibition.where("current = ? AND category_id = 1", true).first
+    @upcoming = Exhibition.where("upcoming = ? AND category_id = 1", true).first
     @exhibitions = {}
     
     @exs = Exhibition.where("current = ? AND upcoming = ?", false, false).order("start_date DESC")

@@ -10,7 +10,7 @@ class Admin::ExhibitionsController < ApplicationController
       @page = 1
     end
     
-    @exhibitions = Exhibition.paginate(:page => @page).order('start_date DESC')
+    @exhibitions = Exhibition.where("category_id = ?", 1).paginate(:page => @page).order('start_date DESC')
   end
   
   def set_current
@@ -62,6 +62,7 @@ class Admin::ExhibitionsController < ApplicationController
   
   def create
     @exhibition = Exhibition.new(params[:exhibition])
+    @exhibition.category_id = 1
     respond_to do |format|
       if @exhibition.save
         format.html {redirect_to admin_exhibitions_path, :notice => '전시가 성공적으로 생성되었습니다.'}

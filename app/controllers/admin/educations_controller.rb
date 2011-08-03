@@ -4,50 +4,56 @@ class Admin::EducationsController < ApplicationController
   layout 'admin'
   
   def index
-    @educations = Education.order('start_date DESC')
+    if params[:page]
+      @page = params[:page]
+    else
+      @page = 1
+    end
+    
+    @exhibitions = Exhibition.where("category_id = ?", 3).paginate(:page => @page).order('start_date DESC')
   end
   
   def set_current
-    @educations = Education.all
-    @education = Education.find(params[:id])
-    @educations.each do |education|
-      if education.id != @education.id
-        education.current = false
-        education.save
+    @exhibitions = Exhibition.all
+    @exhibition = Exhibition.find(params[:id])
+    @exhibitions.each do |exhibition|
+      if exhibition.id != @exhibition.id
+        exhibition.current = false
+        exhibition.save
       end
     end
     
-    if !@education.upcoming
-      @education.current = !@education.current
+    if !@exhibition.upcoming
+      @exhibition.current = !@exhibition.current
       respond_to do |format|
-        if @education.save
-          format.html {redirect_to admin_educations_path, :notice => '성공적으로 변경하였습니다.'}
+        if @exhibition.save
+          format.html {redirect_to admin_exhibitions_path, :notice => '성공적으로 변경하였습니다.'}
         else
-          format.html {redirect_to admin_educations_path, :notice => '오류가 발생하였습니다.'}
+          format.html {redirect_to admin_exhibitions_path, :notice => '오류가 발생하였습니다.'}
         end
       end
     end
   end
   
   def set_upcoming
-    @educations = Education.all
-    @education = Education.find(params[:id])
-    @educations.each do |education|
-      if education.id != @education.id
-        education.upcoming = false
-        education.save
+    @exhibitions = Exhibition.all
+    @exhibition = Exhibition.find(params[:id])
+    @exhibitions.each do |exhibition|
+      if exhibition.id != @exhibition.id
+        exhibition.upcoming = false
+        exhibition.save
       end
     end
     
     
     
-    if !@education.current 
-      @education.upcoming =!@education.upcoming
+    if !@exhibition.current 
+      @exhibition.upcoming =!@exhibition.upcoming
       respond_to do |format|
-        if @education.save
-          format.html {redirect_to admin_educations_path, :notice => '성공적으로 변경하였습니다.'}
+        if @exhibition.save
+          format.html {redirect_to admin_exhibitions_path, :notice => '성공적으로 변경하였습니다.'}
         else
-          format.html {redirect_to admin_educations_path, :notice => '오류가 발생하였습니다.'}
+          format.html {redirect_to admin_exhibitions_path, :notice => '오류가 발생하였습니다.'}
         end
       end
     end
@@ -55,12 +61,13 @@ class Admin::EducationsController < ApplicationController
   end
   
   def create
-    @education = Education.new(params[:education])
+    @exhibition = Exhibition.new(params[:exhibition])
+    @exhibition.category_id = 2
     respond_to do |format|
-      if @education.save
-        format.html {redirect_to admin_educations_path, :notice => '교육프로그램이 성공적으로 생성되었습니다.'}
+      if @exhibition.save
+        format.html {redirect_to admin_exhibitions_path, :notice => '전시가 성공적으로 생성되었습니다.'}
       else
-        format.html {redirect_to admin_educations_path, :alert => '교육프로그램 생성이 실패하였습니다.'}
+        format.html {redirect_to admin_exhibitions_path, :alert => '전시 생성이 실패하였습니다.'}
       end
     end
   end
@@ -69,27 +76,27 @@ class Admin::EducationsController < ApplicationController
   end
   
   def edit
-    @education = Education.find(params[:id])
+    @exhibition = Exhibition.find(params[:id])
   end
   
   def update
-    @education = Education.find(params[:id])        
-    @education.bigphoto.reprocess!
+    @exhibition = Exhibition.find(params[:id])        
+    @exhibition.bigphoto.reprocess!
     respond_to do |format|
-      if @education.update_attributes(params[:education])
-        format.html {redirect_to admin_educations_path, :notice => '교육프로그램이 성공적으로 수정되었습니다.' }
+      if @exhibition.update_attributes(params[:exhibition])
+        format.html {redirect_to admin_exhibitions_path, :notice => '전시가 성공적으로 수정되었습니다.' }
       else
-        format.html {redirect_to admin_educations_path, :alert => '교육프로그램 수정 중 오류가 발생하였습니다.'}
+        format.html {redirect_to admin_exhibitions_path, :alert => '전시 수정 중 오류가 발생하였습니다.'}
       end
     end
   end
   
   def destroy
-    @education = Education.find(params[:id])
-    @education.destroy
+    @exhibition = Exhibition.find(params[:id])
+    @exhibition.destroy
     
     respond_to do |format|
-      format.html {redirect_to admin_educations_path, :notice => '성공적으로 삭제하였습니다.'}
+      format.html {redirect_to admin_exhibitions_path, :notice => '성공적으로 삭제하였습니다.'}
     end
   end
 end

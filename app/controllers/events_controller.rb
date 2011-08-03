@@ -1,28 +1,30 @@
 # -*- encoding : utf-8 -*-
 class EventsController < ApplicationController
   def index
-    @current = Event.where("current = ?", true).first
-    @upcoming = Event.where("upcoming = ?", true).first
+    @current = Exhibition.where("current = ? AND category_id = 3", true).first
+    @upcoming = Exhibition.where("upcoming = ? AND category_id = 3", true).first
+    @exhibitions = {}
     
-    @events = {}
-    @evs = Event.where("current = ? AND upcoming = ?", false, false).order("start_date DESC")
+    @exs = Exhibition.where("current = ? AND upcoming = ?", false, false).order("start_date DESC")
     @years = []
-    @evs.each do |ev|
-      year = ev.start_date.strftime("%Y")
+    @exs.each do |ex|
+      year = ex.start_date.strftime("%Y")
       @years << year.to_i
-      if @events[year.to_s] == nil
-        @events[year.to_s] =[]
+      if @exhibitions[year.to_s] == nil
+        @exhibitions[year.to_s] =[]
       end
-      @events[year.to_s] << ev
+      @exhibitions[year.to_s] << ex
     end
     
     @years.uniq!
     @years.sort! {|a, b| b <=> a}
     
     
+    
   end
   
+  
   def show
-    @event = Event.find(params[:id])
+    @exhibition = Exhibition.find(params[:id])
   end
 end
