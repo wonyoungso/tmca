@@ -14,6 +14,10 @@
           <%= label_tag 'news[description]', '내용' %>
           <%= text_area_tag 'news[description]', '', :class => 'text_area', :id => 'newsNewTextArea' %>
         </div>
+        <div class="group">
+          <%= label_tag 'news[attachment]', 'PDF / Press Release 첨부' %>
+          <%= file_field_tag 'news[attachment]' %>
+        </div>
         <div class="group navform wat-cf">
           <button type="submit" class="button">
             <img alt="Save" src="/images/web-app-theme/icons/tick.png"> 저장
