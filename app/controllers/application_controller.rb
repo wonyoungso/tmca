@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   helper :all
-  helper_method :logged_in?, :current_user
+  helper_method :logged_in?, :current_user, :login_required
   before_filter :get_first_news
   
   def get_first_news
