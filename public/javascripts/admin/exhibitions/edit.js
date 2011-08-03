@@ -102,7 +102,7 @@ $(document).ready(function(e){
       }
 
 
-      $("#uploader0 tbody input[type='checkbox']:checked").hide().parent().append($('<img src="/images/docuImgUploader_ajaxloader.gif"/>'));
+      $("#uploader_image tbody input[type='checkbox']:checked").hide().parent().append($('<img src="/images/docuImgUploader_ajaxloader.gif"/>'));
       docuImgUploader.start();
 
 
@@ -147,11 +147,11 @@ $(document).ready(function(e){
 
       if ($(this).attr('checked'))
       {
-          $("#uploader0 tbody input[type='checkbox']").attr('checked', true);
+          $("#uploader_image tbody input[type='checkbox']").attr('checked', true);
       }
       else
       {
-          $("#uploader0 tbody input[type='checkbox']").attr('checked', false);
+          $("#uploader_image tbody input[type='checkbox']").attr('checked', false);
       }
   });
 
@@ -192,10 +192,10 @@ $(document).ready(function(e){
 
       };
 
-      $("#uploader0 tbody input[type='checkbox']:checked").each($.proxy(picDelete.addIds, picDelete));
+      $("#uploader_image tbody input[type='checkbox']:checked").each($.proxy(picDelete.addIds, picDelete));
       $.ajax({
           type: 'DELETE',
-          url: '/posts/' + post_id + '/delete_files.json',
+          url: '/admin/pictures/' + exhibition_id  + '/delete_files.json',
           data: $.param(picDelete.ids),
           success: $.proxy(picDelete.success, picDelete)
       });
@@ -244,7 +244,7 @@ $(document).ready(function(e){
 
   docuPdfUploader.bind('FilesAdded',
   function(up, files) {
-      $("#uploader0 tbody input[type='checkbox']:checked").attr('checked', false);
+      $("#uploader_pdf tbody input[type='checkbox']:checked").attr('checked', false);
       $.each(files,
       function(i, file) {
           var regexp = /[ㄱ-ㅎ|가-힣]/;
@@ -309,7 +309,7 @@ $(document).ready(function(e){
       }
 
 
-      $("#uploader0 tbody input[type='checkbox']:checked").hide().parent().append($('<img src="/images/docuPdfUploader_ajaxloader.gif"/>'));
+      $("#uploader_pdf tbody input[type='checkbox']:checked").hide().parent().append($('<img src="/images/docuPdfUploader_ajaxloader.gif"/>'));
       docuPdfUploader.start();
 
 
@@ -354,11 +354,11 @@ $(document).ready(function(e){
 
       if ($(this).attr('checked'))
       {
-          $("#uploader0 tbody input[type='checkbox']").attr('checked', true);
+          $("#uploader_pdf tbody input[type='checkbox']").attr('checked', true);
       }
       else
       {
-          $("#uploader0 tbody input[type='checkbox']").attr('checked', false);
+          $("#uploader_pdf tbody input[type='checkbox']").attr('checked', false);
       }
   });
 
@@ -399,10 +399,10 @@ $(document).ready(function(e){
 
       };
 
-      $("#uploader0 tbody input[type='checkbox']:checked").each($.proxy(picDelete.addIds, picDelete));
+      $("#uploader_pdf tbody input[type='checkbox']:checked").each($.proxy(picDelete.addIds, picDelete));
       $.ajax({
           type: 'DELETE',
-          url: '/posts/' + post_id + '/delete_files.json',
+          url: '/admin/pdfs/' + exhibition_id  + '/delete_files.json',
           data: $.param(picDelete.ids),
           success: $.proxy(picDelete.success, picDelete)
       });
@@ -412,15 +412,6 @@ $(document).ready(function(e){
 
   });
 
-  $("#docuPdfInsertBtn").click(function(e) {
-      e.preventDefault();
-
-      $("#uploader0 tbody input[type='checkbox']:checked").each(function(index, item) {
-          editor[0].execCommand('InsertImage', $(item).attr('rel'));
-          editor[0].focus();
-          editor[0].updateTextArea();
-      });
-  });
  
  
 });
