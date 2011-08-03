@@ -412,3 +412,32 @@ button.button:active, a.button:active {
 .link_button{
   cursor: pointer;
 }
+
+
+/* 업로더 */
+
+.uploader { margin:15px 5px 5px;  }
+.uploader table { width:100%; padding:0; border-bottom:1px solid #ccc; }
+.uploader table th, .uploader table td { text-align:left; height:20px; background:url(../images/file_bar.png) top #ddd repeat-x; padding:5px; }
+.uploader table th.select { width:30px; }
+.uploader table th.title {  }
+.uploader table th.status { width:70px }
+.uploader table th.size { width:70px }
+.uploader table th.statusIcon { width:30px; }
+
+.uploader table td.select { width:30px; }
+.uploader table td.title {  }
+.uploader table td.status { width:70px }
+.uploader table td.size { width:70px }
+.uploader table td.statusIcon { width:30px; }
+.uploader table td { background:#eee; padding:5px; height:20px;}
+.uploader table tr { border-bottom:1px solid #fff; }
+.uploader table tr.on td { background:#ddd; }
+.uploader .control { position:relative; padding:10px 5px 5px; height:20px; }
+.uploader .control {  }
+.uploader .control .status { line-height:20px; float:right; text-align:right; padding-right:5px;  }     
+.uploader .docuUploaderTable {height:170px;overflow-y:scroll;background-color:#eee;}
+
+
+
+
