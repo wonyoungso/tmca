@@ -37,21 +37,20 @@
           이미지 업로드
         </div>        
     <div id="uploader_image" class="uploader">
-			<table>
-				<thead>
-					<tr>
-						<th class="select"><%= check_box_tag 'descUploaderChkToggle', '1' %></th>
-						<th class="title">filename</th>
-						<th class="status">
-						 status
-						</th>
-						<th class="size">size</th>
-						<th class="statusIcon"></th>
-					</tr>
-				</thead>
-			</table>
 			<div class="docuUploaderTable">
 				<table>
+				  <thead>
+  					<tr>
+  						<th class="select"><%= check_box_tag 'descUploaderChkToggle', '1' %></th>
+  						<th class="title">filename</th>
+  						<th class="status">
+  						 status
+  						</th>
+  						<th class="size">size</th>
+  						<th class="statusIcon"></th>
+  					</tr>
+  				</thead>
+  				
 					<tbody>
 
 						  <% @exhibition.pictures.each do |picture| %>
@@ -79,21 +78,20 @@
       PDF 업로드
       </div>
       <div id="uploader_pdf" class="uploader">
-				<table>
-					<thead>
-						<tr>
-							<th class="select"><%= check_box_tag 'descUploaderPDFChkToggle', '1' %></th>
-							<th class="title">filename</th>
-							<th class="status">
-							 status
-							</th>
-							<th class="size">size</th>
-							<th class="statusIcon"></th>
-						</tr>
-					</thead>
-				</table>
 				<div class="docuPdfUploaderTable">
 					<table>
+					  <thead>
+  						<tr>
+  							<th class="select"><%= check_box_tag 'descUploaderPDFChkToggle', '1' %></th>
+  							<th class="title">filename</th>
+  							<th class="status">
+  							 status
+  							</th>
+  							<th class="size">size</th>
+  							<th class="statusIcon"></th>
+  						</tr>
+  					</thead>
+  					
 						<tbody>
 
   						  <% @exhibition.pdfs.each do |pdf| %>
