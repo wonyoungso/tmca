@@ -418,7 +418,7 @@ button.button:active, a.button:active {
 
 .uploader { margin:15px 5px 5px;  }
 .uploader table { width:100%; padding:0;}
-.uploader table th, .uploader table td { text-align:left; height:20px; background:url(../images/file_bar.png) top #ddd repeat-x; padding:5px; }
+.uploader table th, .uploader table td { text-align:left; height:20px;  }
 .uploader table th.select { width:30px; }
 .uploader table th.title {  }
 .uploader table th.status { width:70px }
