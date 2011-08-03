@@ -6,7 +6,7 @@ $(document).ready(function(e){
   
   docuImgUploader = new plupload.Uploader({
       runtimes: 'flash, html5, gears',
-      url: '/pictures.json',
+      url: '/admin/pictures.json',
       max_file_size: '10mb',
       unique_names: true,
       browse_button: 'docuImgSelectBtn',
@@ -25,7 +25,8 @@ $(document).ready(function(e){
       container: 'docuImgUploadContainer',
       multipart_params: {
           'authenticity_token': $("#editDescriptionForm input[name='authenticity_token']").val(),
-          'post_id': post_id,
+          'pictureable_id': exhibition_id,
+          'pictureable_tyle': 'Exhibition'
       }
   });
 
@@ -212,8 +213,8 @@ $(document).ready(function(e){
 	
   docuPdfUploader = new plupload.Uploader({
       runtimes: 'flash, html5, gears',
-      url: '/pictures.json',
-      max_file_size: '10mb',
+      url: '/admin/pdfs.json',
+      max_file_size: '100mb',
       unique_names: true,
       browse_button: 'docuPdfSelectBtn',
 
@@ -231,7 +232,8 @@ $(document).ready(function(e){
       container: 'docuPdfUploadContainer',
       multipart_params: {
           'authenticity_token': $("#editDescriptionForm input[name='authenticity_token']").val(),
-          'post_id': post_id,
+          'pictureable_id': exhibition_id,
+          'pictureable_tyle': 'Exhibition'
       }
   });
 

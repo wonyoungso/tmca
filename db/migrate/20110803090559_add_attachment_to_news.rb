@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAttachmentToNews < ActiveRecord::Migration
   def self.up
     add_column :news, :attachment_file_size, :integer

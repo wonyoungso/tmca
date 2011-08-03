@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddAttachmentEngToExhibitions < ActiveRecord::Migration
   def self.up
     add_column :news, :attachment_eng_file_name, :string
