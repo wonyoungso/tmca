@@ -26,7 +26,7 @@ $(document).ready(function(e){
       multipart_params: {
           'authenticity_token': $("#editDescriptionForm input[name='authenticity_token']").val(),
           'pictureable_id': exhibition_id,
-          'pictureable_tyle': 'Exhibition'
+          'pictureable_type': 'Exhibition'
       }
   });
 
@@ -230,7 +230,7 @@ $(document).ready(function(e){
       multipart_params: {
           'authenticity_token': $("#editDescriptionForm input[name='authenticity_token']").val(),
           'pictureable_id': exhibition_id,
-          'pictureable_tyle': 'Exhibition'
+          'pictureable_type': 'Exhibition'
       }
   });
 
