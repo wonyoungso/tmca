@@ -33,8 +33,18 @@ Tmca::Application.routes.draw do
     resources :informations
     resources :mailinglists
     resources :mailingtemplates
-    resources :pictures
-    resources :pdfs
+    
+    resources :pictures do
+      collection do
+        delete 'delete_files'
+      end
+    end
+    
+    resources :pdfs do
+      collection do
+        delete 'delete_files'
+      end
+    end
     
   end
   
