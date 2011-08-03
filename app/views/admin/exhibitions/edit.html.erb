@@ -16,85 +16,7 @@
           <%= label_tag 'exhibition[title]', '제목' %>
           <%= text_field_tag 'exhibition[title]', @exhibition.title, :class => 'text_field' %>
         </div>
-        
-        <div id="uploader_image" class="uploader">
-  				<table>
-  					<thead>
-  						<tr>
-  							<th class="select"><%= check_box_tag 'descUploaderChkToggle', '1' %></th>
-  							<th class="title">filename</th>
-  							<th class="status">
-  							 status
-  							</th>
-  							<th class="size">size</th>
-  							<th class="statusIcon"></th>
-  						</tr>
-  					</thead>
-  				</table>
-  				<div class="docuUploaderTable">
-  					<table>
-  						<tbody>
-
-    						  <% @exhibition.pictures.each do |picture| %>
-    							  <tr>
-    							    <td class="select"><%= check_box_tag 'picture_ids[]', 'picture-' + picture.id.to_s, false, :rel => picture.photo.url %>
-
-    							    <td class="title"><%= picture.photo_file_name%></td>
-    							    <td class="status">
-    					          <%= image_tag 'validate_ok.gif' %>
-    							    </td>
-    							    <td class="size"><%= (picture.photo_file_size / 1000).floor %> KB</td>
-    							    <td class="statusIcon"></td>
-    							  </tr>
-    							<% end %>
-  						</tbody>
-  					</table>
-  			  </div>
-  				<div class="control" id ="docuImgUploadContainer">
-  			    <%= link_to 'select file', '#', :class => 'upBtn pngFix', :id => 'docuImgSelectBtn' %>
-  			    <%= link_to 'delete', '#', :class => 'upBtn pngFix', :id => 'docuImgDeleteBtn' %>
-  				</div>
-  				
-  				
-          <div id="uploader_pdf" class="uploader">
-    				<table>
-    					<thead>
-    						<tr>
-    							<th class="select"><%= check_box_tag 'descUploaderPDFChkToggle', '1' %></th>
-    							<th class="title">filename</th>
-    							<th class="status">
-    							 status
-    							</th>
-    							<th class="size">size</th>
-    							<th class="statusIcon"></th>
-    						</tr>
-    					</thead>
-    				</table>
-    				<div class="docuPdfUploaderTable">
-    					<table>
-    						<tbody>
-
-      						  <% @exhibition.pdfs.each do |pdf| %>
-      							  <tr>
-      							    <td class="select"><%= check_box_tag 'pdf_ids[]', 'pdf-' + picture.id.to_s, false, :rel => pdf.attachment.url %>
-
-      							    <td class="title"><%= pdf.attachment_file_name%></td>
-      							    <td class="status">
-      					          <%= image_tag 'validate_ok.gif' %>
-      							    </td>
-      							    <td class="size"><%= (pdf.attachment_file_size / 1000).floor %> KB</td>
-      							    <td class="statusIcon"></td>
-      							  </tr>
-      							<% end %>
-    						</tbody>
-    					</table>
-    			  </div>
-    				<div class="control" id ="docuPdfUploadContainer">
-    			    <%= link_to 'select file', '#', :class => 'upBtn pngFix', :id => 'docuPdfSelectBtn' %>
-    			    <%= link_to 'delete', '#', :class => 'upBtn pngFix', :id => 'docuPdfDeleteBtn' %>
-    				</div>
-    				
-        
+      
         
         <div class="group">
           <%= label_tag 'exhibition[start_date]', '전시 시작일' %>
@@ -111,6 +33,91 @@
           <%= text_area_tag 'exhibition[description]', @exhibition.description, :class => 'text_area', :id => 'exhibitionNewTextArea' %>
         </div>
                 
+        <div>
+          이미지 업로드
+        </div>        
+    <div id="uploader_image" class="uploader">
+			<table>
+				<thead>
+					<tr>
+						<th class="select"><%= check_box_tag 'descUploaderChkToggle', '1' %></th>
+						<th class="title">filename</th>
+						<th class="status">
+						 status
+						</th>
+						<th class="size">size</th>
+						<th class="statusIcon"></th>
+					</tr>
+				</thead>
+			</table>
+			<div class="docuUploaderTable">
+				<table>
+					<tbody>
+
+						  <% @exhibition.pictures.each do |picture| %>
+							  <tr>
+							    <td class="select"><%= check_box_tag 'picture_ids[]', 'picture-' + picture.id.to_s, false, :rel => picture.photo.url %>
+
+							    <td class="title"><%= picture.photo_file_name%></td>
+							    <td class="status">
+					          <%= image_tag 'validate_ok.gif' %>
+							    </td>
+							    <td class="size"><%= (picture.photo_file_size / 1000).floor %> KB</td>
+							    <td class="statusIcon"></td>
+							  </tr>
+							<% end %>
+					</tbody>
+				</table>
+		  </div>
+			<div class="control" id ="docuImgUploadContainer">
+		    <%= link_to 'select file', '#', :class => 'upBtn pngFix', :id => 'docuImgSelectBtn' %>
+		    <%= link_to 'delete', '#', :class => 'upBtn pngFix', :id => 'docuImgDeleteBtn' %>
+			</div>
+
+      
+      <div>
+      PDF 업로드
+      </div>
+      <div id="uploader_pdf" class="uploader">
+				<table>
+					<thead>
+						<tr>
+							<th class="select"><%= check_box_tag 'descUploaderPDFChkToggle', '1' %></th>
+							<th class="title">filename</th>
+							<th class="status">
+							 status
+							</th>
+							<th class="size">size</th>
+							<th class="statusIcon"></th>
+						</tr>
+					</thead>
+				</table>
+				<div class="docuPdfUploaderTable">
+					<table>
+						<tbody>
+
+  						  <% @exhibition.pdfs.each do |pdf| %>
+  							  <tr>
+  							    <td class="select"><%= check_box_tag 'pdf_ids[]', 'pdf-' + picture.id.to_s, false, :rel => pdf.attachment.url %>
+
+  							    <td class="title"><%= pdf.attachment_file_name%></td>
+  							    <td class="status">
+  					          <%= image_tag 'validate_ok.gif' %>
+  							    </td>
+  							    <td class="size"><%= (pdf.attachment_file_size / 1000).floor %> KB</td>
+  							    <td class="statusIcon"></td>
+  							  </tr>
+  							<% end %>
+						</tbody>
+					</table>
+			  </div>
+				<div class="control" id ="docuPdfUploadContainer">
+			    <%= link_to 'select file', '#', :class => 'upBtn pngFix', :id => 'docuPdfSelectBtn' %>
+			    <%= link_to 'delete', '#', :class => 'upBtn pngFix', :id => 'docuPdfDeleteBtn' %>
+				</div>
+
+
+
         <div class="group navform wat-cf">
           <button type="submit" class="button">
             <img alt="Save" src="/images/web-app-theme/icons/tick.png"> 저장
