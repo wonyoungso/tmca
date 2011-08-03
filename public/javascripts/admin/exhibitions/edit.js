@@ -325,7 +325,7 @@ $(document).ready(function(e){
       if (response.success)
       {
           $("input[value=" + file.id + "]").parent().find('img').remove();
-          $("input[value=" + file.id + "]").show().attr('id', 'picture-' + response.picture.id).attr("rel", response.picture.url).attr('value', 'picture-' + response.picture.id);
+          $("input[value=" + file.id + "]").show().attr('id', 'pdf-' + response.pdf.id).attr("rel", response.pdf.url).attr('value', 'pdf-' + response.pdf.id);
           $("input[value=" + file.id + "]").parent().parent().find('td.status').html('<img src="/images/validate_ok.gif"/>');
       }
       else
