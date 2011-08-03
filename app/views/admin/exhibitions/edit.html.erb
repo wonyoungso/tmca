@@ -97,7 +97,7 @@
 
   						  <% @exhibition.pdfs.each do |pdf| %>
   							  <tr>
-  							    <td class="select"><%= check_box_tag 'pdf_ids[]', 'pdf-' + picture.id.to_s, false, :rel => pdf.attachment.url %>
+  							    <td class="select"><%= check_box_tag 'pdf_ids[]', 'pdf-' + pdf.id.to_s, false, :rel => pdf.attachment.url %>
 
   							    <td class="title"><%= pdf.attachment_file_name%></td>
   							    <td class="status">
