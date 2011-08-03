@@ -32,7 +32,7 @@
   					<table>
   						<tbody>
 
-    						  <% @exhibitions.pictures.each do |picture| %>
+    						  <% @exhibition.pictures.each do |picture| %>
     							  <tr>
     							    <td class="select"><%= check_box_tag 'picture_ids[]', 'picture-' + picture.id.to_s, false, :rel => picture.photo.url %>
 
@@ -71,7 +71,7 @@
     					<table>
     						<tbody>
 
-      						  <% @exhibitions.pdfs.each do |pdf| %>
+      						  <% @exhibition.pdfs.each do |pdf| %>
       							  <tr>
       							    <td class="select"><%= check_box_tag 'pdf_ids[]', 'pdf-' + picture.id.to_s, false, :rel => pdf.attachment.url %>
 
