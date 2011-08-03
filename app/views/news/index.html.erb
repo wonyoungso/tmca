@@ -5,7 +5,7 @@
   
   <div class="right">
     <% if @latest_news != nil %>
-      <h3><%= @latest_news.title %></h3>
+      <h3 class="HV"><%= @latest_news.title %></h3>
       <div class="date">
         <p><%= @latest_news.created_at.strftime("%Y/%m/%d %H:%M") %></p>
       </div>
@@ -28,7 +28,7 @@
     
     <% @news_chunks.each do |news| %>
       <div class="pastNews">
-        <%= link_to news.title, '#', :rel => news.id, %>
+        <%= link_to news.title, '#', :rel => news.id, :class => "HV" %>
       </div>
     <% end %>
   </div>
