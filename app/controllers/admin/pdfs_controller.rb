@@ -18,6 +18,23 @@ class Admin::PdfsController < ApplicationController
    end
 
 
+
+   def delete_files
+     failed_id = []
+     params[:pdf_ids].each do |pdf_id|
+       @pdf = Pdf.find(pdf_id)
+       if logged_in?
+         @pdf.destroy
+       else
+         failed_id << pic_id
+       end
+     end
+
+     respond_to do |format|
+       format.json { render :json => {:success => true}}
+     end
+   end
+
    def pdf_as_json(pdf)
      pdf = {
        :id => pdf.id,

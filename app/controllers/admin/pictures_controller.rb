@@ -17,6 +17,25 @@ class Admin::PicturesController < ApplicationController
        end
 
    end
+   
+
+
+
+   def delete_files
+     failed_id = []
+     params[:picture_ids].each do |pic_id|
+       @picture = Picture.find(pic_id)
+       if @picture.pictureable.users.include?(current_user) || current_user.admin
+         @picture.destroy
+       else
+         failed_id << pic_id
+       end
+     end
+
+     respond_to do |format|
+       format.json { render :json => {:success => true}}
+     end
+   end
 
 
    def picture_as_json(picture)
