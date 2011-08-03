@@ -8,7 +8,7 @@
       새 전시 생성
     </h2>
     <div class="inner">
-      <%= form_tag admin_exhibition_path(@exhibition), :multipart => true, :class => 'form' do %>
+      <%= form_tag admin_exhibition_path(@exhibition), :multipart => true, :class => 'form', :id => 'exhibitionEditForm' do %>
         
         <%= hidden_field_tag '_method', 'put' %>
           
