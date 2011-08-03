@@ -77,7 +77,7 @@ $(document).ready(function(e){
             append(statusTd).
             append(sizeTd).
             append(statusIconTd).
-            appendTo("#uploader0 tbody");
+            appendTo("#uploader_image tbody");
           }
           else
           {
@@ -284,7 +284,7 @@ $(document).ready(function(e){
             append(statusTd).
             append(sizeTd).
             append(statusIconTd).
-            appendTo("#uploader0 tbody");
+            appendTo("#uploader_pdf tbody");
           }
           else
           {
