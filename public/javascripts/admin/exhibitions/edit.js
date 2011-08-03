@@ -178,7 +178,6 @@ $(document).ready(function(e){
           success: function(data) {
               if (data.success)
               {
-                  $.noticeMessage("성공적으로 이미지를 삭제하였습니다.");
                   for (var i = 0; i < this.trs.length; i++)
                   {
                       $(this.trs[i]).remove();
@@ -380,7 +379,6 @@ $(document).ready(function(e){
           success: function(data) {
               if (data.success)
               {
-                  $.noticeMessage("성공적으로 이미지를 삭제하였습니다.");
                   for (var i = 0; i < this.trs.length; i++)
                   {
                       $(this.trs[i]).remove();
