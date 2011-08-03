@@ -22,7 +22,7 @@ class Admin::PdfsController < ApplicationController
      pdf = {
        :id => pdf.id,
        :url => pdf.attachment.url,
-       :file_name => pdf.photo_file_name
+       :file_name => pdf.attachment_file_name
      }
      pdf
    end
