@@ -1,6 +1,5 @@
 # -*- encoding : utf-8 -*-
 class Admin::PicturesController < ApplicationController
-  before_filter :login_required
   def create
 
        @picture = Picture.new
