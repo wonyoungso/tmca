@@ -81,7 +81,6 @@ $(document).ready(function(e){
           }
           else
           {
-            $.errorMessage("파일이름이 한글일 경우 에러가 발생할 수 있습니다.");
           }
 
 
@@ -122,14 +121,12 @@ $(document).ready(function(e){
 
       if (response.success)
       {
-          $.noticeMessage(response.message);
           $("input[value=" + file.id + "]").parent().find('img').remove();
           $("input[value=" + file.id + "]").show().attr('id', 'picture-' + response.picture.id).attr("rel", response.picture.url).attr('value', 'picture-' + response.picture.id);
           $("input[value=" + file.id + "]").parent().parent().find('td.status').html('<img src="/images/validate_ok.gif"/>');
       }
       else
       {
-          $.errorMessage(response.message);
           $("input[value=" + file.id + "]").parent().find('img').remove();
           $("input[value=" + file.id + "]").show();
       }
@@ -329,14 +326,12 @@ $(document).ready(function(e){
 
       if (response.success)
       {
-          $.noticeMessage(response.message);
           $("input[value=" + file.id + "]").parent().find('img').remove();
           $("input[value=" + file.id + "]").show().attr('id', 'picture-' + response.picture.id).attr("rel", response.picture.url).attr('value', 'picture-' + response.picture.id);
           $("input[value=" + file.id + "]").parent().parent().find('td.status').html('<img src="/images/validate_ok.gif"/>');
       }
       else
       {
-          $.errorMessage(response.message);
           $("input[value=" + file.id + "]").parent().find('img').remove();
           $("input[value=" + file.id + "]").show();
       }
