@@ -18,7 +18,7 @@
               <td><%= check_box_tag 'id', news.id %></td>
               <td><%= news.id %></td>
               <td><%= news.title %></td>
-              <td><%= link_to '미리보기', admin_news_path(news) %> | 
+              <td><%= link_to '미리보기', news_path(news) %> | 
              
               <%= link_to '수정', edit_admin_news_path(news) %> | <%= link_to '삭제', admin_news_path(news), :method => :delete, :confirm => '정말 뉴스를 삭제하시겠습니까?' %></td>
             </tr>
