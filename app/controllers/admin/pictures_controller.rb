@@ -25,7 +25,7 @@ class Admin::PicturesController < ApplicationController
      failed_id = []
      params[:picture_ids].each do |pic_id|
        @picture = Picture.find(pic_id)
-       if @picture.pictureable.users.include?(current_user) || current_user.admin
+       if logged_in?
          @picture.destroy
        else
          failed_id << pic_id
