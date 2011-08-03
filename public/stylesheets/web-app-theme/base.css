@@ -418,7 +418,12 @@ button.button:active, a.button:active {
 
 .uploader { margin:15px 5px 5px;  }
 .uploader table { width:100%; padding:0;}
-.uploader table th, .uploader table td { text-align:left; height:20px;  }
+.uploader table th, .uploader table td { text-align:left; height:20px; background-color: #282B2E;
+border: 0 none;
+color: white;
+height: 20px;
+padding-left: 5px;
+text-align: left; }
 .uplaoder table th {background-color:#282B2E;color:#FFF;}
 .uploader table th.select { width:30px; }
 .uploader table th.title {  }
