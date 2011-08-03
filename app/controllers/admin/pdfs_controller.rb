@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Admin::PdfsController < ApplicationController
+before_filter :login_requireda
   def create
        @pdf = Pdf.new
        @pdf.attachment = params[:file]
