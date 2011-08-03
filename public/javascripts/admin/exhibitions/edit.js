@@ -192,7 +192,7 @@ $(document).ready(function(e){
       $("#uploader_image tbody input[type='checkbox']:checked").each($.proxy(picDelete.addIds, picDelete));
       $.ajax({
           type: 'DELETE',
-          url: '/admin/pictures/' + exhibition_id  + '/delete_files.json',
+          url: '/admin/pictures/delete_files.json',
           data: $.param(picDelete.ids),
           success: $.proxy(picDelete.success, picDelete)
       });
@@ -364,7 +364,7 @@ $(document).ready(function(e){
           },
           trs: [],
           addIds: function(index, item) {
-              if ($(item).val().match("picture-"))
+              if ($(item).val().match("pdf-"))
               {
                   this.ids.picture_ids.push($(item).val().split('-')[1]);
                   this.trs.push($(item).parent().parent());
@@ -394,7 +394,7 @@ $(document).ready(function(e){
       $("#uploader_pdf tbody input[type='checkbox']:checked").each($.proxy(picDelete.addIds, picDelete));
       $.ajax({
           type: 'DELETE',
-          url: '/admin/pdfs/' + exhibition_id  + '/delete_files.json',
+          url: '/admin/pdfs/delete_files.json',
           data: $.param(picDelete.ids),
           success: $.proxy(picDelete.success, picDelete)
       });
