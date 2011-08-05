@@ -5,7 +5,9 @@
   
   <% if @current_exhibition != nil %>
     <div class="welcome">    
-      <%= image_tag @current_exhibition.currentPhoto %>
+      <div class="imageWrap">
+        <%= image_tag @current_exhibition.currentPhoto %>
+      </div>
       <div class="welcomeback"></div>
       <div class="info">
         <span class="HV category">exhibition</span>
@@ -24,7 +26,9 @@
   
   <% if @current_education != nil %>
     <div class="welcome">    
-      <%= image_tag @current_education.currentPhoto %>
+      <div class="imageWrap">      
+        <%= image_tag @current_education.currentPhoto %>
+      </div>
       <div class="welcomeback"></div>
       <div class="info">
         <span class="HV category">education</span>
@@ -43,7 +47,9 @@
   
   <% if @current_event != nil %>
     <div class="welcome">    
-      <%= image_tag @current_event.currentPhoto %>
+      <div class="imageWrap">
+        <%= image_tag @current_event.currentPhoto %>
+      </div>
       <div class="welcomeback"></div>
       <div class="info">
         <span class="HV category">event</span>
