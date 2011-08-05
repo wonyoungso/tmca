@@ -1,5 +1,5 @@
 <div id="list" class="block">
-  <%= render 'admin/educations/tabs' %>
+  <%= render 'admin/exhibitions/tabs' %>
   <div class="content">
     <h2 class="title">
       교육프로그램 목록
@@ -21,35 +21,41 @@
           <tbody><tr>
             <th class="first"><input type="checkbox" class="checkbox toggle"></th>
             <th></th>
-            <th>ID</th>
+            <th>
+              시작일
+            </th>
             <th>교육프로그램 제목</th>
             <th>&nbsp;</th>
             <th class="last">&nbsp;</th>
           </tr>
-          <% @educations.each_with_index do |education, index| %>
-            <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %> <% if education.current %>current<% elsif education.upcoming %>upcoming<% end %>">
-              <td><%= check_box_tag 'id', education.id %></td>
-              <td><%= image_tag education.bigphoto.url(:thumb) %> </td>
-              <td><%= education.id %></td>
-              <td><%= education.title %></td>
+          <% @exhibitions.each_with_index do |exhibition, index| %>
+            <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %> <% if exhibition.current %>current<% elsif exhibition.upcoming %>upcoming<% end %>">
+              <td><%= check_box_tag 'id', exhibition.id %></td>
+              <td></td>
+              <td><%= exhibition.start_date.strftime("%Y/%m/%d") %></td>
+              <td><%= link_to exhibition.title, exhibition_path(exhibition) %></td>
               <td>
-                 <% if !education.current %>
-                    <%= link_to '현재 교육프로그램 지정', set_current_admin_education_path(education), :method => :put, :confirm => '현재 교육프로그램로 지정하시겠습니까?' %>
+                 <% if !exhibition.current %>
+                    <%= link_to '현재 교육프로그램 지정', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 교육프로그램로 지정하시겠습니까?' %>
                  <% else %> 
-                  <%= link_to '현재 교육프로그램 취소', set_current_admin_education_path(education), :method => :put, :confirm => '현재 교육프로그램 지정을 취소하시겠습니까?' %>
+                  <%= link_to '현재 교육프로그램 지정 취소', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 교육프로그램 지정을 취소하시겠습니까?' %>
                  <% end %>
-                 <% if !education.upcoming %>
-                    <%= link_to '예정 교육프로그램 지정', set_upcoming_admin_education_path(education), :method => :put, :confirm => '예정 교육프로그램로 지정하시겠습니까?' %>
+                 <br/>
+                 <% if !exhibition.upcoming %>
+                    <%= link_to '예정 교육프로그램 지정', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 교육프로그램로 지정하시겠습니까?' %>
                  <% else %>
-                    <%= link_to '예정 교육프로그램 쥐소', set_upcoming_admin_education_path(education), :method => :put, :confirm => '예정 교육프로그램 지정을 취소하시겠습니까?' %>
+                    <%= link_to '예정 교육프로그램 지정 쥐소', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 교육프로그램 지정을 취소하시겠습니까?' %>
                  <% end %>
               </td>
-              <td><%= link_to '미리보기', admin_education_path(education) %> | 
-             
-              <%= link_to '수정', edit_admin_education_path(education) %> | <%= link_to '삭제', admin_education_path(education), :method => :delete, :confirm => '정말 교육프로그램을 삭제하시겠습니까?' %></td>
+              <td>         
+              <%= link_to '수정', edit_admin_exhibition_path(exhibition) %> | <%= link_to '삭제', admin_exhibition_path(exhibition), :method => :delete, :confirm => '정말 교육프로그램를 삭제하시겠습니까?' %></td>
             </tr>
           <% end %>
         </tbody></table>
+        
+        <%= will_paginate @exhibitions %>
+        
+        <div class="CB"></div>
     </div>
   </div>
 </div>
