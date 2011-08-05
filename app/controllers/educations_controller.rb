@@ -5,8 +5,8 @@ class EducationsController < ApplicationController
     @upcoming = Exhibition.where("upcoming = ? AND category_id = ?", true, 2).first
     @exhibitions = {}
     
-    @exs = Exhibition.where("current = ? AND upcoming = ? AND category_id = ?", false, false, 2).order("start_date DESC")
-    @years = []
+    
+    @exs = Exhibition.where("current = ? AND upcoming = ? AND category_id = ? start_date != ?", false, false, 2, nil).order("start_date DESC")
     @exs.each do |ex|
       logger.info ex
       year = ex.start_date.strftime("%Y")
