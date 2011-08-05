@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def login_required
     if !logged_in?
       respond_to do |format|
-        format.html 
+        format.html { redirect_to root_path, :alert => '로그인이 필요합니다.'}
         format.json { render :json => {:success => false, :message => '로그인이 필요합니다' } }
       end
     end

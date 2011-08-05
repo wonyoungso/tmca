@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Admin::SessionsController < ApplicationController
-  before_filter :admin_required, :only => [:destroy]
+  before_filter :login_required, :only => [:destroy]
   layout 'admin'
   def new
     if !logged_in?
