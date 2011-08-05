@@ -15,9 +15,9 @@ class Exhibition < ActiveRecord::Base
     #   bigphoto.reprocess!  
     # end
     
-  def currentPhoto
+  def currentPhoto(varient = nil)
     if self.pictures.first != nil
-      self.pictures.first.photo.url
+      self.pictures.first.photo.url(varient)
     else
       "default_exhibition.png"
     end

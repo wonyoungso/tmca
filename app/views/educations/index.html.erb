@@ -6,7 +6,7 @@
   
   <div class="right">
     <% if @current != nil %>
-      <%= image_tag @current.bigphoto.url(:thumb) %>
+      <%= image_tag @current.currentPhoto(:thumb) %>
       <h3 class="HV"><%= @current.title %></h3>
       <div class="date">
         <%= @current.start_date.strftime("%Y.%m.%d")%>-<%= @current.end_date.strftime("%Y.%m.%d")%>
@@ -28,7 +28,7 @@
   
   <div class="right">
     <% if @upcoming != nil %>
-      <%= image_tag @upcoming.bigphoto.url(:thumb) %>
+      <%= image_tag @upcoming.currentPhoto(:thumb) %>
       <h3 class="HV"><%= @upcoming.title %></h3>
       <div class="date">
         <%= @upcoming.start_date.strftime("%Y.%m.%d")%>-<%= @upcoming.end_date.strftime("%Y.%m.%d")%>
