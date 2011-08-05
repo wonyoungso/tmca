@@ -10,28 +10,28 @@ class Admin::EventsController < ApplicationController
        @page = 1
      end
      
-     # ExpWeblogTitle.all.each do |weblog_title|
-     #   entry_id = weblog_title.entry_id.to_i
-     #   categorypost = ExpCategoryPost.find_by_entry_id(entry_id)
-     #   
-     #   begin
-     #     if categorypost.cat_id == 6
-     #     
-     #       if weblog_title.year.to_i < 2000
-     #         @exhibition = Exhibition.new
-     #         @exhibition.title = weblog_title.title
-     #         descData = ExpWeblogData.find_by_entry_id(entry_id)
-     #         @exhibition.description = descData.field_id_1 + descData.field_id_2 + descData.field_id_3
-     #         @exhibition.start_date = Date.new(weblog_title.year.to_i, weblog_title.month.to_i, weblog_title.day.to_i)
-     #         @exhibition.end_date = Date.new(weblog_title.year.to_i, weblog_title.month.to_i, weblog_title.day.to_i)
-     #         @exhibition.save
-     #       end
-     #     
-     #     end
-     #    rescue
-     #    end
-     #    
-     # end
+     ExpWeblogTitle.all.each do |weblog_title|
+       entry_id = weblog_title.entry_id.to_i
+       categorypost = ExpCategoryPost.find_by_entry_id(entry_id)
+       
+       #begin
+         if categorypost.cat_id == 6
+         
+           if weblog_title.year.to_i < 2000
+             @exhibition = Exhibition.new
+             @exhibition.title = weblog_title.title
+             descData = ExpWeblogData.find_by_entry_id(entry_id)
+             @exhibition.description = descData.field_id_1 + descData.field_id_2 + descData.field_id_3
+             @exhibition.start_date = Date.new(weblog_title.year.to_i, weblog_title.month.to_i, weblog_title.day.to_i)
+             @exhibition.end_date = Date.new(weblog_title.year.to_i, weblog_title.month.to_i, weblog_title.day.to_i)
+             @exhibition.save
+           end
+         
+         end
+        #rescue
+        #end
+        
+     end
      
 
      @exhibitions = Exhibition.where("category_id = ?", 3).paginate(:page => @page).order('start_date DESC')
