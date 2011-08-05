@@ -28,7 +28,7 @@
   <div class="right">
     
     <% @news_chunks.each do |news| %>
-      <div class="pastNews">
+      <div class="pastNews HV">
         <%= link_to news.title, news_path(news), :rel => news.id %>
       </div>
     <% end %>
