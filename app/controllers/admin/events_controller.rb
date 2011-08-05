@@ -91,8 +91,7 @@ class Admin::EventsController < ApplicationController
    end
 
    def update
-     @exhibition = Exhibition.find(params[:id])        
-     @exhibition.bigphoto.reprocess!
+     @exhibition = Exhibition.find(params[:id])   
      respond_to do |format|
        if @exhibition.update_attributes(params[:exhibition])
          format.html {redirect_to admin_events_path, :notice => '전시가 성공적으로 수정되었습니다.' }
