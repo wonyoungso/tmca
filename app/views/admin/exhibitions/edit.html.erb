@@ -32,10 +32,10 @@
           <%= label_tag 'exhibition[description]', '내용' %>
           <%= text_area_tag 'exhibition[description]', @exhibition.description, :class => 'text_area', :id => 'exhibitionNewTextArea' %>
         </div>
-                
-        <div>
-          이미지 업로드
-        </div>        
+               
+               <div style="margin-left:10px;margin-top:30px;font-size:1.2em">
+                 <span class="HV">이미지 업로드</span>
+               </div>      
         <div id="uploader_image" class="uploader">
 			    <div class="docuUploaderTable">
 				    <table>
@@ -75,8 +75,8 @@
     		</div>
 
       
-      <div>
-      PDF 업로드
+      <div style="margin-left:10px;margin-top:30px;font-size:1.2em">
+        <span class="HV">PDF 업로드</span>
       </div>
       <div id="uploader_pdf" class="uploader">
 				<div class="docuPdfUploaderTable">
