@@ -1,5 +1,5 @@
 <div id="list" class="block">
-  <%= render 'admin/events/tabs' %>
+  <%= render 'admin/exhibitions/tabs' %>
   <div class="content">
     <h2 class="title">
       이벤트 목록
@@ -28,32 +28,34 @@
             <th>&nbsp;</th>
             <th class="last">&nbsp;</th>
           </tr>
-          <% @events.each_with_index do |event, index| %>
-            <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %> <% if event.current %>current<% elsif event.upcoming %>upcoming<% end %>">
-              <td><%= check_box_tag 'id', event.id %></td>
-              <td> </td>
-              <td><%= event.start_date.strftime("%Y/%m/%d") %></td>
-              <td><%= event.title %></td>
+          <% @exhibitions.each_with_index do |exhibition, index| %>
+            <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %> <% if exhibition.current %>current<% elsif exhibition.upcoming %>upcoming<% end %>">
+              <td><%= check_box_tag 'id', exhibition.id %></td>
+              <td></td>
+              <td><%= exhibition.start_date.strftime("%Y/%m/%d") %></td>
+              <td><%= link_to exhibition.title, exhibition_path(exhibition) %></td>
               <td>
-                 <% if !event.current %>
-                    <%= link_to '현재 이벤트 지정', set_current_admin_event_path(event), :method => :put, :confirm => '현재 이벤트로 지정하시겠습니까?' %>
+                 <% if !exhibition.current %>
+                    <%= link_to '현재 이벤트 지정', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 이벤트로 지정하시겠습니까?' %>
                  <% else %> 
-                  <%= link_to '현재 이벤트 취소', set_current_admin_event_path(event), :method => :put, :confirm => '현재 이벤트 지정을 취소하시겠습니까?' %>
+                  <%= link_to '현재 이벤트 지정 취소', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 이벤트 지정을 취소하시겠습니까?' %>
                  <% end %>
-                 <% if !event.upcoming %>
-                    <%= link_to '예정 이벤트 지정', set_upcoming_admin_event_path(event), :method => :put, :confirm => '예정 이벤트로 지정하시겠습니까?' %>
+                 <br/>
+                 <% if !exhibition.upcoming %>
+                    <%= link_to '예정 이벤트 지정', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 이벤트로 지정하시겠습니까?' %>
                  <% else %>
-                    <%= link_to '예정 이벤트 쥐소', set_upcoming_admin_event_path(event), :method => :put, :confirm => '예정 이벤트 지정을 취소하시겠습니까?' %>
+                    <%= link_to '예정 이벤트 지정 쥐소', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 이벤트 지정을 취소하시겠습니까?' %>
                  <% end %>
               </td>
-              <td><%= link_to '미리보기', admin_event_path(event) %> | 
-             
-              <%= link_to '수정', edit_admin_event_path(event) %> | <%= link_to '삭제', admin_event_path(event), :method => :delete, :confirm => '정말 이벤트을 삭제하시겠습니까?' %></td>
+              <td>         
+              <%= link_to '수정', edit_admin_exhibition_path(exhibition) %> | <%= link_to '삭제', admin_exhibition_path(exhibition), :method => :delete, :confirm => '정말 이벤트를 삭제하시겠습니까?' %></td>
             </tr>
           <% end %>
         </tbody></table>
         
-        <%= will_paginate @events %>
+        <%= will_paginate @exhibitions %>
+        
+        <div class="CB"></div>
     </div>
   </div>
 </div>

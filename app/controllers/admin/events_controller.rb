@@ -27,9 +27,9 @@ class Admin::EventsController < ApplicationController
        @exhibition.current = !@exhibition.current
        respond_to do |format|
          if @exhibition.save
-           format.html {redirect_to admin_exhibitions_path, :notice => '성공적으로 변경하였습니다.'}
+           format.html {redirect_to admin_events_path, :notice => '성공적으로 변경하였습니다.'}
          else
-           format.html {redirect_to admin_exhibitions_path, :notice => '오류가 발생하였습니다.'}
+           format.html {redirect_to admin_events_path, :notice => '오류가 발생하였습니다.'}
          end
        end
      end
@@ -51,9 +51,9 @@ class Admin::EventsController < ApplicationController
        @exhibition.upcoming =!@exhibition.upcoming
        respond_to do |format|
          if @exhibition.save
-           format.html {redirect_to admin_exhibitions_path, :notice => '성공적으로 변경하였습니다.'}
+           format.html {redirect_to admin_events_path, :notice => '성공적으로 변경하였습니다.'}
          else
-           format.html {redirect_to admin_exhibitions_path, :notice => '오류가 발생하였습니다.'}
+           format.html {redirect_to admin_events_path, :notice => '오류가 발생하였습니다.'}
          end
        end
      end
@@ -65,9 +65,9 @@ class Admin::EventsController < ApplicationController
      @exhibition.category_id = 3
      respond_to do |format|
        if @exhibition.save
-         format.html {redirect_to admin_exhibitions_path, :notice => '전시가 성공적으로 생성되었습니다.'}
+         format.html {redirect_to admin_events_path, :notice => '전시가 성공적으로 생성되었습니다.'}
        else
-         format.html {redirect_to admin_exhibitions_path, :alert => '전시 생성이 실패하였습니다.'}
+         format.html {redirect_to admin_events_path, :alert => '전시 생성이 실패하였습니다.'}
        end
      end
    end
@@ -84,9 +84,9 @@ class Admin::EventsController < ApplicationController
      @exhibition.bigphoto.reprocess!
      respond_to do |format|
        if @exhibition.update_attributes(params[:exhibition])
-         format.html {redirect_to admin_exhibitions_path, :notice => '전시가 성공적으로 수정되었습니다.' }
+         format.html {redirect_to admin_events_path, :notice => '전시가 성공적으로 수정되었습니다.' }
        else
-         format.html {redirect_to admin_exhibitions_path, :alert => '전시 수정 중 오류가 발생하였습니다.'}
+         format.html {redirect_to admin_events_path, :alert => '전시 수정 중 오류가 발생하였습니다.'}
        end
      end
    end
@@ -96,7 +96,7 @@ class Admin::EventsController < ApplicationController
      @exhibition.destroy
 
      respond_to do |format|
-       format.html {redirect_to admin_exhibitions_path, :notice => '성공적으로 삭제하였습니다.'}
+       format.html {redirect_to admin_events_path, :notice => '성공적으로 삭제하였습니다.'}
      end
    end
 
