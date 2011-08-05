@@ -32,7 +32,7 @@ class Admin::SessionsController < ApplicationController
       @success = false
    
       respond_to do |format|   
-        format.html { redirect_to admin_login_path }
+        format.html { redirect_to admin_login_path, :alert => '로그인이 실패하였습니다.' }
       end
     end
   
