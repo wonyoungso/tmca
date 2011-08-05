@@ -14,62 +14,58 @@ class Admin::EventsController < ApplicationController
    end
 
    def set_current
-     @exhibitions = Exhibition.all
-     @exhibition = Exhibition.find(params[:id])
-     @exhibitions.each do |exhibition|
-       if exhibition.id != @exhibition.id
-         exhibition.current = false
-         exhibition.save
-       end
-     end
+      @exhibition = Exhibition.find(params[:id])
+      @ex_exhibitions = Exhibition.where("category_id = ? AND current = ?", 3, true)
+      @ex_exhibitions.each do |ex_exhibition|
+        ex_exhibition.current = false
+        ex_exhibition.save
+      end
 
-     if !@exhibition.upcoming
-       @exhibition.current = !@exhibition.current
-       respond_to do |format|
-         if @exhibition.save
-           format.html {redirect_to admin_events_path, :notice => '성공적으로 변경하였습니다.'}
-         else
-           format.html {redirect_to admin_events_path, :notice => '오류가 발생하였습니다.'}
-         end
-       end
-     end
-   end
+      if !@exhibition.upcoming
+        @exhibition.current = !@exhibition.current
+        respond_to do |format|
+          if @exhibition.save
+            format.html {redirect_to admin_events_path, :notice => '성공적으로 변경하였습니다.'}
+          else
+            format.html {redirect_to admin_events_path, :notice => '오류가 발생하였습니다.'}
+          end
+        end
+      end
+    end
 
+    def new
+      @exhibition = Exhibition.new
+      @exhibition.title = "title"
+      @exhibition.description = "설명을 적어주세요"
+      @exhibition.category_id = 1
+      @exhibition.save
 
-   def new
-     @exhibition = Exhibition.new
-     @exhibition.title = "title"
-     @exhibition.description = "설명을 적어주세요"
-     @exhibition.category_id = 3
-     @exhibition.save
-
-     redirect_to edit_admin_event_path(@exhibition)
-   end
-   
-   def set_upcoming
-     @exhibitions = Exhibition.all
-     @exhibition = Exhibition.find(params[:id])
-     @exhibitions.each do |exhibition|
-       if exhibition.id != @exhibition.id
-         exhibition.upcoming = false
-         exhibition.save
-       end
-     end
+      redirect_to edit_admin_exhibition_path(@exhibition)
+    end
 
 
+    def set_upcoming
+      @exhibition = Exhibition.find(params[:id])
+      @exhibition = Exhibition.find(params[:id])
+      @ex_exhibitions = Exhibition.where("category_id = ? AND current = ?", 3, true)
+      @ex_exhibitions.each do |ex_exhibition|
+        ex_exhibition.upcoming = false
+        ex_exhibition.save
+      end    
 
-     if !@exhibition.current 
-       @exhibition.upcoming =!@exhibition.upcoming
-       respond_to do |format|
-         if @exhibition.save
-           format.html {redirect_to admin_events_path, :notice => '성공적으로 변경하였습니다.'}
-         else
-           format.html {redirect_to admin_events_path, :notice => '오류가 발생하였습니다.'}
-         end
-       end
-     end
 
-   end
+      if !@exhibition.current 
+        @exhibition.upcoming =!@exhibition.upcoming
+        respond_to do |format|
+          if @exhibition.save
+            format.html {redirect_to admin_events_path, :notice => '성공적으로 변경하였습니다.'}
+          else
+            format.html {redirect_to admin_events_path, :notice => '오류가 발생하였습니다.'}
+          end
+        end
+      end
+
+    end
 
    def create
      @exhibition = Exhibition.new(params[:exhibition])

@@ -14,13 +14,11 @@ class Admin::ExhibitionsController < ApplicationController
   end
   
   def set_current
-    @exhibitions = Exhibition.all
     @exhibition = Exhibition.find(params[:id])
-    @exhibitions.each do |exhibition|
-      if exhibition.id != @exhibition.id
-        exhibition.current = false
-        exhibition.save
-      end
+    @ex_exhibitions = Exhibition.where("category_id = ? AND current = ?", 1, true)
+    @ex_exhibitions.each do |ex_exhibition|
+      ex_exhibition.current = false
+      ex_exhibition.save
     end
     
     if !@exhibition.upcoming
@@ -47,15 +45,13 @@ class Admin::ExhibitionsController < ApplicationController
   
   
   def set_upcoming
-    @exhibitions = Exhibition.all
     @exhibition = Exhibition.find(params[:id])
-    @exhibitions.each do |exhibition|
-      if exhibition.id != @exhibition.id
-        exhibition.upcoming = false
-        exhibition.save
-      end
-    end
-    
+    @exhibition = Exhibition.find(params[:id])
+    @ex_exhibitions = Exhibition.where("category_id = ? AND current = ?", 1, true)
+    @ex_exhibitions.each do |ex_exhibition|
+      ex_exhibition.upcoming = false
+      ex_exhibition.save
+    end    
     
     
     if !@exhibition.current 
