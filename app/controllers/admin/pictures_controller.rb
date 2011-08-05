@@ -26,7 +26,7 @@ class Admin::PicturesController < ApplicationController
      params[:picture_ids].each do |pic_id|
        @picture = Picture.find(pic_id)
          @picture.destroy
-    end
+     end
 
      respond_to do |format|
        format.json { render :json => {:success => true}}
