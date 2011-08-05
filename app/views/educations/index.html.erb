@@ -54,11 +54,11 @@
           <h3 class="HV"><%= year.to_s %></h3>
         </div>
         <div class="yearRight">
-          <% if @educations[year.to_s] != nil %>
+          <% if @exhibitions[year.to_s] != nil %>
             <div>
-              <% @educations[year.to_s].each do |education| %>
+              <% @exhibitions[year.to_s].each do |exhibition| %>
                 <div>
-                  <%= link_to education.title, education_path(education), :class => 'HV' %>
+                  <%= link_to exhibition.title, education_path(exhibition), :class => 'HV' %>
                 </div>
               <% end %>
             </div>
