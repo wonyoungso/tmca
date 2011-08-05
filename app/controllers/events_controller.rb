@@ -6,7 +6,7 @@ class EventsController < ApplicationController
     @exhibitions = {}
     
     
-    @exs = Exhibition.where("current = ? AND upcoming = ? AND category_id = ? start_date != ?", false, false, 3, nil).order("start_date DESC")
+    @exs = Exhibition.where("current = ? AND upcoming = ? AND category_id = ? AND start_date IS NOT NULL", false, false, 3).order("start_date DESC")
     @years = []
     @exs.each do |ex|
       year = ex.start_date.strftime("%Y")
