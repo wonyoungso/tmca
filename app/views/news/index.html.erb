@@ -13,7 +13,7 @@
         <%= simple_format(@latest_news.description) %>
       </div>
       
-      <% if @news.attachment not nil %>
+      <% if @news.attachment != nil %>
         <div class="attachment">
           <%= link_to image_tag('pdf_icon.png'), @news.attachment.url %>
         </div>
