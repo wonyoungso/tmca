@@ -10,7 +10,7 @@ class Admin::EducationsController < ApplicationController
       @page = 1
     end
     
-    @exhibitions = Exhibition.where("category_id = ?", 3).paginate(:page => @page).order('start_date DESC')
+    @exhibitions = Exhibition.where("category_id = ?", 2).paginate(:page => @page).order('start_date DESC')
   end
   
   def set_current
