@@ -14,4 +14,13 @@ class Exhibition < ActiveRecord::Base
     # def reprocess_bigphoto
     #   bigphoto.reprocess!  
     # end
+    
+  def currentPhoto
+    if self.pictures.first != nil
+      self.pictures.first.photo.url
+    else
+      "default_exhibition.png"
+    end
+  end
+      
 end
