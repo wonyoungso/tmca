@@ -5,7 +5,7 @@ class ExhibitionsController < ApplicationController
     @upcoming = Exhibition.where("upcoming = ? AND category_id = ?", true, 1).first
     @exhibitions = {}
     
-    @exs = Exhibition.where("current = ? AND upcoming = ? AND category_id = ? AND start_date IS NOT NULL", false, false, 1, nil).order("start_date DESC")
+    @exs = Exhibition.where("current = ? AND upcoming = ? AND category_id = ? AND start_date IS NOT NULL", false, false, 1).order("start_date DESC")
     @years = []
     @exs.each do |ex|
       logger.info ex.title
