@@ -133,7 +133,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	.footerFullColumn a:link, .footerFullColumn a:visited {color:#333;}
   
 /* Welcome */
-  .content .welcome {width:319px; cursor:pointer;float:left; position:relative;padding: 40px 0; margin-top:-35px;border-right:1px solid #f0f0f0;display:none;}
+  .content .welcome {width:319px; cursor:pointer;float:left; position:relative;padding: 40px 0; margin-top:-35px;border-right:1px solid #f0f0f0;display:none;overflow:hidden;height:500px;}
   .content .welcome .welcomeback {width:100%; height:510px;position:absolute;left:0;top:40px;}
   .content .welcome .welcomeback.yellow {background-color:#FFF600;}
   .content .welcome .welcomeback.black {background-color:#454548;}
