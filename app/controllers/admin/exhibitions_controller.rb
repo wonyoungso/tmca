@@ -35,6 +35,17 @@ class Admin::ExhibitionsController < ApplicationController
     end
   end
   
+  def new
+    @exhibition = Exhibition.new
+    @exhibition.title = "title"
+    @exhibition.description = "설명을 적어주세요"
+    @exhibition.category_id = 1
+    @exhibition.save
+    
+    redirect_to edit_admin_exhibition_path(@exhibition)
+  end
+  
+  
   def set_upcoming
     @exhibitions = Exhibition.all
     @exhibition = Exhibition.find(params[:id])
@@ -60,17 +71,6 @@ class Admin::ExhibitionsController < ApplicationController
     
   end
   
-  def create
-    @exhibition = Exhibition.new(params[:exhibition])
-    @exhibition.category_id = 1
-    respond_to do |format|
-      if @exhibition.save
-        format.html {redirect_to admin_exhibitions_path, :notice => '전시가 성공적으로 생성되었습니다.'}
-      else
-        format.html {redirect_to admin_exhibitions_path, :alert => '전시 생성이 실패하였습니다.'}
-      end
-    end
-  end
   
   def show
   end

@@ -35,6 +35,17 @@ class Admin::EventsController < ApplicationController
      end
    end
 
+
+   def new
+     @exhibition = Exhibition.new
+     @exhibition.title = "title"
+     @exhibition.description = "설명을 적어주세요"
+     @exhibition.category_id = 3
+     @exhibition.save
+
+     redirect_to edit_admin_event_path(@exhibition)
+   end
+   
    def set_upcoming
      @exhibitions = Exhibition.all
      @exhibition = Exhibition.find(params[:id])

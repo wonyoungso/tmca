@@ -72,6 +72,17 @@ class Admin::EducationsController < ApplicationController
     end
   end
   
+  
+  def new
+    @exhibition = Exhibition.new
+    @exhibition.title = "title"
+    @exhibition.description = "설명을 적어주세요"
+    @exhibition.category_id = 2
+    @exhibition.save
+
+    redirect_to edit_admin_education_path(@exhibition)
+  end
+  
   def show
   end
   
