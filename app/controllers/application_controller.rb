@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  #protect_from_forgery
   
   helper :all
   helper_method :logged_in?, :current_user, :login_required
