@@ -2,10 +2,10 @@
   var exhibition_id = <%= @exhibition.id %>;
 </script>
 <div id="list" class="block">
-  <%= render 'admin/exhibitions/tabs' %>
+  <%= render 'admin/educations/tabs' %>
   <div class="content">
     <h2 class="title">
-      새 전시 생성
+      새 교육프로그램 생성
     </h2>
     <div class="inner">
       <%= form_tag admin_education_path(@exhibition), :multipart => true, :class => 'form', :id => 'exhibitionEditForm' do %>
@@ -19,12 +19,12 @@
       
         
         <div class="group">
-          <%= label_tag 'exhibition[start_date]', '전시 시작일' %>
+          <%= label_tag 'exhibition[start_date]', '교육프로그램 시작일' %>
           <%= date_select 'exhibition', 'start_date', :default => @exhibition.start_date %>
         </div>
         
         <div class="group">
-          <%= label_tag 'exhibition[end_date]', '전시 종료일' %>
+          <%= label_tag 'exhibition[end_date]', '교육프로그램 종료일' %>
           <%= date_select 'exhibition', 'end_date', :default => @exhibition.end_date %>
         </div>
         
