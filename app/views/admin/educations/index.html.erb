@@ -36,19 +36,19 @@
               <td><%= link_to exhibition.title, exhibition_path(exhibition) %></td>
               <td>
                  <% if !exhibition.current %>
-                    <%= link_to '현재 교육프로그램 지정', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 교육프로그램로 지정하시겠습니까?' %>
+                    <%= link_to '현재 교육프로그램 지정', set_current_admin_education_path(exhibition), :method => :put, :confirm => '현재 교육프로그램로 지정하시겠습니까?' %>
                  <% else %> 
-                  <%= link_to '현재 교육프로그램 지정 취소', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 교육프로그램 지정을 취소하시겠습니까?' %>
+                  <%= link_to '현재 교육프로그램 지정 취소', set_current_admin_education_path(exhibition), :method => :put, :confirm => '현재 교육프로그램 지정을 취소하시겠습니까?' %>
                  <% end %>
                  <br/>
                  <% if !exhibition.upcoming %>
-                    <%= link_to '예정 교육프로그램 지정', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 교육프로그램로 지정하시겠습니까?' %>
+                    <%= link_to '예정 교육프로그램 지정', set_upcoming_admin_education_path(exhibition), :method => :put, :confirm => '예정 교육프로그램로 지정하시겠습니까?' %>
                  <% else %>
-                    <%= link_to '예정 교육프로그램 지정 쥐소', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 교육프로그램 지정을 취소하시겠습니까?' %>
+                    <%= link_to '예정 교육프로그램 지정 쥐소', set_upcoming_admin_education_path(exhibition), :method => :put, :confirm => '예정 교육프로그램 지정을 취소하시겠습니까?' %>
                  <% end %>
               </td>
               <td>         
-              <%= link_to '수정', edit_admin_exhibition_path(exhibition) %> | <%= link_to '삭제', admin_exhibition_path(exhibition), :method => :delete, :confirm => '정말 교육프로그램를 삭제하시겠습니까?' %></td>
+              <%= link_to '수정', edit_admin_education_path(exhibition) %> | <%= link_to '삭제', admin_education_path(exhibition), :method => :delete, :confirm => '정말 교육프로그램를 삭제하시겠습니까?' %></td>
             </tr>
           <% end %>
         </tbody></table>

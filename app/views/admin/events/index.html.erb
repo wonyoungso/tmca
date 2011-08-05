@@ -36,15 +36,15 @@
               <td><%= link_to exhibition.title, exhibition_path(exhibition) %></td>
               <td>
                  <% if !exhibition.current %>
-                    <%= link_to '현재 이벤트 지정', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 이벤트로 지정하시겠습니까?' %>
+                    <%= link_to '현재 이벤트 지정', set_current_admin_event_path(exhibition), :method => :put, :confirm => '현재 이벤트로 지정하시겠습니까?' %>
                  <% else %> 
-                  <%= link_to '현재 이벤트 지정 취소', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 이벤트 지정을 취소하시겠습니까?' %>
+                  <%= link_to '현재 이벤트 지정 취소', set_current_admin_event_path(exhibition), :method => :put, :confirm => '현재 이벤트 지정을 취소하시겠습니까?' %>
                  <% end %>
                  <br/>
                  <% if !exhibition.upcoming %>
-                    <%= link_to '예정 이벤트 지정', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 이벤트로 지정하시겠습니까?' %>
+                    <%= link_to '예정 이벤트 지정', set_upcoming_admin_event_path(exhibition), :method => :put, :confirm => '예정 이벤트로 지정하시겠습니까?' %>
                  <% else %>
-                    <%= link_to '예정 이벤트 지정 쥐소', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 이벤트 지정을 취소하시겠습니까?' %>
+                    <%= link_to '예정 이벤트 지정 쥐소', set_upcoming_admin_event_path(exhibition), :method => :put, :confirm => '예정 이벤트 지정을 취소하시겠습니까?' %>
                  <% end %>
               </td>
               <td>         
