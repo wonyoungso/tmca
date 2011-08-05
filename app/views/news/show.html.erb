@@ -11,7 +11,7 @@
       <div class="description">
         <%= simple_format(@news.description) %>
       </div>
-      <% if @news.attachment != nil %>
+      <% if @news.attachment.url.match('missing.png') != nil %>
         <div class="attachment">
           <%= link_to image_tag('pdf_icon.png'), @news.attachment.url %>
         </div>
@@ -29,7 +29,7 @@
     
     <% @news_chunks.each do |news| %>
       <div class="pastNews">
-        <%= link_to news.title, '#', :rel => news.id %>
+        <%= link_to news.title, news_path(news), :rel => news.id %>
       </div>
     <% end %>
   </div>
