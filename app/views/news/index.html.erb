@@ -34,7 +34,7 @@
     
     <% @news_chunks.each do |news| %>
       <div class="pastNews">
-        <%= link_to news.title, news_path(news), :rel => news.id, :class => "HV" %> <%= time_ago_in_words(news.created_at) %> ago
+        <%= link_to news.title, news_path(news), :rel => news.id, :class => "HV" %> <span class="date"><%= time_ago_in_words(news.created_at) %>전</span>
       </div>
     <% end %>
   </div>

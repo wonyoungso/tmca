@@ -188,6 +188,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .newsChunk .right .date {font-size:11px; color:#777;border-bottom:1px dashed #AAA; padding-bottom:10px; margin-bottom:10px; }
   .newsChunk .right .description {margin-top:10px; line-height:160%; font-size:14px; }
   .newsChunk .right .pastNews {margin-top:15px; border-bottom:1px solid #eee;padding-bottom:15px; margin-bottom:15px; font-size:14px;}
+  .newsChunk .right .pastNews .date{font-size:0.7em; }
   .newsChunk .right .pastNews a {text-decoration:none; color:#999; font-weight:bold;}
   .newsChunk .right .pastNews a:hover { color:#333; }
   
