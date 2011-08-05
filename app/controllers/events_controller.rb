@@ -26,6 +26,6 @@ class EventsController < ApplicationController
   
   
   def show
-    @exhibition = Exhibition.find(params[:id])
+    @event = Exhibition.find(params[:id])
   end
 end
