@@ -1,11 +1,11 @@
 # -*- encoding : utf-8 -*-
 class ExhibitionsController < ApplicationController
   def index
-    @current = Exhibition.where("current = ? AND category_id = 1", true).first
-    @upcoming = Exhibition.where("upcoming = ? AND category_id = 1", true).first
+    @current = Exhibition.where("current = ? AND category_id = ?", true, 1).first
+    @upcoming = Exhibition.where("upcoming = ? AND category_id = ?", true, 1).first
     @exhibitions = {}
     
-    @exs = Exhibition.where("current = ? AND upcoming = ?", false, false).order("start_date DESC")
+    @exs = Exhibition.where("current = ? AND upcoming = ? AND category_id = ?", false, false, 1).order("start_date DESC")
     @years = []
     @exs.each do |ex|
       year = ex.start_date.strftime("%Y")
