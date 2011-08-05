@@ -12,6 +12,12 @@
       <div class="description">
         <%= simple_format(@latest_news.description) %>
       </div>
+      
+      <% if @news.attachment not nil %>
+        <div class="attachment">
+          <%= link_to image_tag('pdf_icon.png'), @news.attachment.url %>
+        </div>
+      <% end %>
       <div class="CB"></div>
     <% else %>
       최근 뉴스가 없습니다.
@@ -28,7 +34,7 @@
     
     <% @news_chunks.each do |news| %>
       <div class="pastNews">
-        <%= link_to news.title, '#', :rel => news.id, :class => "HV" %>
+        <%= link_to news.title, news_path(news), :rel => news.id, :class => "HV" %>
       </div>
     <% end %>
   </div>

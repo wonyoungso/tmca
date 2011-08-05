@@ -11,9 +11,11 @@
       <div class="description">
         <%= simple_format(@news.description) %>
       </div>
-      <div class="attachment">
-        <%= link_to image_tag('pdf_icon.png'), @news.attachment.url %>
-      </div>
+      <% if @news.attachment not nil %>
+        <div class="attachment">
+          <%= link_to image_tag('pdf_icon.png'), @news.attachment.url %>
+        </div>
+      <% end %>
       <div class="CB"></div>
   </div>
   <div class="CB"></div>
