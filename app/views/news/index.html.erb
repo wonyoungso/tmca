@@ -13,9 +13,9 @@
         <%= simple_format(@latest_news.description) %>
       </div>
       
-      <% if !@news.attachment.url.match('missing.png') %>
+      <% if !@latest_news.attachment.url.match('missing.png') %>
         <div class="attachment">
-          <%= link_to 'Download PDF', @news.attachment.url, :class => 'downloadBtn' %>
+          <%= link_to 'Download PDF', @latest_news.attachment.url, :class => 'downloadBtn' %>
         </div>
       <% end %>
       <div class="CB"></div>
