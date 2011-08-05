@@ -14,10 +14,13 @@ class Admin::EventsController < ApplicationController
        entry_id = weblog_title.entry_id.to_i
        categorypost = ExpCategoryPost.find_by_entry_id(entry_id)
        
-       #begin
+       begin
          if categorypost.cat_id == 6
-         
+       
+              
            if weblog_title.year.to_i < 2000
+             logger.info weblog_title.title
+             
              @exhibition = Exhibition.new
              @exhibition.title = weblog_title.title
              descData = ExpWeblogData.find_by_entry_id(entry_id)
@@ -28,8 +31,8 @@ class Admin::EventsController < ApplicationController
            end
          
          end
-        #rescue
-        #end
+        rescue
+        end
         
      end
      
