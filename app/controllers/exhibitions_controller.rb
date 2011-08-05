@@ -8,6 +8,7 @@ class ExhibitionsController < ApplicationController
     @exs = Exhibition.where("current = ? AND upcoming = ? AND category_id = ?", false, false, 1).order("start_date DESC")
     @years = []
     @exs.each do |ex|
+      logger.info ex
       year = ex.start_date.strftime("%Y")
       @years << year.to_i
       if @exhibitions[year.to_s] == nil
