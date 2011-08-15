@@ -1,4 +1,6 @@
 # -*- encoding : utf-8 -*-
+include ActionView::Helpers::SanitizeHelper
+include ActionView::Helpers::TextHelper
 class SearchController < ApplicationController
   def index
     if isNumeric(params[:query])
@@ -37,7 +39,7 @@ class SearchController < ApplicationController
     exhibitions.each do |exhibition|
       exhibition_json = {
         :title => exhibition.title,
-        :description => exhibition.description,
+        :description => strip_tags(exhibition.description),
         :category => Exhibition::CATEGORY[exhibition.category_id.to_i],
         :thumbImg => exhibition.currentPhoto(:thumb)
       }
@@ -60,7 +62,7 @@ class SearchController < ApplicationController
     news_chunk.each do |news|
       news_json = {
         :title => news.title,
-        :description => news.description,
+        :description => truncate(strip_tags(news.description),
         :attachment_url => news.attachment.url,
         :category => 'News',
         :thumbImg => 'news_default.png'
