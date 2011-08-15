@@ -7,7 +7,7 @@ var searchController = {
     else
     {
       $(".resultWrap").empty().append($('<div class="searchResult"></div>'));
-      $("#resultSizeTemplate").tmpl(data).appendTo($(".resultWrap"));
+      $("#resultSizeTemplate").tmpl(data).prependTo($(".resultWrap"));
       for (var i = 0; i < data.exhibitions.length; i++)
       {
         $("#searchResultTemplate").tmpl(data.exhibitions[i]).appendTo($(".resultWrap .searchResult"));
@@ -19,6 +19,8 @@ var searchController = {
         $("#searchResultTemplate").tmpl(data.exhibitions[i]).appendTo($(".resultWrap .searchResult"));
         
       }
+      
+      Cufon.refresh();
     }
   }
 };

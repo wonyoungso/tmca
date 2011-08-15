@@ -97,6 +97,15 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#searchWrap .searchBtn { width:30px; height:30px; text-indent:-999px; overflow:hidden; display:block; background-image:url(../images/search_btn.png); background-position:0 0; position:absolute; right:0px; top:0px; }
 	#searchWrap .searchBtn:hover { background-position:0 -30px; }
 
+  #searchWrap .resultWrap .resultTitle {margin-top:10px;font-size:1.2em;color:#333;}
+  #searchWrap .resultWrap .result img {float:left;}
+  #searchWrap .resultWrap .result .rightWrap {float:left; font-size:1.2em;}
+  #searchWrap .resultWrap .result .category {font-size:0.8em;color:#555;}
+  #searchWrap .resultWrap .result .title {font-size:1.2em;color:#333;}
+  
+  
+  
+  
 
 	/* Footer */
 	#footer { width:100%;position:relative; margin-bottom:50px; }

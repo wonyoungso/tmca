@@ -65,10 +65,10 @@
   </div>  
   <script id="resultSizeTemplate" type="text/x-jquery-tmpl">
     
-    {{if has_attachment}}
-      <span class="resultTitle">${size} results</span>
+    {{if size > 0}}
+      <div class="resultTitle"><span class="HV"><span class="size">${size}</span> results</span></div>
     {{else}}
-        <span class="resultTitle">no results</span>
+      <div class="resultTitle"><span class="HV">no results</span></div>
     {{/if}}
     
   </script>
@@ -77,11 +77,11 @@
   <script id="searchResultTemplate" type="text/x-jquery-tmpl"> 
     <div class="result">
       <img src="${thumbImg}" alt="thumb" />
-      <div class="category">
-        ${category}
-      </div>
       <div class="title">
         ${title}
+      </div>
+      <div class="category">
+        ${category}
       </div>
       <div class="description">
         ${description}
