@@ -38,7 +38,7 @@ class SearchController < ApplicationController
       exhibition_json = {
         :title => exhibition.title,
         :description => exhibition.description,
-        :category => Exhibition::CATEGORY[exhibition.category.to_i],
+        :category => Exhibition::CATEGORY[exhibition.category_id.to_i],
         :thumbImg => exhibition.currentPhoto(:thumb)
       }
       
