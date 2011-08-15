@@ -8,7 +8,7 @@
       새 이벤트 생성
     </h2>
     <div class="inner">
-      <%= form_tag admin_exhibition_path(@exhibition), :multipart => true, :class => 'form', :id => 'exhibitionEditForm' do %>
+      <%= form_tag admin_event_path(@exhibition), :multipart => true, :class => 'form', :id => 'exhibitionEditForm' do %>
         
         <%= hidden_field_tag '_method', 'put' %>
           
