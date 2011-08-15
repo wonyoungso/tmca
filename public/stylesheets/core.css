@@ -89,9 +89,11 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#headerNews { float:left; padding:8px 0 0 50px;  background:url(../images/header_news.png) left top no-repeat; color:#666; height:22px;  }
 	#headerNews a { color:#666; }
 	#headerNews a:hover { text-decoration:underline; }
-	#searchWrap { float:right; background:#555; height:30px; width:230px; position:relative;  }
-	#searchWrap input { background:transparent; border:none; padding:5px; width:190px; height:20px; color:#999; line-height:20px;}
-	#searchWrap input:hover, #searchWrap input:focus { color:#fff; }
+	
+  #searchWrap {display:none;}
+	#searchWrap {width:100%; position:relative;  }
+	#searchWrap input { background:transparent; border:none; padding:5px; width:100%; font-size:4.0em;height:60px; color:#555; line-height:20px;}
+	#searchWrap input:hover, #searchWrap input:focus { color:#000; }
 	#searchWrap .searchBtn { width:30px; height:30px; text-indent:-999px; overflow:hidden; display:block; background-image:url(../images/search_btn.png); background-position:0 0; position:absolute; right:0px; top:0px; }
 	#searchWrap .searchBtn:hover { background-position:0 -30px; }
 
@@ -169,7 +171,6 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .pastRight .yearRight a:link, .exhibitions .pastRight .yearRight a:visited{color:#555;padding:5px;}
   .pastRight .yearRight a:hover {background-color:#FDF252;padding:5px;}
 
-  #searchWrap {display:none;}
   
   
   /* news */

@@ -23,7 +23,7 @@ $(document).ready(function(e){
   $("#searchBtn").click(function(e){
     e.preventDefault();
 
-    $("#searchWrap").slideDown();
+    $("#searchWrap").slideToggle();
   });
   
   $(".searchTextField").keyup(function(e){
