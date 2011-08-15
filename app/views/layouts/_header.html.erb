@@ -77,20 +77,22 @@
   <script id="searchResultTemplate" type="text/x-jquery-tmpl"> 
     <div class="result">
       <img src="${thumbImg}" alt="thumb" />
-      <div class="title">
-        ${title}
-      </div>
-      <div class="category">
-        ${category}
-      </div>
-      <div class="description">
-        ${description}
-      </div>
-      {{if has_attachment}}
-        <div class="attachment">
-          <A href="${attachment_link}" class="downloadBtn">Download PDF</a>
+      <div class="rightWrap">
+        <div class="title">
+          ${title}
         </div>
-      {{/if}}
+        <div class="category">
+          ${category}
+        </div>
+        <div class="description">
+          ${description}
+        </div>
+        {{if has_attachment}}
+          <div class="attachment">
+            <A href="${attachment_link}" class="downloadBtn">Download PDF</a>
+          </div>
+        {{/if}}
+      </div>
       <div class="CB"></div>
     </div>
   </script>
