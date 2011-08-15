@@ -11,8 +11,8 @@ class SearchController < ApplicationController
       @news = News.where(:created_at => Date(numeric, 1, 1)..Date(numeric, 12, 31))
         
     else
-      @exhibitions = Exhibition.where("title LIKE ? or description LIKE ?", "%#{params[:query]}%")
-      @news = News.where("title LIKE ? or description LIKE ?", "%#{params[:query]}%")
+      @exhibitions = Exhibition.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%","%#{params[:query]}%")
+      @news = News.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
     end
     
     @size = @exhibitions.size + @news.size
