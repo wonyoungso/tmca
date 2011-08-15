@@ -55,9 +55,27 @@
   <div id="searchWrap">
     <%= text_field_tag 'query', '', :placeholder => 'Search', :class => 'searchTextField' %>
     <%= link_to 'search', '#', :class => 'searchBtn' %>
+    <div class="resultWrap">
+    
+      <div class="searchResult">
+        
+      </div>
+    </div>
+    
   </div>  
+  <script id="resultSizeTemplate" type="text/x-jquery-tmpl">
+    
+    {{if has_attachment}}
+      <span class="resultTitle">${size} results</span>
+    {{else}}
+        <span class="resultTitle">no results</span>
+    {{/if}}
+    
+  </script>
+  
+  
   <script id="searchResultTemplate" type="text/x-jquery-tmpl"> 
-    <div class="searchResult">
+    <div class="result">
       <img src="${thumbImg}" alt="thumb" />
       <div class="category">
         ${category}

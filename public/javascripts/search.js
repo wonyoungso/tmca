@@ -6,15 +6,18 @@ var searchController = {
     }
     else
     {
+      $(".resultWrap").empty().append($('<div class="searchResult"></div>'));
+      $("#resultSizeTemplate").tmpl(data.size).appendTo($(".resultWrap");
       for (var i = 0; i < data.exhibitions.length; i++)
       {
-        $("#searchResultTemplate").tmpl(data.exhibitions[i]).appendTo($("#searchWrap"));
+        $("#searchResultTemplate").tmpl(data.exhibitions[i]).appendTo($(".resultWrap .searchResult"));
       }
       
     
       for (var i = 0; i < data.news.length; i++)
       {
-        $("#searchResultTemplate").tmpl(data.exhibitions[i]).appendTo($("#searchWrap"));
+        $("#searchResultTemplate").tmpl(data.exhibitions[i]).appendTo($(".resultWrap .searchResult"));
+        
       }
     }
   }
