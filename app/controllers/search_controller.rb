@@ -42,7 +42,7 @@ class SearchController < ApplicationController
       }
       
       if exhibition.pdfs.size > 0
-        exhibiton_json[:attachment_link] = exhibition.pdfs.first.attachment.url
+        exhibition_json[:attachment_link] = exhibition.pdfs.first.attachment.url
       end
       
       exhibitions_json << exhibition_json
