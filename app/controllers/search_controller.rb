@@ -7,8 +7,8 @@ class SearchController < ApplicationController
         numeric = '19' + params[:query]
       end
       
-      @exhibitions = Exhibition.where(:start_date => Date(numeric, 1, 1)..Date(numeric, 12, 31))
-      @news = News.where(:created_at => Date(numeric, 1, 1)..Date(numeric, 12, 31))
+      @exhibitions = Exhibition.where(:start_date => Date.new(numeric, 1, 1)..Date.new(numeric, 12, 31))
+      @news = News.where(:created_at => Date.new(numeric, 1, 1)..Date.new(numeric, 12, 31))
         
     else
       @exhibitions = Exhibition.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%","%#{params[:query]}%")
