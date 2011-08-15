@@ -68,7 +68,7 @@ class Admin::EventsController < ApplicationController
       @exhibition.category_id = 1
       @exhibition.save
 
-      redirect_to edit_admin_exhibition_path(@exhibition)
+      redirect_to edit_admin_event_path(@exhibition)
     end
 
 
