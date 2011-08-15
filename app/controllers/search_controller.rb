@@ -62,7 +62,7 @@ class SearchController < ApplicationController
         :title => news.title,
         :description => news.description,
         :attachment_url => news.attachment.url,
-        :category => 'News'
+        :category => 'News',
         :thumbImg => 'news_default.png'
       }
       news_chunk_json << news_json
