@@ -91,7 +91,7 @@ class Admin::ExhibitionsController < ApplicationController
     @exhibition.destroy
     
     respond_to do |format|
-      format.html {redirect_to admin_exhibitions_path, :notice => '성공적으로 삭제하였습니다.'}
+      format.html {redirect_to request.referer, :notice => '성공적으로 삭제하였습니다.'}
     end
   end
 end
