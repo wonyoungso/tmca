@@ -1,16 +1,73 @@
 # -*- encoding : utf-8 -*-
 class SearchController < ApplicationController
   def index
-    @exhibitions = Exhibition.where("title LIKE ? or description LIKE ?", params[:query])
-    @news = News.where("title LIKE ? or description LIKE ?", params[:query])
-    @events = Event.where("title LIKE ? or description LIKE ?", params[:query])
-    @educations = Education.where("title LIKE ? or description LIKE ?", params[:query])
+    if isNumeric(params[:query])
+      numeric = params[:query].to_i
+      if numeric < 100
+        numeric = '19' + params[:query]
+      end
+      
+      @exhibitions = Exhibition.where(:start_date => Date(numeric, 1, 1)..Date(numeric, 12, 31))
+      @news = News.where(:created_at => Date(numeric, 1, 1)..Date(numeric, 12, 31))
+        
+    else
+      @exhibitions = Exhibition.where("title LIKE ? or description LIKE ?", params[:query])
+      @news = News.where("title LIKE ? or description LIKE ?", params[:query])
+    end
+    
+    @size = @exhibitions.size + @news.size
     
     respond_to do |format|
-      format.html 
-      
-      #TODO search_by_json으로 통합
-      format.json {render :json => {:success => true}}
+      format.json {render :json => {:success => true, :size => @size, :exhibitions => search_by_exhibition_json(@exhibitions), :news => search_by_news_json(@news)}}
     end
   end
+  
+  def isNumeric(s)
+    begin
+      Float(s)
+    rescue
+      false # not numeric
+    else
+      true # numeric
+    end
+  end
+  
+  def search_by_exhibition_json(exhibitions)
+    exhibitions_json = []
+    exhibitions.each do |exhibition|
+      exhibition_json = {
+        :title => exhibition.title,
+        :description => exhibition.description,
+        :thumbImg => exhibition.currentPhoto(:thumb)
+      }
+      
+      if exhibition.pdfs.size > 0
+        exhibiton_json[:attachment_link] = exhibition.pdfs.first.attachment.url
+      end
+      
+      exhibitions_json << exhibition_json
+    end
+    
+    return exhibitions_json
+    
+  end
+  
+  
+  
+  def search_by_news_json(news_chunk)
+    news_chunk_json = []
+    news_chunk.each do |news|
+      news_json = {
+        :title => news.title,
+        :description => news.description,
+        :attachment_url => news.attachment.url,
+        :thumbImg => 'news_default.png'
+      }
+      news_chunk_json << news_json
+    end
+    
+    return news_chunk_json
+    
+  end
+  
 end

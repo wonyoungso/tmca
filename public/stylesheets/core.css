@@ -169,6 +169,8 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .pastRight .yearRight a:link, .exhibitions .pastRight .yearRight a:visited{color:#555;padding:5px;}
   .pastRight .yearRight a:hover {background-color:#FDF252;padding:5px;}
 
+  #searchWrap {display:none;}
+  
   
   /* news */
   
