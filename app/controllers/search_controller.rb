@@ -38,6 +38,7 @@ class SearchController < ApplicationController
       exhibition_json = {
         :title => exhibition.title,
         :description => exhibition.description,
+        :category => Exhibition::CATEGORY[exhibition.category.to_i],
         :thumbImg => exhibition.currentPhoto(:thumb)
       }
       
@@ -61,6 +62,7 @@ class SearchController < ApplicationController
         :title => news.title,
         :description => news.description,
         :attachment_url => news.attachment.url,
+        :category => 'News'
         :thumbImg => 'news_default.png'
       }
       news_chunk_json << news_json
