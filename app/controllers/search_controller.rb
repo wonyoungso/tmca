@@ -39,7 +39,7 @@ class SearchController < ApplicationController
     exhibitions.each do |exhibition|
       exhibition_json = {
         :title => exhibition.title,
-        :description => strip_tags(exhibition.description),
+        :description => truncate(strip_tags(exhibition.description), :length => 30),
         :category => Exhibition::CATEGORY[exhibition.category_id.to_i],
         :thumbImg => exhibition.currentPhoto(:thumb)
       }
@@ -62,7 +62,7 @@ class SearchController < ApplicationController
     news_chunk.each do |news|
       news_json = {
         :title => news.title,
-        :description => truncate(strip_tags(news.description),
+        :description => truncate(strip_tags(news.description), :length => 30),
         :attachment_url => news.attachment.url,
         :category => 'News',
         :thumbImg => 'news_default.png'
