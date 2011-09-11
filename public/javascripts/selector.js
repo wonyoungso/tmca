@@ -9,8 +9,9 @@ $(document).ready(function(e){
     
     var index = $(this).attr("data-id");
    
-    $(".photoSection .photo").fadeOut();
-    $(".photoSection .photo:eq(" + index +  ")").fadeIn();
+    $(".photoSection .photo").fadeOut(400, {idx : index}, function(e){
+      $(".photoSection .photo:eq(" + idx +  ")").fadeIn();
+    });
     
   });
 });
