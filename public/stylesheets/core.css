@@ -75,7 +75,10 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	
 	#header { width:100%;height:60px;position:relative;}
 	#nav {float:left;}
-	#nav #mainNav {position:absolute;display:block;top:36px;left:50px}
+	#nav #mainNav {display: block;
+     left: 308px;
+     position: absolute;
+     top: 36px;}
 	#nav #mainNav li { padding:0 17px 0 10px; background:url(../images/slush.png) right top no-repeat; float:left;  }
 	#nav #mainNav li.active a {background-color: #FDF052;}
 	#nav #mainNav li.last { background:none; }
