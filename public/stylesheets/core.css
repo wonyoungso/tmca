@@ -243,8 +243,8 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .descriptionSection .description .desc {float:right;width:640px;line-height:160%; }
   
   
-  
-  ul.navigator {width:960px; margin: 0 auto; height:40px; background-color:#FDF243;}
+  #selector {width:960px; margin: 0 auto; height:40px; background-color:#FDF243;}
+  ul.navigator {}
   
   ul.navigator li { float:left; height:20px; padding:2px; }
   ul.navigator li a { display:block; width:20px; height:20px; background:url(../images/slide_off.png); }

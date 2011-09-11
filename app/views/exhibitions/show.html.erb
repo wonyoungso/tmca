@@ -20,18 +20,19 @@
           <%= image_tag picture.photo(:original) %>
         </div>
       <% end %>
-    
-  		<ul class="navigator">
-  			<%@exhibition.pictures.each_with_index do |pictures, index| %>
-  			  <li><a data-id="<%= index %>" href="#" class="selector pngFix 
-  			  <% if index == 0 %>
-  			    on
-  			  <% else %>
-  			    off
-  			  <% end %>
-  			  " alt="unit01"></a></li>
-  			<% end %>
-  		</ul>
+      <div class="selector">
+    		<ul class="navigator">
+    			<%@exhibition.pictures.each_with_index do |pictures, index| %>
+    			  <li><a data-id="<%= index %>" href="#" class="selector pngFix 
+    			  <% if index == 0 %>
+    			    on
+    			  <% else %>
+    			    off
+    			  <% end %>
+    			  " alt="unit01"></a></li>
+    			<% end %>
+    		</ul>
+  		</div>
 	  <div class="CB"></div>
   </div>
   
