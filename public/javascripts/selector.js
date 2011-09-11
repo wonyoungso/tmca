@@ -9,16 +9,23 @@ $(document).ready(function(e){
     
     var navController = {
       index: 0,
+      currentPhoto: null,
       afterFadeOut: function(e){
-        $(".photoSection .photo:eq(" + this.index +  ")").fadeIn();
+        $(".photoSection .photo.current").removeClass('current');
+        
+        $(".photoSection .photo:eq(" + this.index +  ")").fadeIn(400, function(e){
+          $(this).addClass('current');
+          
+        });
       }
       
     };
     
     navController.index = $(this).attr("data-id");
+    navController.currentPhoto = $(".photoSection .photo.current");
     
    
-    $(".photoSection .photo").fadeOut(400, $.proxy(navController.afterFadeOut, navController));
+    $(".photoSection .photo.current").fadeOut(400, $.proxy(navController.afterFadeOut, navController));
     
   });
 });
