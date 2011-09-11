@@ -7,11 +7,18 @@ $(document).ready(function(e){
     $(this).removeClass("off");
     $(this).addClass("on");
     
-    var index = $(this).attr("data-id");
+    var navController = {
+      index: 0,
+      afterFadeOut: function(e){
+        $(".photoSection .photo:eq(" + this.index +  ")").fadeIn();
+      }
+      
+    };
+    
+    navController.index = $(this).attr("data-id");
+    
    
-    $(".photoSection .photo").fadeOut(400, {idx : index}, function(e){
-      $(".photoSection .photo:eq(" + idx +  ")").fadeIn();
-    });
+    $(".photoSection .photo").fadeOut(400, $.proxy(navController.afterFadeOut, navController));
     
   });
 });
