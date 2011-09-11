@@ -12,10 +12,13 @@ $(document).ready(function(e){
       currentPhoto: null,
       afterFadeOut: function(e){
         $(".photoSection .photo.current").removeClass('current');
-        
-        $(".photoSection .photo:eq(" + this.index +  ")").fadeIn(400, function(e){
+        $(".photoSection").animate({height: $(".photoSection .photo:eq(" + this.index +  ")").height()}, 200, $.proxy(this.fadeInCurrent, this));    
+       
+      },
+      fadeInCurrent: function(e){
+         $(".photoSection .photo:eq(" + this.index +  ")").fadeIn(400, function(e){
           $(this).addClass('current');
-          
+
         });
       }
       
