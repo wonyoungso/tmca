@@ -81,7 +81,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#nav #mainNav li { padding:0 17px 0 10px; background:url(../images/slush.png) right top no-repeat; float:left;  }
 	#nav #mainNav li.active a {background-color: #FDF052;}
 	#nav #mainNav li.last { background:none; }
-	#nav #mainNav li a { font-weight:bold; color:#333; font-size:14px; }
+	#nav #mainNav li a { font-weight:bold; color:#333; font-size:16px; }
 	#nav #mainNav li a:hover { background-color:#FDF052; }
 	
 
