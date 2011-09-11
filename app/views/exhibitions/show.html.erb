@@ -11,8 +11,12 @@
 <div class="CB"></div>
 <div class="descriptionSection">
   <div class="photoSection">
-      <% @exhibition.pictures.each do |picture| %>
-        <div class="photo">
+      <% @exhibition.pictures.each_with_index do |picture, index| %>
+        <% if index == 0 %>
+          <div class="photo current">
+        <% else %>
+          <div class="photo">
+        <% end %>
           <%= image_tag picture.photo(:original) %>
         </div>
       <% end %>

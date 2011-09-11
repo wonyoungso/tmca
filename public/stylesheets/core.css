@@ -237,6 +237,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   
   .descriptionSection {margin-top:20px;}
   .descriptionSection .photoSection {position:relative;}
-  .descriptionSection .photoSection .photo {position:absolute;left:0;overflow:hidden;}
+  .descriptionSection .photoSection .photo {position:absolute;left:0;top:0;width:960px;overflow:hidden;display:none;}
+  .descriptionSection .photoSection .photo.current{display:block;}
   .descriptionSection .description .pressRelease {float:left; width:320px;}  
   .descriptionSection .description .desc {float:left;line-height:160%; }
