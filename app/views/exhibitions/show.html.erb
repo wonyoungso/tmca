@@ -30,7 +30,11 @@
   <div class="description">
     <div class="pressRelease">
       <%= link_to 'Back', exhibitions_path, :class => 'backBtn' %>
-      <%= link_to 'Press Release', '', :class => 'downloadBtn' %>
+      <% @exhibition.pdfs.each do |pdf| %>
+        <div>
+          <%= link_to 'Press Release', pdf.attachment.url, :class => 'downloadBtn' %>
+        </div>
+      <% end %>
     </div>
     
     <div class="desc">
