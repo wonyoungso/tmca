@@ -1,54 +1,57 @@
 <div id="bodyWrap">
   
-	<h1 id="logoWrap">
-	  <%= link_to 'Total Museum of Contemporary Art', root_path %>
-	</h1>
 	<div id="header">
-
-			<ul id="mainNav">
-				<% if params[:controller] == 'news' %>
-				  <li class="active">
-				<% else %>
-				  <li>
-				<% end %>
-        <%= link_to 'news', news_index_path, :class => 'HV' %></li>
+      <div id="logo">
+    	  <h1 id="logoWrap">
+      	  <%= link_to 'Total Museum of Contemporary Art', root_path %>
+      	</h1>
+    	</div>
+    	<div id="nav">
+		  	<ul id="mainNav">
+  				<% if params[:controller] == 'news' %>
+  				  <li class="active">
+  				<% else %>
+  				  <li>
+  				<% end %>
+          <%= link_to 'news', news_index_path, :class => 'HV' %></li>
 				
-				<% if params[:controller] == 'exhibitions' %>
-				  <li class="active">
-				<% else %>
-				  <li>
-				<% end %>
-				<%= link_to 'exhibitions', exhibitions_path, :class => 'HV' %></li>
+  				<% if params[:controller] == 'exhibitions' %>
+  				  <li class="active">
+  				<% else %>
+  				  <li>
+  				<% end %>
+  				<%= link_to 'exhibitions', exhibitions_path, :class => 'HV' %></li>
 				
-				<% if params[:controller] == 'educations' %>
-				  <li class="active">
-				<% else %>
-				  <li>
-				<% end %>
-				<%= link_to 'educations', educations_path, :class => 'HV' %></li>
+  				<% if params[:controller] == 'educations' %>
+  				  <li class="active">
+  				<% else %>
+  				  <li>
+  				<% end %>
+  				<%= link_to 'educations', educations_path, :class => 'HV' %></li>
 				
-				<% if params[:controller] == 'events' %>
-				  <li class="active">
-				<% else %>
-				  <li>
-				<% end %>
-				<%= link_to 'events', events_path, :class => 'HV' %></li>
+  				<% if params[:controller] == 'events' %>
+  				  <li class="active">
+  				<% else %>
+  				  <li>
+  				<% end %>
+  				<%= link_to 'events', events_path, :class => 'HV' %></li>
 				
-				<% if params[:controller] == 'informations' %>
-				  <li class="active">
-				<% else %>
-				  <li>
-				<% end %>
-				<%= link_to 'information', information_path, :class => 'HV' %></li>
+  				<% if params[:controller] == 'informations' %>
+  				  <li class="active">
+  				<% else %>
+  				  <li>
+  				<% end %>
+  				<%= link_to 'information', information_path, :class => 'HV' %></li>
 				
-				<% if params[:controller] == 'search' %>
-				  <li class="active last">
-				<% else %>
-				  <li class="last">
-				<% end %>
-				<%= link_to 'search', '#', :class => 'HV', :id => 'searchBtn' %></li>
+  				<% if params[:controller] == 'search' %>
+  				  <li class="active last">
+  				<% else %>
+  				  <li class="last">
+  				<% end %>
+  				<%= link_to 'search', '#', :class => 'HV', :id => 'searchBtn' %></li>
 				
-			</ul>  
+  			</ul>  
+  		</div>
 		<div class="CB"></div>
 	</div>
   
