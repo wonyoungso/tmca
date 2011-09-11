@@ -244,7 +244,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   
   
   
-  ul.navigator { position:absolute; z-index:3; bottom:0px; left:23px; width:192px; padding:10px 14px; }
+  ul.navigator { }
   ul.navigator li { float:left; height:20px; padding:2px; }
   ul.navigator li a { display:block; width:20px; height:20px; background:url(../images/slide_off.png); }
   ul.navigator li a:hover { background:url(../images/slide_over.png); }
