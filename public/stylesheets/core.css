@@ -64,11 +64,18 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	/* Header */
 	#logo {float:left;}
 	#logoWrap { display:block;  } 
-	#logoWrap a { display:block; margin:0 auto;background-image:url(../images/logo.png); width:320px; height:70px; overflow:hidden; text-indent:-9999px; }
+	#logoWrap a { background-image: url("../images/logo.png");
+    background-position: -67px 0;
+    display: block;
+    height: 70px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 280px; }
 	
 	#header { width:100%;height:60px;position:relative;}
 	#nav {float:left;}
-	#nav #mainNav {position:absolute;display:block;top:20px;left:480px;margin-left:-26%;}
+	#nav #mainNav {position:absolute;display:block;top:36px;left:50px}
 	#nav #mainNav li { padding:0 17px 0 10px; background:url(../images/slush.png) right top no-repeat; float:left;  }
 	#nav #mainNav li.active a {background-color: #FDF052;}
 	#nav #mainNav li.last { background:none; }
