@@ -6,5 +6,11 @@ $(document).ready(function(e){
     
     $(this).removeClass("off");
     $(this).addClass("on");
+    
+    var index = $(this).attr("data-id");
+   
+    $(".photoSection photo").fadeOut();
+    $(".photoSection photo:eq(" + index +  ")").fadeIn();
+    
   });
 });
