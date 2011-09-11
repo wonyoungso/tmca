@@ -236,9 +236,7 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .titleSection .title .date { margin-top:10px;color:#666;}
   
   .descriptionSection {margin-top:20px;}
-  .descriptionSection .description {float:left;width:320px;font-size:12px;line-height:160%;}
-  .descriptionSection .description div { padding-bottom:20px; color:#777;}
-  .descriptionSection .description p {margin-bottom:20px; font-size:12px; line-height:180%; color:#777;}
-  .descriptionSection .photo {float:right;width:639px; border-left:1px solid #eee;}
-  
-  
+  .descriptionSection .photoSection {}
+  .descriptionSection .photoSection .photo {}
+  .descriptionSection .description .pressRelease {float:left; width:320px;}  
+  .descriptionSection .description .desc {float:left;}
