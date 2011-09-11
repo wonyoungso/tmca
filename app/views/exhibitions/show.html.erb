@@ -11,11 +11,13 @@
 <div class="CB"></div>
 <div class="descriptionSection">
   <div class="photoSection">
-    <% @exhibition.pictures.each do |picture| %>
-      <div class="photo">
-        <%= image_tag picture.photo(:original) %>
-      </div>
-    <% end %>
+      <% @exhibition.pictures.each do |picture| %>
+        <div class="photo">
+          <%= image_tag picture.photo(:original) %>
+        </div>
+      <% end %>
+    <div class="selector">
+    </div>
 	  <div class="CB"></div>
   </div>
   <div class="description">
