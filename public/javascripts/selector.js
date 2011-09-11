@@ -1,4 +1,5 @@
 $(document).ready(function(e){
+  $(".photoSection").height($(".photoSection .photo:eq(" + this.index +  ")").height());
   $(".navigator li a").click(function(e){
     e.preventDefault();
     $(".navigator li a").removeClass("on");
@@ -12,7 +13,7 @@ $(document).ready(function(e){
       currentPhoto: null,
       afterFadeOut: function(e){
         $(".photoSection .photo.current").removeClass('current');
-        $(".photoSection").animate({height: $(".photoSection .photo:eq(" + this.index +  ")").height()}, 200, $.proxy(this.fadeInCurrent, this));    
+        $(".photoSection").animate({height: $(".photoSection .photo:eq(" + this.index +  ")").height()}, 400, $.proxy(this.fadeInCurrent, this));    
        
       },
       fadeInCurrent: function(e){
