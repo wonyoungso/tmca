@@ -241,3 +241,12 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .descriptionSection .photoSection .photo.current{display:block;}
   .descriptionSection .description .pressRelease {float:left; width:320px;}  
   .descriptionSection .description .desc {float:right;width:640px;line-height:160%; }
+  
+  
+  
+  ul.navigator { position:absolute; z-index:3; bottom:0px; left:23px; width:192px; padding:10px 14px; }
+  ul.navigator li { float:left; height:20px; padding:2px; }
+  ul.navigator li a { display:block; width:20px; height:20px; background:url(../images/slide_off.png); }
+  ul.navigator li a:hover { background:url(../images/slide_over.png); }
+  ul.navigator li a.on { background:url(../images/slide_on.png); }
+  
