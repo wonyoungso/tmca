@@ -45,6 +45,7 @@
       <% @exhibition.pdfs.each do |pdf| %>
         <div>
           <%= link_to 'Press Release', pdf.attachment.url, :class => 'downloadBtn' %>
+          <%= pdf.attachment_file_name %>
         </div>
       <% end %>
     </div>
