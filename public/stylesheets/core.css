@@ -62,15 +62,18 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
 	#contentWrap { width:100%; position:relative; padding:30px 0 10px;}
 
 	/* Header */
-	#logoWrap { display:block; width:960px; } 
+	#logo {float:left;}
+	#logoWrap { display:block;  } 
 	#logoWrap a { display:block; margin:0 auto;background-image:url(../images/logo.png); width:320px; height:70px; overflow:hidden; text-indent:-9999px; }
+	
 	#header { width:100%;height:60px;position:relative;}
-	#mainNav {position:absolute;display:block;top:20px;left:480px;margin-left:-26%;}
-	#mainNav li { padding:0 17px 0 10px; background:url(../images/slush.png) right top no-repeat; float:left;  }
-	#mainNav li.active a {background-color: #FDF052;}
-	#mainNav li.last { background:none; }
-	#mainNav li a { font-weight:bold; color:#333; font-size:14px; }
-	#mainNav li a:hover { background-color:#FDF052; }
+	#nav {float:left;}
+	#nav #mainNav {position:absolute;display:block;top:20px;left:480px;margin-left:-26%;}
+	#nav #mainNav li { padding:0 17px 0 10px; background:url(../images/slush.png) right top no-repeat; float:left;  }
+	#nav #mainNav li.active a {background-color: #FDF052;}
+	#nav #mainNav li.last { background:none; }
+	#nav #mainNav li a { font-weight:bold; color:#333; font-size:14px; }
+	#nav #mainNav li a:hover { background-color:#FDF052; }
 	
 
 	#extraWrap { float:right; width:230px; padding-top:27px; border-top:2px solid #ddd;}
@@ -228,3 +231,5 @@ div.CB { clear:both !important; width:100%; height:0px; overflow:hidden; }
   .descriptionSection .description div { padding-bottom:20px; color:#777;}
   .descriptionSection .description p {margin-bottom:20px; font-size:12px; line-height:180%; color:#777;}
   .descriptionSection .photo {float:right;width:639px; border-left:1px solid #eee;}
+  
+  
