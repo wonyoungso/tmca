@@ -340,11 +340,6 @@ $(document).ready(function(e){
   $('input, textarea').placeholder();
   
   
-  
-  Cufon.set('fontFamily', 'rixgo');
-  Cufon.now();
-
-  Cufon.replace('.HV');
 
 
 });
