@@ -6,19 +6,62 @@
       <%= @event.start_date.strftime("%Y.%m.%d")%>-<%= @event.end_date.strftime("%Y.%m.%d")%>
     </div>
   </div>
+  <div class="CB"></div>
 </div>
 <div class="CB"></div>
 <div class="descriptionSection">
+  <div class="photoSection">
+      <% @event.pictures.each_with_index do |picture, index| %>
+        <% if index == 0 %>
+          <div class="photo current">
+        <% else %>
+          <div class="photo">
+        <% end %>
+          <%= image_tag picture.photo(:original) %>
+        </div>
+      <% end %>
+      <div class="selector">
+    		<ul class="navigator">
+    			<% @event.pictures.each_with_index do |pictures, index| %>
+    			  <li><a data-id="<%= index %>" href="#" class="selector pngFix 
+    			  <% if index == 0 %>
+    			    on
+    			  <% else %>
+    			    off
+    			  <% end %>
+    			  " alt="unit01"></a></li>
+    			<% end %>
+    		</ul>
+    		<div class="CB"></div>
+  		</div>
+	  <div class="CB"></div>
+  </div>
+  
+  <div class="CB"></div>
+  
   <div class="description">
-    <div style="margin-right:10px">
+    <div class="pressRelease">
+      <%= link_to 'Back', events_path, :class => 'backBtn' %>
+      <% @event.pdfs.each do |pdf| %>
+        <div>
+        <div style="float:left">
+          <%= link_to 'Press Release', pdf.attachment.url, :class => 'downloadBtn' %>
+        </div>
+        <div style="float:left;margin-left:5px;margin-top:8px">
+          <%= pdf.attachment_file_name %>
+        </div>
+        <div class="CB"></div>
+        </div>
+      <% end %>
+    </div>
+    
+    <div class="desc">
       <%= raw(@event.description) %>
     </div>
-    <%= link_to 'Back', exhibitions_path, :class => 'backBtn' %>
-    <%= link_to 'Download PDF', '#', :class => 'downloadBtn' %>
-	<div class="CB"></div>
+    <div class="CB"></div>
   </div>
+  
 
-  <div class="photo">
-    <%= image_tag @event.currentPhoto(:original) %>
-  </div>
+  <div class="CB"></div>
 </div>
+<%= javascript_include_tag 'selector' %>
