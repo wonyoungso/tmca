@@ -73,7 +73,7 @@ class Admin::EventsController < ApplicationController
 
 
     def set_upcoming
-      @exhibition = Exhibition.find(params[:id])]
+      @exhibition = Exhibition.find(params[:id])
       @ex_exhibitions = Exhibition.where("category_id = ? AND upcoming = ?", 3, true)
       @ex_exhibitions.each do |ex_exhibition|
         ex_exhibition.upcoming = false
