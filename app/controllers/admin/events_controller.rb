@@ -73,9 +73,8 @@ class Admin::EventsController < ApplicationController
 
 
     def set_upcoming
-      @exhibition = Exhibition.find(params[:id])
-      @exhibition = Exhibition.find(params[:id])
-      @ex_exhibitions = Exhibition.where("category_id = ? AND current = ?", 3, true)
+      @exhibition = Exhibition.find(params[:id])]
+      @ex_exhibitions = Exhibition.where("category_id = ? AND upcoming = ?", 3, true)
       @ex_exhibitions.each do |ex_exhibition|
         ex_exhibition.upcoming = false
         ex_exhibition.save
@@ -91,7 +90,20 @@ class Admin::EventsController < ApplicationController
             format.html {redirect_to admin_events_path, :notice => '오류가 발생하였습니다.'}
           end
         end
+      else
+        @exhibition.current = false
+        @exhibition.upcoming = true
+
+        respond_to do |format|
+          if @exhibition.save
+            format.html {redirect_to admin_exhibitions_path, :notice => '성공적으로 변경하였습니다.'}
+          else
+            format.html {redirect_to admin_exhibitions_path, :notice => '오류가 발생하였습니다.'}
+          end
+        end
+
       end
+      
 
     end
 
