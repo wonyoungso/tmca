@@ -30,7 +30,19 @@ class Admin::ExhibitionsController < ApplicationController
           format.html {redirect_to admin_exhibitions_path, :notice => '오류가 발생하였습니다.'}
         end
       end
+    else
+      @exhibition.upcoming = false
+      @exhibition.current = true
+      respond_to do |format|
+        if @exhibition.save
+          format.html {redirect_to admin_exhibitions_path, :notice => '성공적으로 변경하였습니다.'}
+        else
+          format.html {redirect_to admin_exhibitions_path, :notice => '오류가 발생하였습니다.'}
+        end
+      end
+      
     end
+    
   end
   
   def new
