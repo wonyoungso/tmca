@@ -24,7 +24,7 @@
                 <%= current.exhibition.title %>
               </td>
               <td>
-                <%= text_field_tag 'idex_' + current.id, current.idex, :rel => current.id %>
+                <%= text_field_tag 'idex_' + current.id.to_s, current.idex, :rel => current.id %>
                 <%= link_to '순서 업데이트', '#', :class => 'updateMainBtn' %>
               </td>
               <td>         
