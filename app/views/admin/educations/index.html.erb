@@ -35,6 +35,8 @@
               <td><%= exhibition.start_date.strftime("%Y/%m/%d") %></td>
               <td><%= link_to exhibition.title, exhibition_path(exhibition) %></td>
               <td>
+                
+                 <%= link_to '메인으로 지정', admin_currents_path(:exhibition_id => exhibition.id), :method => :post, :confirm => '메인으로 지정하시겠습니까?' %><br/>
                  <% if !exhibition.current %>
                     <%= link_to '현재 교육프로그램 지정', set_current_admin_education_path(exhibition), :method => :put, :confirm => '현재 교육프로그램로 지정하시겠습니까?' %>
                  <% else %> 

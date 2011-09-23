@@ -8,7 +8,7 @@ class Admin::CurrentsController < ApplicationController
   end
   
   def create
-    @exhibition = Exhibition.find(params[:id])
+    @exhibition = Exhibition.find(params[:exhibition_id])
     @lastCurrent = Current.last
     
     @current = Current.new
