@@ -3,14 +3,20 @@
     <%= image_tag 'indicator.gif' %>
   </div>
   
-  <% if @current_exhibition != nil %>
+  <% @currents.each do |current| %>
     <div class="welcome">    
       <div class="imageWrap">
-        <%= image_tag @current_exhibition.currentPhoto %>
+        <%= image_tag current.exhibition.currentPhoto %>
       </div>
       <div class="welcomeback"></div>
       <div class="info">
-        <span class="HV category">exhibition</span>
+        <% if current.exhibition.category_id == 1 %>
+          <span class="HV category">exhibition</span>
+        <% if current.exhibition.category_id == 2 %>
+          <span class="HV category">education</span>
+        <% else %>
+          <span class="HV category">event</span>
+        <% end %>  
         <h2 class="HV">
           <%= @current_exhibition.title %>
         </h2>
@@ -24,47 +30,6 @@
     </div>
   <% end %>
   
-  <% if @current_education != nil %>
-    <div class="welcome">    
-      <div class="imageWrap">      
-        <%= image_tag @current_education.currentPhoto %>
-      </div>
-      <div class="welcomeback"></div>
-      <div class="info">
-        <span class="HV category">education</span>
-        <h2 class="HV">
-          <%= @current_education.title %>
-        </h2>
-        <span class="date">
-          <%= @current_education.start_date.strftime("%Y.%m.%d")%>-<%= @current_education.end_date.strftime("%Y.%m.%d")%>
-        </span>
-        <div class="detailBtn">
-          <%= link_to '더 보기', education_path(@current_education)%>
-        </div>
-      </div>
-    </div>
-  <% end %>
-  
-  <% if @current_event != nil %>
-    <div class="welcome">    
-      <div class="imageWrap">
-        <%= image_tag @current_event.currentPhoto %>
-      </div>
-      <div class="welcomeback"></div>
-      <div class="info">
-        <span class="HV category">event</span>
-        <h2 class="HV">
-          <%= @current_event.title %>
-        </h2>
-        <span class="date">
-          <%= @current_event.start_date.strftime("%Y.%m.%d")%>-<%= @current_event.end_date.strftime("%Y.%m.%d")%>
-        </span>    
-        <div class="detailBtn">
-          <%= link_to '더 보기', event_path(@current_event)%>
-        </div>
-      </div>
-    </div>
-  <% end %>
   <div class="CB"></div>
 </div>
 <%= javascript_include_tag 'welcomes/index' %>
