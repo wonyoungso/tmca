@@ -12,19 +12,19 @@
       <div class="info">
         <% if current.exhibition.category_id == 1 %>
           <span class="HV category">exhibition</span>
-        <% if current.exhibition.category_id == 2 %>
+        <% elsif current.exhibition.category_id == 2 %>
           <span class="HV category">education</span>
         <% else %>
           <span class="HV category">event</span>
         <% end %>  
         <h2 class="HV">
-          <%= @current_exhibition.title %>
+          <%= current.exhibition.title %>
         </h2>
         <span class="date">
-          <%= @current_exhibition.start_date.strftime("%Y.%m.%d")%>-<%= @current_exhibition.end_date.strftime("%Y.%m.%d")%>
+          <%= current.exhibition.start_date.strftime("%Y.%m.%d")%>-<%= current.exhibition.end_date.strftime("%Y.%m.%d")%>
         </span>
         <div class="detailBtn">
-          <%= link_to '더 보기', exhibition_path(@current_exhibition)%>
+          <%= link_to '더 보기', exhibition_path(current.exhibition)%>
         </div>
       </div>
     </div>
