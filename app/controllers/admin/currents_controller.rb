@@ -30,8 +30,6 @@ class Admin::CurrentsController < ApplicationController
   def update
     @current = Current.find(params[:id])
     @current.idex = params[:idex]
-    @current.exhibition = Exhibition.find(params[:exhibition_id])
-    
     
     
     if @current.save
