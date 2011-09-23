@@ -9,6 +9,8 @@ Tmca::Application.routes.draw do
     match '/logout', :to => 'sessions#destroy', :as => 'logout', :via => :get
     match 'install', :to => 'installs#new', :via => :get
     resources :sessions
+    
+    resources :currents 
     resources :exhibitions do
       member do
         put 'set_current'
