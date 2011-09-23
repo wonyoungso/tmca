@@ -1,0 +1,40 @@
+<div id="list" class="block">
+  <%= render 'admin/currents/tabs' %>
+  <div class="content">
+    <h2 class="title">
+      메인 목록
+    </h2>
+    <div class="inner">
+    
+        <table class="table">
+          <tbody><tr>
+            <th class="first"><input type="checkbox" class="checkbox toggle"></th>
+            <th>
+              프로그램 이름
+            </th>
+            <th>
+              순서
+            </th>
+            <th class="last">&nbsp;</th>
+          </tr>
+          <% @currents.each_with_index do |current, index| %>
+            <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %>">
+              <td></td>
+              <td>
+                <%= current.exhibition.title %>
+              </td>
+              <td>
+                <%= text_field_tag 'idex_' + current.id, current.idex, :rel => current.id %>
+                <%= link_to '순서 업데이트', '#', :class => 'updateMainBtn' %>
+              </td>
+              <td>         
+                <%= link_to '삭제', admin_current_path(current), :method => :delete, :confirm => '정말 메인을 삭제하시겠습니까?' %></td>
+            </tr>
+          <% end %>
+        </tbody></table>
+        
+        
+        <div class="CB"></div>
+    </div>
+  </div>
+</div>

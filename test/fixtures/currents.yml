@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  exhibition_id: 1
+  idex: 1
+
+two:
+  exhibition_id: 1
+  idex: 1
