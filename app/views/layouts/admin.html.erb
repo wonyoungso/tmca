@@ -28,12 +28,15 @@
       </div>
       <div id="main-navigation">
         <ul class="wat-cf">
-          <% if params[:controller] == 'admin/sessions' %>
-            <li class="first active">
+          
+          
+          <% if params[:controller] == 'admin/currents' %>
+            <li class="active">
           <% else %>
             <li>
           <% end %>
-          <%= link_to 'Main Page', admin_login_path %></li>
+          <%= link_to 'MainPage', admin_currents_path %></li>
+          
           
           <% if params[:controller] == 'admin/news' %>
             <li class="active">
@@ -62,6 +65,7 @@
             <li>
           <% end %>
           <%= link_to 'Events', admin_events_path %></li>
+          
           
           <% if params[:controller] == 'admin/mailinglists' || params[:controller] == 'admin/mailingtemplates' %>
             <li class="active">
