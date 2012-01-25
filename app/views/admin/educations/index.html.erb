@@ -32,7 +32,7 @@
             <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %> <% if exhibition.current %>current<% elsif exhibition.upcoming %>upcoming<% end %>">
               <td><%= check_box_tag 'id', exhibition.id %></td>
               <td></td>
-              <td><%= exhibition.start_date.strftime("%Y/%m/%d") %></td>
+              <td><%= exhibition.start_date_rescued.strftime("%Y/%m/%d") %></td>
               <td><%= link_to exhibition.title, exhibition_path(exhibition) %></td>
               <td>
                 

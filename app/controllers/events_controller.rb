@@ -9,7 +9,7 @@ class EventsController < ApplicationController
     @exs = Exhibition.where("current = ? AND upcoming = ? AND category_id = ? AND start_date IS NOT NULL", false, false, 3).order("start_date DESC")
     @years = []
     @exs.each do |ex|
-      year = ex.start_date.strftime("%Y")
+      year = ex.start_date_rescued.strftime("%Y")
       @years << year.to_i
       if @exhibitions[year.to_s] == nil
         @exhibitions[year.to_s] =[]

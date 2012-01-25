@@ -24,4 +24,21 @@ class Exhibition < ActiveRecord::Base
     end
   end
       
+  def start_date_rescued
+    if self.start_date.present?
+      self.start_date
+    else
+      DateTime.now
+    end
+  end
+  
+  def end_date_rescued
+    if self.end_date.present?
+      self.end_date
+    else
+      DateTime.now
+    end
+    
+  end
+  
 end

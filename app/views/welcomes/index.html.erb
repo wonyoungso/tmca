@@ -21,7 +21,7 @@
           <%= current.exhibition.title %>
         </h2>
         <span class="date">
-          <%= current.exhibition.start_date.strftime("%Y.%m.%d")%>-<%= current.exhibition.end_date.strftime("%Y.%m.%d")%>
+          <%= current.exhibition.start_date_rescued.strftime("%Y.%m.%d")%>-<%= current.exhibition.end_date_rescued.strftime("%Y.%m.%d")%>
         </span>
         <div class="detailBtn">
           <%= link_to '더 보기', exhibition_path(current.exhibition)%>

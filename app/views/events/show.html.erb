@@ -3,7 +3,7 @@
   <div class="title">
     <h2 class="HV"><%= @event.title %></h2>
     <div class="date">
-      <%= @event.start_date.strftime("%Y.%m.%d")%>-<%= @event.end_date.strftime("%Y.%m.%d")%>
+      <%= @event.start_date_rescued.strftime("%Y.%m.%d")%>-<%= @event.end_date_rescued.strftime("%Y.%m.%d")%>
     </div>
   </div>
   <div class="CB"></div>

@@ -9,7 +9,7 @@
       <%= image_tag @current.currentPhoto(:thumb) %>
       <h3 class="HV"><%= @current.title %></h3>
       <div class="date">
-        <%= @current.start_date.strftime("%Y.%m.%d")%>-<%= @current.end_date.strftime("%Y.%m.%d")%>
+        <%= @current.start_date_rescued.strftime("%Y.%m.%d")%>-<%= @current.end_date_rescued.strftime("%Y.%m.%d")%>
       </div>
       <div class="detailBtn">
         <%= link_to '자세히보기', education_path(@current) %>
@@ -31,7 +31,7 @@
       <%= image_tag @upcoming.currentPhoto(:thumb) %>
       <h3 class="HV"><%= @upcoming.title %></h3>
       <div class="date">
-        <%= @upcoming.start_date.strftime("%Y.%m.%d")%>-<%= @upcoming.end_date.strftime("%Y.%m.%d")%>
+        <%= @upcoming.start_date_rescued.strftime("%Y.%m.%d")%>-<%= @upcoming.end_date_rescued.strftime("%Y.%m.%d")%>
       </div>
       <div class="detailBtn">
         <%= link_to '자세히보기', education_path(@upcoming) %>
