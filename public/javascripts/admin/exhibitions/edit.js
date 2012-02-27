@@ -359,7 +359,7 @@ $(document).ready(function(e){
 
       var picDelete = {
           ids: {
-              picture_ids: []
+              pdf_ids: []
           },
           trs: [],
           addIds: function(index, item) {
