@@ -365,7 +365,7 @@ $(document).ready(function(e){
           addIds: function(index, item) {
               if ($(item).val().match("pdf-"))
               {
-                  this.ids.picture_ids.push($(item).val().split('-')[1]);
+                  this.ids.pdf_ids.push($(item).val().split('-')[1]);
                   this.trs.push($(item).parent().parent());
               }
               else
