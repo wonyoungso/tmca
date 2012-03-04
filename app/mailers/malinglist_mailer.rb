@@ -16,8 +16,6 @@ class MalinglistMailer < ActionMailer::Base
     end
     
     
-    debugger
-    
     mail(:to => 'receiver@totalmuseum.org',    
          #:bcc => @emails,
          :bcc => 'b@tiia.kr',
