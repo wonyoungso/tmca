@@ -17,10 +17,10 @@
   <tbody>
   <% @mailingtemplates.each_with_index do |mailingtemplate, index| %>
     <tr>
-      <td><%= mailingtemplate.id %></td>
+      <td class="span1"><%= mailingtemplate.vol %></td>
       <td>
         <%= mailingtemplate.title %><br/>
-        <%= truncate(mailingtemplate.description, :length => 100) %>
+        <%= truncate(simple_format(mailingtemplate.description), :length => 100) %>
       </td>
       <td></td>
     </tr>

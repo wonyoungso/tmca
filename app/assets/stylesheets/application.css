@@ -10,5 +10,5 @@
  *
  *= require_self
  *= require 'reset.css'
- *= require 'core.css'
+ *= require 'core.css.erb'
 */
