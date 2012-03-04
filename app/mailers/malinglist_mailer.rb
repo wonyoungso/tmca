@@ -9,12 +9,11 @@ class MalinglistMailer < ActionMailer::Base
     
     attachs.each do |attach|
       if attach.content_type == 'image/png' || attach.content_type == 'image/gif' || attach.content_type == 'image_jpg'
-        attachments.inline[attach.original_filename] = attach.tempfile
+        attachments.inline[attach.original_filename] = File.read(attach.tempfile)
       else
-        attachments[attach.original_filename] = attach.tempfile
+        attachments[attach.original_filename] = File.read(attach.tempfile)
       end
     end
-    
     
     mail(:to => 'receiver@totalmuseum.org',    
          #:bcc => @emails,
