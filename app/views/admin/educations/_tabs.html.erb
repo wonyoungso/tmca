@@ -1,6 +1,15 @@
-<div class="secondary-navigation">
-  <ul class="wat-cf">
-    <li class="active first"><%= link_to '교육프로그램 목록', admin_educations_path %></li>
-    <li><%= link_to '새 교육프로그램 생성', new_admin_education_path %></li>
-  </ul>
-</div>
+<ul class="nav nav-tabs">
+  <% if params[:action] == 'index' %>
+    <li class="active">
+  <% else %>
+    <li>
+  <% end %>   
+  <%= link_to '교육프로그램 목록', admin_educations_path %></li>
+  
+  <% if params[:action] == 'edit' %>
+    <li class="active">
+  <% else %>
+    <li>
+  <% end %>  
+  <%= link_to '새 교육프로그램 생성', new_admin_education_path %></li>
+</ul>

@@ -1,12 +1,12 @@
 <div class="content">
   <div class="indicator">
-    <%= image_tag 'indicator.gif' %>
+    <%= image_tag asset_path('indicator.gif') %>
   </div>
   
   <% @currents.each do |current| %>
     <div class="welcome">    
       <div class="imageWrap">
-        <%= image_tag current.exhibition.currentPhoto %>
+        <%= image_tag current.exhibition.currentPhoto(:original) %>
       </div>
       <div class="welcomeback"></div>
       <div class="info">

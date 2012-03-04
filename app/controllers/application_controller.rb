@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   
   helper :all
   helper_method :logged_in?, :current_user, :login_required
-  before_filter :get_first_news
-  
-  def get_first_news
-    @news_header = News.order("created_at DESC").first
-  end
+  # before_filter :get_first_news
+#   
+#   def get_first_news
+#     @news_header = News.order("created_at DESC").first
+#   end
   
   
   def login_required

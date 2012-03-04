@@ -21,7 +21,7 @@ $(document).ready(function(e){
 
 
       // Flash settings
-      flash_swf_url: '/javascripts/plupload/plupload.flash.swf',
+      flash_swf_url: '/assets/plupload/plupload.flash.swf',
       container: 'docuImgUploadContainer',
       multipart_params: {
           'authenticity_token': $("#exhibitionEditForm input[name='authenticity_token']").val(),
@@ -101,7 +101,7 @@ $(document).ready(function(e){
       }
 
 
-      $("#uploader_image tbody input[type='checkbox']:checked").hide().parent().append($('<img src="/images/docuImgUploader_ajaxloader.gif"/>'));
+      $("#uploader_image tbody input[type='checkbox']:checked").hide().parent().append($('<img src="/assets/docuImgUploader_ajaxloader.gif"/>'));
       docuImgUploader.start();
 
 
@@ -123,7 +123,7 @@ $(document).ready(function(e){
       {
           $("input[value=" + file.id + "]").parent().find('img').remove();
           $("input[value=" + file.id + "]").show().attr('id', 'picture-' + response.picture.id).attr("rel", response.picture.url).attr('value', 'picture-' + response.picture.id);
-          $("input[value=" + file.id + "]").parent().parent().find('td.status').html('<img src="/images/validate_ok.gif"/>');
+          $("input[value=" + file.id + "]").parent().parent().find('td.status').html('<img src="/assets/validate_ok.gif"/>');
       }
       else
       {
@@ -173,7 +173,7 @@ $(document).ready(function(e){
                   $(item).parent().parent().remove();
               }
 
-              $(item).replaceWith('<img src="/images/docuImgUploader_ajaxloader.gif"/>');
+              $(item).replaceWith('<img src="/assets/docuImgUploader_ajaxloader.gif"/>');
           },
           success: function(data) {
               if (data.success)
@@ -222,7 +222,7 @@ $(document).ready(function(e){
 
 
       // Flash settings
-      flash_swf_url: '/javascripts/plupload/plupload.flash.swf',
+      flash_swf_url: '/assets/plupload/plupload.flash.swf',
       container: 'docuPdfUploadContainer',
       multipart_params: {
           'authenticity_token': $("#exhibitionEditForm input[name='authenticity_token']").val(),
@@ -302,7 +302,7 @@ $(document).ready(function(e){
       }
 
 
-      $("#uploader_pdf tbody input[type='checkbox']:checked").hide().parent().append($('<img src="/images/docuPdfUploader_ajaxloader.gif"/>'));
+      $("#uploader_pdf tbody input[type='checkbox']:checked").hide().parent().append($('<img src="/assets/docuPdfUploader_ajaxloader.gif"/>'));
       docuPdfUploader.start();
 
 
@@ -324,7 +324,7 @@ $(document).ready(function(e){
       {
           $("input[value=" + file.id + "]").parent().find('img').remove();
           $("input[value=" + file.id + "]").show().attr('id', 'pdf-' + response.pdf.id).attr("rel", response.pdf.url).attr('value', 'pdf-' + response.pdf.id);
-          $("input[value=" + file.id + "]").parent().parent().find('td.status').html('<img src="/images/validate_ok.gif"/>');
+          $("input[value=" + file.id + "]").parent().parent().find('td.status').html('<img src="/assets/validate_ok.gif"/>');
       }
       else
       {
@@ -341,7 +341,7 @@ $(document).ready(function(e){
 
 
   //docuPdfUploader.refresh();
-  $('#descUploaderChkToggle').change(function(e) {
+  $('#pdfUploaderChkToggle').change(function(e) {
 
       if ($(this).attr('checked'))
       {
@@ -374,7 +374,7 @@ $(document).ready(function(e){
                   $(item).parent().parent().remove();
               }
 
-              $(item).replaceWith('<img src="/images/docuPdfUploader_ajaxloader.gif"/>');
+              $(item).replaceWith('<img src="/assets/docuPdfUploader_ajaxloader.gif"/>');
           },
           success: function(data) {
               if (data.success)

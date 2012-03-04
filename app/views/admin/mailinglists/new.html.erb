@@ -1,0 +1,56 @@
+<%= render 'admin/mailinglists/tabs' %>
+  
+<div id="list" class="block">
+  <div class="content">
+    <h2 class="title">
+      메일링리스트 보내기
+    </h2>
+    <div class="inner">
+      <%= form_tag admin_mailinglists_path, :multipart => true, :class => 'form' do %>
+        <div class="group">
+          <%= label_tag :title, '제목' %>
+          <%= text_field_tag :title,  '', :class => 'input-xlarge' %>
+        </div>        
+        <div class="group">
+          <%= label_tag :description, '내용' %>
+          <%= text_area_tag :description, '', :class => 'text_area', :id => 'newsNewTextArea' %>
+        </div>
+        
+        <div class="group" style="margin-top:20px">
+          <%= label_tag 'attachments[]', '첨부 파일', :id => 'label_attachment_01' %>
+          <%= file_field_tag 'attachments[]', :id => 'file_attachment_01' %>
+          <p>
+            그림 파일인 경우 자동으로 본문의 맨 앞에 삽입됩니다.
+          </p>
+        </div>
+        
+        
+        <div class="group">
+          <%= label_tag 'attachments[]', '첨부 파일', :id => 'label_attachment_02' %>
+          <%= file_field_tag 'attachments[]', :id => 'file_attachment_02' %>
+          <p>
+            그림 파일인 경우 자동으로 본문의 맨 앞에 삽입됩니다.
+          </p>
+        </div>
+        
+        
+        <div class="group">
+          <%= label_tag 'attachments[]', '첨부 파일', :id => 'label_attachment_03' %>
+          <%= file_field_tag 'attachments[]', :id => 'file_attachment_03' %>
+           <p>
+            그림 파일인 경우 자동으로 본문의 맨 앞에 삽입됩니다.
+          </p>
+        </div>
+        
+        
+        <div class="form-actions">
+          <%= button_tag '저장', :class => 'btn btn-primary' %>
+          <%= link_to '취소', admin_exhibitions_path %>
+        </div>
+      
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'admin/news/new' %>

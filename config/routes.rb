@@ -10,12 +10,19 @@ Tmca::Application.routes.draw do
     match 'install', :to => 'installs#new', :via => :get
     resources :sessions
     
-    resources :currents 
+    resources :currents do 
+      collection do
+        delete 'cancel_main'
+      end
+    end
+    
     resources :exhibitions do
       member do
         put 'set_current'
         put 'set_upcoming'
       end
+      
+      
     end
     
     resources :news

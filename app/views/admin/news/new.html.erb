@@ -8,7 +8,7 @@
       <%= form_tag admin_news_index_path, :multipart => true, :class => 'form' do %>
         <div class="group">
           <%= label_tag 'news[title]', '제목' %>
-          <%= text_field_tag 'news[title]',  '', :class => 'text_field' %>
+          <%= text_field_tag 'news[title]',  '', :class => 'input-xlarge' %>
         </div>        
         <div class="group">
           <%= label_tag 'news[description]', '내용' %>
@@ -18,14 +18,11 @@
           <%= label_tag 'news[attachment]', 'PDF / Press Release 첨부' %>
           <%= file_field_tag 'news[attachment]' %>
         </div>
-        <div class="group navform wat-cf">
-          <button type="submit" class="button">
-            <img alt="Save" src="/images/web-app-theme/icons/tick.png"> 저장
-          </button>
-          <a class="button" href="#header">
-            <img alt="Cancel" src="/images/web-app-theme/icons/cross.png"> 취소
-          </a>
-        </div>
+          <div class="form-actions">
+        <%= button_tag '저장', :class => 'btn btn-primary' %>
+        <%= link_to '취소', admin_exhibitions_path %>
+      </div>
+      
       <% end %>
     </div>
   </div>
