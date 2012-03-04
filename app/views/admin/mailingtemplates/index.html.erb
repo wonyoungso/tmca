@@ -1,27 +1,28 @@
-<div id="list" class="block">
-  <%= render 'admin/mailinglists/tabs' %>
-  <div class="content">
-    <h2 class="title">
-      메일링리스트 템플릿 목록
-    </h2>
-    <div class="inner">
-    
-        <table class="table">
-          <tbody><tr>
-            <th class="first"><input type="checkbox" class="checkbox toggle"></th>
-            <th>id</th>
-            <th>제목</th>
-            <th class="last">&nbsp;</th>
-          </tr>
-          <% @mailingtemplates.each_with_index do |mailingtemplate, index| %>
-            <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %>">
-              <td><%= check_box_tag 'id', mailingtemplate.id %></td>
-              <td><%= mailingtemplate.id %></td>
-              <td><%= mailingtemplate.title %></td>
-              <td><%= link_to '탈퇴', admin_mailingtemplate_path(mailingtemplate), :method => :delete, :confirm => '정말 뉴스를 삭제하시겠습니까?' %></td>
-            </tr>
-          <% end %>
-        </tbody></table>
-    </div>
-  </div>
-</div>
+
+
+<%= render 'admin/mailinglists/tabs' %>
+<h2 class="title">
+  메일링리스트 전송내역 목록
+</h2>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+    <th class="first">#</th>
+    <th>제목</th>
+    <th class="last">&nbsp;</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @mailingtemplates.each_with_index do |mailingtemplate, index| %>
+    <tr>
+      <td><%= mailingtemplate.id %></td>
+      <td>
+        <%= mailingtemplate.title %><br/>
+        <%= truncate(mailingtemplate.description, :length => 100) %>
+      </td>
+      <td></td>
+    </tr>
+  <% end %>
+</tbody></table>

@@ -38,7 +38,7 @@ class Admin::EventsController < ApplicationController
      # end
      
 
-     @exhibitions = Exhibition.where("category_id = ?", 3).paginate(:page => @page).order('start_date DESC')
+     @exhibitions = Exhibition.where("category_id = ?", 3).paginate(:page => @page, :per_page => 10).order('start_date DESC')
    end
 
    def set_current

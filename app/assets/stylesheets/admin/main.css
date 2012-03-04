@@ -1,0 +1,72 @@
+h2
+{
+  font-size:18px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+
+h3
+{
+  font-size:14px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+
+.upload-title
+{
+  margin-top:20px;
+}
+
+.pagination span.disabled
+{
+    background-color: #eee;
+    color: #999999;
+    cursor: default;
+    
+    
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+    line-height: 34px;
+    padding: 0 14px;
+    text-decoration: none;
+}
+
+.pagination a.previous_page
+{
+  border-width:1px;
+}
+
+.pagination span.gap
+{
+    color: #999999;
+    cursor: default;
+
+    
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    float: left;
+    line-height: 34px;
+    padding: 0 14px;
+    text-decoration: none;
+}
+.pagination em.current
+{
+    color: #999999;
+    cursor: default;
+
+    
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    float: left;
+    line-height: 34px;
+    padding: 0 14px;
+    text-decoration: none;
+}

@@ -1,7 +1,23 @@
-<div class="secondary-navigation">
-  <ul class="wat-cf">
-    <li class="active first"><%= link_to '메일링 리스트 가입자', admin_mailinglists_path %></li>
-    <li><%= link_to '메일링 리스트 템플릿', admin_mailingtemplates_path %></li>
-    <li><%= link_to '메일링리스트 보내기', new_admin_mailinglist_path %></li>
-  </ul>
-</div>
+<ul class="nav nav-tabs">
+  <% if params[:action] == 'index' && params[:controller] == 'admin/mailinglists' %>
+    <li class="active">
+  <% else %>
+    <li>
+  <% end %>   
+  <%= link_to '메일링 리스트 가입자', admin_mailinglists_path %></li>
+  
+  
+  <% if params[:controller] == 'admin/mailingtemplates' && params[:action] == 'index' %>
+    <li class="active">
+  <% else %>
+    <li>
+  <% end %>   
+  <%= link_to '메일링 리스트 전송내역', admin_mailingtemplates_path %></li>
+  
+  <% if params[:action] == 'new' %>
+    <li class="active">
+  <% else %>
+    <li>
+  <% end %>  
+  <%= link_to '메일링리스트 보내기', new_admin_mailinglist_path %></li>
+</ul>

@@ -1,0 +1,56 @@
+<div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to 'Total Museum of Contemporary Art', root_path, :class => 'brand' %>
+
+        <ul class="nav">
+            
+          <% if params[:controller] == 'admin/currents' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'Main Page', admin_currents_path %></li>
+          
+          
+          <% if params[:controller] == 'admin/news' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'News', admin_news_index_path %></li>
+          
+          <% if params[:controller] == 'admin/exhibitions' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'Exhibitions', admin_exhibitions_path %></li>
+          
+          <% if params[:controller] == 'admin/educations' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'Educations', admin_educations_path %></li>
+          
+          <% if params[:controller] == 'admin/events' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'Events', admin_events_path %></li>
+          
+          
+          <% if params[:controller] == 'admin/mailinglists' || params[:controller] == 'admin/mailingtemplates' %>
+            <li class="active">
+          <% else %>
+            <li>
+          <% end %>
+          <%= link_to 'Mailing List', admin_mailinglists_path %></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  

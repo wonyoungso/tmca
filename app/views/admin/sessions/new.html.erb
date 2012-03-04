@@ -1,44 +1,33 @@
-<div id="box">
-  <div id="block-login" class="block">
-  
-    <h2>
-      관리자 페이지 로그인
-    </h2>
-    <div class="flash">
-      <% flash.each do |type, message| -%>
-        <div class="message <%= type %>">
-          <p><%= message %></p>
-        </div>
-      <% end -%>
+<h2>
+  관리자 페이지 로그인
+</h2>
+  <div class="flash">
+  <% flash.each do |type, message| %>
+    <div class="message <%= type %>">
+      <p><%= message %></p>
     </div>
-  
-    <div class="content login">
-    
+  <% end %>
+  </div>
 
-      <%= form_tag admin_sessions_path, :class => 'form login' do %>
-        <div class="group wat-cf">
-          <div class="left">
-            <%= label_tag 'login', '아이디', :class => 'label right' %>
-          </div>
-          <div class="right">
-            <%= text_field_tag 'login', '', :class => 'text_field' %>
-          </div>
-        </div>
-        <div class="group wat-cf">
-          <div class="left">
-            <%= label_tag 'password', '비밀번호', :class => 'label right' %>
-          </div>
-          <div class="right">
-            <%= password_field_tag 'password', '', :class => 'text_field'  %>
-          </div>
-        </div>
-        <div class="group navform wat-cf">
-          <div class="right">
-            <input type="submit" class="button" value="Login" />
-          </div>
-        </div>
-      <% end %>
 
+<%= form_tag admin_sessions_path, :class => 'form-horizontal' do %>
+  <div class="control-group">
+    <%= label_tag 'login', '아이디', :class => 'control-label' %>
+    <div class="controls">
+      <%= text_field_tag 'login', '', :class => 'input-xlarge' %>
     </div>
   </div>
-</div>
+  
+  <div class="control-group">
+    <%= label_tag 'password', '비밀번호', :class => 'control-label' %>
+    <div class="controls">
+      <%= password_field_tag 'password', '', :class => 'input-xlarge'  %>
+    </div>
+  </div>
+  
+  <div class="form-actions">
+    <%= button_tag '로그인', :class => 'btn btn-privary' %>
+  </div>
+  
+  
+<% end %>

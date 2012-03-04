@@ -46,4 +46,12 @@ class Admin::CurrentsController < ApplicationController
     
     redirect_to request.referer, :notice => '성공적으로 삭제하였습니다.'
   end
+  
+  def cancel_main
+    @current = Current.where(:exhibition_id => params[:exhibition_id]).first
+    
+    @current.destroy
+    redirect_to request.referer, :notice => '성공적으로 삭제하였습니다.'
+    
+  end
 end

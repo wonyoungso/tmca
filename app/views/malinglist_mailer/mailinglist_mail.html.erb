@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <% attachments.inline.each do |inline| %>
+      <%= image_tag inline.url %>      
+    <% end %>  
+    
+    <%= raw(@template.description)%>
+  </body>
+</html>

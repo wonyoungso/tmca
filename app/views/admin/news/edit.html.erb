@@ -19,18 +19,14 @@
           <%= text_area_tag 'news[description]', @news.description, :class => 'text_area', :id => 'newsNewTextArea' %>
         </div>
         
-        <div class="group">
+        <div class="group" style="margin-top:20px">
           <%= label_tag 'news[attachment]', 'PDF / Press Release 첨부' %>
           <%= file_field_tag 'news[attachment]' %>
         </div>
         
-        <div class="group navform wat-cf">
-          <button type="submit" class="button">
-            <img alt="Save" src="/images/web-app-theme/icons/tick.png"> 저장
-          </button>
-          <a class="button" href="<%= admin_exhibitions_path %>">
-            <img alt="Cancel" src="/images/web-app-theme/icons/cross.png"> 취소
-          </a>
+        <div class="form-actions">
+          <%= button_tag '저장', :class => 'btn btn-primary' %>
+          <%= link_to '취소', admin_news_index_path %>
         </div>
       <% end %>
     </div>

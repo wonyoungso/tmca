@@ -1,108 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Total Museum of Contemporary Art</title>
-  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/drastic-dark/style", "web-app-theme/override" %>
+  <title>관리자 페이지 :: Total Museum of Contemporary Art</title>
+	<%= stylesheet_link_tag 'admin' %>
   
-	<%= javascript_include_tag 'jquery.1.5.2.min' %>
-	
-	<script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
-	
-	<%= javascript_include_tag 'rails' %>
-	<%= javascript_include_tag 'jquery.cleditor.min' %>
-	<%= stylesheet_link_tag '/javascripts/jquery.cleditor.css' %>
-	<%= javascript_include_tag 'jquery.imgareaselect.pack' %>
-	
-  <%= javascript_include_tag 'plupload/plupload.full' %>
-  <%= javascript_include_tag 'plupload/jquery.plupload.queue/jquery.plupload.queue' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div id="container">
-    <div id="header">
-      <h1><a href="/">Total Museum of Contemporary Art</a></h1>
-      <div id="user-navigation">
-        <ul class="wat-cf">
-          <li><%= link_to t("web-app-theme.logout", :default => "Logout"), admin_logout_path, :class => 'logout' %></li>
-        </ul>
+
+  <%= javascript_include_tag 'admin' %>
+  <%= render 'layouts/admin/header' %>
+  <div class="container">
+    <% if notice.present? %>
+      <div class="alert alert-success">
+        <%= link_to 'x', '#', :class => 'close', :data => {:dismiss => 'alert'} %>
+        <h4 class="alert-heading">성공!</h4>
+        <%= notice %>
       </div>
-      <div id="main-navigation">
-        <ul class="wat-cf">
-          
-          
-          <% if params[:controller] == 'admin/currents' %>
-            <li class="active">
-          <% else %>
-            <li>
-          <% end %>
-          <%= link_to 'MainPage', admin_currents_path %></li>
-          
-          
-          <% if params[:controller] == 'admin/news' %>
-            <li class="active">
-          <% else %>
-            <li>
-          <% end %>
-          <%= link_to 'News', admin_news_index_path %></li>
-          
-          <% if params[:controller] == 'admin/exhibitions' %>
-            <li class="active">
-          <% else %>
-            <li>
-          <% end %>
-          <%= link_to 'Exhibitions', admin_exhibitions_path %></li>
-          
-          <% if params[:controller] == 'admin/educations' %>
-            <li class="active">
-          <% else %>
-            <li>
-          <% end %>
-          <%= link_to 'Educations', admin_educations_path %></li>
-          
-          <% if params[:controller] == 'admin/events' %>
-            <li class="active">
-          <% else %>
-            <li>
-          <% end %>
-          <%= link_to 'Events', admin_events_path %></li>
-          
-          
-          <% if params[:controller] == 'admin/mailinglists' || params[:controller] == 'admin/mailingtemplates' %>
-            <li class="active">
-          <% else %>
-            <li>
-          <% end %>
-          <%= link_to 'Mailing List', admin_mailinglists_path %></li>
-          
-          <% if params[:controller] == 'admin/informations' %>
-            <li class="active">
-          <% else %>
-            <li>
-          <% end %>
-          <%= link_to 'Information', admin_informations_path %></li>
-        </ul>
-      </div>
-    </div>    
-    <div id="wrapper" class="wat-cf">
-      <div class="flash">
-        <% flash.each do |type, message| -%>
-          <div class="message <%= type %>">
-            <p><%= message %></p>
-          </div>
-        <% end -%>
-      </div>
-      <div id="main">
-        <%= yield %>
-        <div id="footer">
-          <div class="block">
-            <p>Copyright &copy; <%= Time.now.year %> Total Museum of Contemporary Art.</p>
-          </div>      
-        </div>
-      </div>
-      <div id="sidebar">
-        <%= yield :sidebar %>
-      </div>
-    </div>    
+    <% end %>
+    
+    <% if alert.present? %>
+      <div class="alert alert-error">
+        <%= link_to 'x', '#', :class => 'close', :data => {:dismiss => 'alert'} %>
+        <h4 class="alert-heading">성공!</h4>
+        <%= notice %>
+      </div>  
+    <% end %> 
   </div>
-</body>
+  
+  
+  <div class="container">
+    <%= yield %>
+    
+    <%= render 'layouts/admin/footer' %>
+
+  </div>
+  
+  
+
+  </body>
 </html>

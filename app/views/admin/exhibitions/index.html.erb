@@ -1,63 +1,66 @@
-<div id="list" class="block">
-  <%= render 'admin/exhibitions/tabs' %>
-  <div class="content">
-    <h2 class="title">
-      전시 목록
-    </h2>
-    <div class="inner">
-    <div>
-      <div class="current" style="float:left;width:100px;height:20px;padding:5px">
-        현재 전시
-      </div>
-    
-      <div class="upcoming" style="float:left;width:100px;height:20px;padding:5px">
-        예정 전시
-      </div>
-      <div class="CB"></div>
-    </div>
-    <div class="CB"></div>
+<%= render :partial => 'admin/exhibitions/tabs' %>
 
-        <table class="table">
-          <tbody><tr>
-            <th class="first"><input type="checkbox" class="checkbox toggle"></th>
-            <th></th>
-            <th>
-              시작일
-            </th>
-            <th>전시 제목</th>
-            <th>&nbsp;</th>
-            <th class="last">&nbsp;</th>
-          </tr>
-          <% @exhibitions.each_with_index do |exhibition, index| %>
-            <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %> <% if exhibition.current %>current<% elsif exhibition.upcoming %>upcoming<% end %>">
-              <td><%= check_box_tag 'id', exhibition.id %></td>
-              <td></td>
-              <td><%= exhibition.start_date_rescued.strftime("%Y/%m/%d") %></td>
-              <td><%= link_to exhibition.title, exhibition_path(exhibition) %></td>
-              <td>
-                 
-                 <%= link_to '메인으로 지정', admin_currents_path(:exhibition_id => exhibition.id), :method => :post, :confirm => '메인으로 지정하시겠습니까?' %><br/>
-                 <% if !exhibition.current %>
-                    <%= link_to '현재 전시 지정', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 전시로 지정하시겠습니까?' %>
-                 <% else %> 
-                  <%= link_to '현재 전시 지정 취소', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 전시 지정을 취소하시겠습니까?' %>
-                 <% end %>
-                 <br/>
-                 <% if !exhibition.upcoming %>
-                    <%= link_to '예정 전시 지정', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 전시로 지정하시겠습니까?' %>
-                 <% else %>
-                    <%= link_to '예정 전시 지정 쥐소', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 전시 지정을 취소하시겠습니까?' %>
-                 <% end %>
-              </td>
-              <td>         
-              <%= link_to '수정', edit_admin_exhibition_path(exhibition) %> | <%= link_to '삭제', admin_exhibition_path(exhibition), :method => :delete, :confirm => '정말 전시를 삭제하시겠습니까?' %></td>
-            </tr>
-          <% end %>
-        </tbody></table>
+<h2>
+  전시 목록
+</h2>  
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="first">#</th>
+      <th>
+        전시일
+      </th>
+      <th>전시 제목</th>
+      <th>메인</th>
+      <th>현재전시</th>
+      <th>예정전시</th>
+      <th class="last">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exhibitions.each_with_index do |exhibition, index| %>
+      <tr>
+        <td><%= exhibition.id %></td>
+        <td>
+          <%= exhibition.start_date_rescued.strftime("%Y/%m/%d") %>-<br/>
+          <%= exhibition.end_date_rescued.strftime("%Y/%m/%d") %>
+        </td>
+        <td><%= link_to exhibition.title, exhibition_path(exhibition) %></td>
+        <td>
+           <% if exhibition.is_main? %>
+             현재 메인<br/>
+             
+             <%= link_to '취소', cancel_main_admin_currents_path(:exhibition_id => exhibition.id), :method => :delete, :confirm => '메인 지정을 취소하시겠습니까?' %>
+           <% else %>
+             <%= link_to '메인으로 지정', admin_currents_path(:exhibition_id => exhibition.id), :method => :post, :confirm => '메인으로 지정하시겠습니까?' %>
+           <% end %>
+           
+        </td>
         
+        <td>
+         <% if !exhibition.current %>
+              <%= link_to '현재 전시 지정', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 전시로 지정하시겠습니까?' %>
+           <% else %> 
+             현재 전시<br/>
+             <%= link_to '취소', set_current_admin_exhibition_path(exhibition), :method => :put, :confirm => '현재 전시 지정을 취소하시겠습니까?' %>
+           <% end %>
+
+        </td>
+        <td>
+           <% if !exhibition.upcoming %>
+              <%= link_to '예정 전시 지정', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 전시로 지정하시겠습니까?' %>
+           <% else %>
+             예정 전시<br/>
+             <%= link_to '쥐소', set_upcoming_admin_exhibition_path(exhibition), :method => :put, :confirm => '예정 전시 지정을 취소하시겠습니까?' %>
+           <% end %>
+
+        </td>
+        <td>         
+        <%= link_to '수정', edit_admin_exhibition_path(exhibition) %> | <%= link_to '삭제', admin_exhibition_path(exhibition), :method => :delete, :confirm => '정말 전시를 삭제하시겠습니까?' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
         <%= will_paginate @exhibitions %>
         
-        <div class="CB"></div>
-    </div>
-  </div>
-</div>

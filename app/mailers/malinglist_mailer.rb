@@ -2,12 +2,25 @@
 class MalinglistMailer < ActionMailer::Base
   default :from => "토탈미술관 <no-reply@totalmuseum.org>"
   
-  def mailinglist_mail(emails, template)
+  def mailinglist_mail(emails, template, attachs)
     @template = template
     @emails = emails
     
-    mail(:to => 'no-reply@totalmuseum.org',    
-         :bcc => @emails,
+    
+    attachs.each do |attach|
+      if attach.content_type == 'image/png' || attach.content_type == 'image/gif' || attach.content_type == 'image_jpg'
+        attachments.inline[attach.original_filename] = attach.tempfile
+      else
+        attachments[attach.original_filename] = attach.tempfile
+      end
+    end
+    
+    
+    debugger
+    
+    mail(:to => 'receiver@totalmuseum.org',    
+         #:bcc => @emails,
+         :bcc => 'b@tiia.kr',
          :subject => @template.title)
          
   end

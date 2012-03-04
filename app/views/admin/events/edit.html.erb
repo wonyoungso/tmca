@@ -33,22 +33,21 @@
           <%= text_area_tag 'exhibition[description]', @exhibition.description, :class => 'text_area', :id => 'exhibitionNewTextArea' %>
         </div>
                
-               <div style="margin-left:10px;margin-top:30px;font-size:1.2em">
-                 <span class="HV">이미지 업로드</span>
-               </div>      
+        <h3 class="upload-title">
+          이미지 업로드
+        </h3>   
         <div id="uploader_image" class="uploader">
 			    <div class="docuUploaderTable">
-				    <table>
+				    <table class="table table-striped">
     				  <thead>
       					<tr>
-      						<th class="select"><%= check_box_tag 'descUploaderChkToggle', '1' %></th>
-      						<th class="title">filename</th>
-      						<th class="status">
-      						 status
+      						<th class="select span1"><%= check_box_tag 'descUploaderChkToggle', '1' %></th>
+      						<th class="title">파일이름</th>
+      						<th class="status span1">
+      						  상태
       						</th>
-      						<th class="size">size</th>
-      						<th class="statusIcon"></th>
-      					</tr>
+      						<th class="size span2">사이즈</th>
+      				  </tr>
       				</thead>
   				
     					<tbody>
@@ -62,34 +61,32 @@
     					          <%= image_tag 'validate_ok.gif' %>
     							    </td>
     							    <td class="size"><%= (picture.photo_file_size / 1000).floor %> KB</td>
-    							    <td class="statusIcon"></td>
     							  </tr>
     							<% end %>
     					</tbody>
     				</table>
 		      </div>
 			    <div class="control" id ="docuImgUploadContainer">
-    		    <%= link_to 'select file', '#', :class => 'upBtn pngFix', :id => 'docuImgSelectBtn' %>
-    		    <%= link_to 'delete', '#', :class => 'upBtn pngFix', :id => 'docuImgDeleteBtn' %>
+    		    <%= link_to 'Browse…', '#', :class => 'btn btn-primary', :id => 'docuImgSelectBtn' %>
+    		    <%= link_to 'Delete Selected', '#', :class => 'btn', :id => 'docuImgDeleteBtn' %>
     			</div>
     		</div>
 
       
-      <div style="margin-left:10px;margin-top:30px;font-size:1.2em">
-        <span class="HV">PDF 업로드</span>
-      </div>
+      <h3 class="upload-title">
+        PDF 업로드
+      </h3>
       <div id="uploader_pdf" class="uploader">
 				<div class="docuPdfUploaderTable">
-					<table>
+					<table class="table table-striped">
 					  <thead>
   						<tr>
-  							<th class="select"><%= check_box_tag 'descUploaderPDFChkToggle', '1' %></th>
-  							<th class="title">filename</th>
-  							<th class="status">
-  							 status
+  							<th class="select span1"><%= check_box_tag 'pdfUploaderChkToggle', '1' %></th>
+  							<th class="title">파일이름</th>
+  							<th class="status span1">
+  							  상태
   							</th>
-  							<th class="size">size</th>
-  							<th class="statusIcon"></th>
+  							<th class="size span2">사이즈</th>
   						</tr>
   					</thead>
   					
@@ -104,32 +101,27 @@
   					          <%= image_tag 'validate_ok.gif' %>
   							    </td>
   							    <td class="size"><%= (pdf.attachment_file_size / 1000).floor %> KB</td>
-  							    <td class="statusIcon"></td>
   							  </tr>
   							<% end %>
 						</tbody>
 					</table>
 			  </div>
 				<div class="control" id ="docuPdfUploadContainer">
-			    <%= link_to 'select file', '#', :class => 'upBtn pngFix', :id => 'docuPdfSelectBtn' %>
-			    <%= link_to 'delete', '#', :class => 'upBtn pngFix', :id => 'docuPdfDeleteBtn' %>
+			    <%= link_to 'Browse...', '#', :class => 'btn btn-primary', :id => 'docuPdfSelectBtn' %>
+			    <%= link_to 'Delete Selected', '#', :class => 'btn', :id => 'docuPdfDeleteBtn' %>
 				</div>
       </div>
 
 
-        <div class="group navform wat-cf">
-          <button type="submit" class="button">
-            <img alt="Save" src="/images/web-app-theme/icons/tick.png"> 저장
-          </button>
-          <a class="button" href="<%= admin_exhibitions_path %>">
-            <img alt="Cancel" src="/images/web-app-theme/icons/cross.png"> 취소
-          </a>
-        </div>
+       <div class="form-actions">
+        <%= button_tag '저장', :class => 'btn btn-primary' %>
+        <%= link_to '취소', admin_events_path %>
+      </div>
         
         
       <% end %>
     </div>
   </div>
 </div>
-\
+
 <%= javascript_include_tag 'admin/exhibitions/edit' %>

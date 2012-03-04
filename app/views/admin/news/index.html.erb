@@ -6,17 +6,21 @@
     </h2>
     <div class="inner">
     
-        <table class="table">
-          <tbody><tr>
-            <th class="first"><input type="checkbox" class="checkbox toggle"></th>
-            <th>ID</th>
-            <th>뉴스 제목</th>
-            <th class="last">&nbsp;</th>
-          </tr>
-          <% @news_chucks.each_with_index do |news, index| %>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>날짜</th>
+              <th>뉴스 제목</th>
+              <th class="last">&nbsp;</th>
+            </tr>
+
+          </thead>
+          <tbody>
+            <% @news_chucks.each_with_index do |news, index| %>
             <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %>">
-              <td><%= check_box_tag 'id', news.id %></td>
               <td><%= news.id %></td>
+              <td><%= news.created_at.strftime("%Y/%m/%d") %></td>
               <td><%= news.title %></td>
               <td><%= link_to '미리보기', news_path(news) %> | 
              

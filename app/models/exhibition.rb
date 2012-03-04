@@ -3,8 +3,7 @@ class Exhibition < ActiveRecord::Base
   belongs_to :category
   has_many :pictures, :as => :pictureable, :dependent => :destroy
   has_many :pdfs, :as => :pdfable, :dependent => :destroy
-#  has_one :current, :dependent => :destroy
-    # attr_accessor :crop_medium_x, :crop_medium_y, :crop_medium_width, :crop_medium_height, :crop_thumb_x, :crop_thumb_y, :crop_thumb_width, :crop_thumb_height
+   # attr_accessor :crop_medium_x, :crop_medium_y, :crop_medium_width, :crop_medium_height, :crop_thumb_x, :crop_thumb_y, :crop_thumb_width, :crop_thumb_height
     # after_update :reprocess_bigphoto, :if => :cropping?  
     # 
     # def cropping?  
@@ -23,6 +22,10 @@ class Exhibition < ActiveRecord::Base
     else
       "default_exhibition.png"
     end
+  end
+  
+  def is_main?
+    Current.where(:exhibition_id => self.id).count > 0
   end
       
   def start_date_rescued

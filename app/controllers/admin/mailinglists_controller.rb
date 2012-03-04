@@ -3,17 +3,39 @@ class Admin::MailinglistsController < ApplicationController
   before_filter :login_required
   layout 'admin'
   def index
-    @mailinglists = Mailinglist.all
+  
+  if params[:page]
+      @page = params[:page]
+    else
+      @page = 1
+    end
+    
+    @mailinglists = Mailinglist.paginate(:page => @page, :per_page => 10)
+    
   end
   
   def new
   end
   
   def create
-    @template = MailingTemplate.find(params[:malingtemplate_id])
-    @emails = @malinglists.map(&:email).join(", ")
+    @mailinglists = Mailinglist.all
+    @emails = @mailinglists.map(&:email).join(", ")
+    
+    @template = Mailingtemplate.new({
+      :title => params[:title],
+      :description => params[:description]
+    })
+    
+    @template.save
+    
+    @attachments = []
+    params[:attachments].each do |attachment|
+      @attachments << attachment
+    end
+    
+    
      
-    MalinglistMailer.mailinglist_mail(@emails, @template).deliver
+    MalinglistMailer.mailinglist_mail(@emails, @template, @attachments).deliver
     
     respond_to do |format|
       format.html {redirect_to admin_mailinglists_path, :notice => '성공적으로 메일을 보냈습니다.'}
