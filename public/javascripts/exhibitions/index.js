@@ -14,7 +14,10 @@ var exhibitionsController = {
     });
     this.exhibitions.find('.right').click(function(e){
       e.preventDefault();
-      document.location.href = $(this).find(".detailBtn a").attr("href");
+      if ($(this).find(".detailBtn a").attr("href") != undefined)
+      {
+        document.location.href = $(this).find(".detailBtn a").attr("href");
+      }
     });
   },
   loadStart: function(){
