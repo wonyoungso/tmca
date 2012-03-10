@@ -16,8 +16,7 @@ class MalinglistMailer < ActionMailer::Base
     end
     
     mail(:to => 'receiver@totalmuseum.org',    
-         #:bcc => @emails,
-         :bcc => 'bizarre@bizarre07.com',
+         :bcc => @emails,
          :subject => @template.title)
          
   end
