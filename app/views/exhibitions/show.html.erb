@@ -41,12 +41,13 @@
   
   <div class="description">
     <div class="pressRelease">
-      <div>
+      <div style="margin-bottom:10px">
         <%= link_to 'Back', exhibitions_path, :class => 'backBtn' %>
       </div>
+      <div class="CB"></div>
       <% @exhibition.pdfs.each do |pdf| %>
-        <div>
-        <div>
+        <div stype="margin-bottom:10px">
+        <div style="margin-bottom:5px">
           <%= link_to 'Press Release', pdf.attachment.url, :class => 'downloadBtn' %>
         </div>
         <div>
