@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110923112855) do
+ActiveRecord::Schema.define(:version => 20120708071353) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -123,10 +123,12 @@ ActiveRecord::Schema.define(:version => 20110923112855) do
     t.datetime "updated_at"
   end
 
-  create_table "mailinglists", :id => false, :force => true dso |t|
-    t.integer "id",                                     :null => false
-    t.string  "authcode", :limit => 10, :default => "", :null => false
-    t.string  "email",    :limit => 50, :default => "", :null => false
+  create_table "mailinglists", :id => false, :force => true do |t|
+    t.integer  "id",                                       :null => false
+    t.string   "authcode",   :limit => 10, :default => "", :null => false
+    t.string   "email",      :limit => 50, :default => "", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "mailinglists", ["id"], :name => "user_id"

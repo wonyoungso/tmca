@@ -17,7 +17,7 @@
     		    <%= link_to 'blog', 'http://blog.naver.com/totalmuseum', :target => '_blank', :class => 'HV' %>
     		  </li>
     	    <li>
-      		  <%= link_to 'mailing list', '#', :class => 'HV' %>
+      		  <%= link_to 'mailing list', '#', :class => 'HV', :id => 'mailing_list_join_btn' %>
     	    </li>
     	    <li style="border:none">
     	        (c) Total Museum of Contemporary Art.
@@ -31,3 +31,8 @@
 	</div>
 
 </div>
+<script>
+  $(document).ready(function(e){
+    TMCA.views.mailing_list_view();
+  });
+</script>

@@ -12,6 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require './vendor/underscore-min.js'
+//= require './vendor/backbone-min.js'
+
 //= require './exhibitions/index.js'
 //= require './welcomes/index.js'
 //= require './search.js'
+
+//= require './tmca.js'
+
+//= require_directory './models'
+//= require_directory './views'

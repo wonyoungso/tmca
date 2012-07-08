@@ -17,7 +17,7 @@
     <tr>
       <td><%= mailinglist.id %></td>
       <td><%= mailinglist.email %></td>
-      <td><%= link_to '탈퇴', admin_mailinglist_path(mailinglist), :method => :delete, :confirm => '정말 뉴스를 삭제하시겠습니까?' %></td>
+      <td><%= link_to '탈퇴', admin_mailinglist_path(mailinglist), :method => :delete, :confirm => '정말 탈퇴시키시겠습니까?' %></td>
     </tr>
   <% end %>
 </tbody></table>
