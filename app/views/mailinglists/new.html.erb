@@ -1,0 +1,18 @@
+<div class="mailing_list_view">
+<%= link_to 'x', '#', :class => 'close_btn' %>
+
+<h2>
+  토탈미술관 메일링 리스트 가입
+</h2>
+<div class="mailing_list_form">
+<%= form_for @mailinglist do |f| %>
+  <div>
+    <%= f.label :email, "이메일" %>
+    <%= f.text_field :email, :placeholder => '이메일을 입력해주세요' %>
+  </div>
+  <div class="action">
+  <%= link_to '등록하기', '#', :class => 'btn', :id => 'submit_btn' %>
+</div>
+<% end %>
+</div>
+</div>
