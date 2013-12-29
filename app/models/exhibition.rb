@@ -16,9 +16,13 @@ class Exhibition < ActiveRecord::Base
     # end
   CATEGORY = {1 => 'Exhibition', 2 => 'Education', 3 => 'Event'}
     
-  def currentPhoto(varient = nil)
+  def currentPhoto(varient)
     if self.pictures.first != nil
-      self.pictures.first.photo.url(varient)
+      if varient.present? 
+        self.pictures.first.photo.url(varient)
+      else
+        self.pictures.first.photo.url(:original) 
+      end
     else
       "default_exhibition.png"
     end
