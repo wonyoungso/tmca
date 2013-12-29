@@ -4,6 +4,7 @@
   </div>
   
   <% @currents.each do |current| %>
+    <% if current.exhibition.present? and current.exhibition.currentPhoto.present? %>
     <div class="welcome">    
       <div class="imageWrap">
         <%= image_tag current.exhibition.currentPhoto(:medium) %>
@@ -28,6 +29,7 @@
         </div>
       </div>
     </div>
+    <% end %>
   <% end %>
   
   <div class="CB"></div>
