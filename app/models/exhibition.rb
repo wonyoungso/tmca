@@ -16,7 +16,7 @@ class Exhibition < ActiveRecord::Base
     # end
   CATEGORY = {1 => 'Exhibition', 2 => 'Education', 3 => 'Event'}
     
-  def currentPhoto(varient)
+  def currentPhoto(varient = nil)
     if self.pictures.first != nil
       if varient.present? 
         self.pictures.first.photo.url(varient)
