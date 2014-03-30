@@ -5,8 +5,8 @@ class Picture < ActiveRecord::Base
     :medium => '320x500#', 
     :thumb => '100x100#'
   }, 
-  :path => 'photos/:id/:style/:filename',
-  
+  :path => '/photos/:id/:style/:filename',
+
   :dependent => :destroy 
    
   belongs_to :pictureable, :polymorphic => true
