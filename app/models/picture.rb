@@ -5,8 +5,8 @@ class Picture < ActiveRecord::Base
     :medium => '320x500#', 
     :thumb => '100x100#'
   }, 
-  :url => '/photos/:id/:style/:filename',
-  :path => '/photos/:id/:style/:filename',
+  :url => '/system/photos/:id/:style/:filename',
+  :path => '/system/photos/:id/:style/:filename',
 
   :dependent => :destroy 
    
