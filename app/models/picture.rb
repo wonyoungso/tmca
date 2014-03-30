@@ -6,6 +6,7 @@ class Picture < ActiveRecord::Base
     :thumb => '100x100#'
   }, 
   :path => 'photos/:id/:style/:filename',
+  
   :dependent => :destroy 
    
   belongs_to :pictureable, :polymorphic => true
