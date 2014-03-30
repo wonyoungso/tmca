@@ -2,7 +2,7 @@
 development:
   adapter: mysql2
   database: tmca
-  username: root
+  username: tmca_root
   password: 
   reconnect: true
   host: localhost
