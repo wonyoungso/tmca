@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 Tmca::Application.routes.draw do
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
   match '/search', :to => 'search#index', :as => 'search', :via => :get
   match '/information', :to => 'informations#index', :as => 'information', :via => :get
   

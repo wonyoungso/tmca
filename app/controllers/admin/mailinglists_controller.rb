@@ -18,8 +18,6 @@ class Admin::MailinglistsController < ApplicationController
   end
   
   def create
-    @mailinglists = Mailinglist.all
-    @emails = @mailinglists.map(&:email).join(", ")
     
     @template = Mailingtemplate.new({
       :title => params[:title],
@@ -29,13 +27,16 @@ class Admin::MailinglistsController < ApplicationController
     @template.save
     
     @attachments = []
-    params[:attachments].each do |attachment|
-      @attachments << attachment
+    if params[:attachments].present?
+      params[:attachments].each do |attachment|
+        @attachments << attachment
+      end
     end
-    
-    
+
+    Mailinglist.all.each do |user|
+      MalinglistMailer.delay.mailinglist_mail(user.email, @template, @attachments)
+    end
      
-    MalinglistMailer.mailinglist_mail(@emails, @template, @attachments).deliver
     
     respond_to do |format|
       format.html {redirect_to admin_mailinglists_path, :notice => '성공적으로 메일을 보냈습니다.'}

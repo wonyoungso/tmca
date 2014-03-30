@@ -9,6 +9,7 @@
     <tr>
       <th class="first">#</th>
       <th>E-Mail</th>
+      <th>가입일</th>
       <th class="last">&nbsp;</th>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
     <tr>
       <td><%= mailinglist.id %></td>
       <td><%= mailinglist.email %></td>
+      <td><%= mailinglist.created_at.strftime("%Y-%m-%d") %></td>
       <td><%= link_to '탈퇴', admin_mailinglist_path(mailinglist), :method => :delete, :confirm => '정말 탈퇴시키시겠습니까?' %></td>
     </tr>
   <% end %>

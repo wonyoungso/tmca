@@ -12,14 +12,14 @@ gem 'will_paginate', '~> 3.0'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  gem 'therubyracer'
-
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+  gem 'turbo-sprockets-rails3'
 end
 
+gem 'delayed_job_active_record'
+gem 'delayed_job_web'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

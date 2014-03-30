@@ -10,8 +10,9 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
+//= require './vendor/jquery.js'
+//= require './vendor/jquery.migrate.js'
+//= require './vendor/jquery-ui.js'
 //= require 'jquery.tmpl.min.js'
 //= require './admin/bootstrap.js'
 //= require 'jquery.cleditor.min'

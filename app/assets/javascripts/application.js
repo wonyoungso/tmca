@@ -10,7 +10,9 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
+//= require './vendor/jquery.js'
+//= require './vendor/jquery.migrate.js'
+//= require './vendor/jquery-ui.js'
 //= require jquery_ujs
 //= require './vendor/underscore-min.js'
 //= require './vendor/backbone-min.js'
