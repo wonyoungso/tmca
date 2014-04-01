@@ -13,6 +13,7 @@
 //= require './vendor/jquery.js'
 //= require './vendor/jquery.migrate.js'
 //= require './vendor/jquery-ui.js'
+//= require jquery_ujs
 //= require 'jquery.tmpl.min.js'
 //= require './admin/bootstrap.js'
 //= require 'jquery.cleditor.min'
