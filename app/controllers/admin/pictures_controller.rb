@@ -6,7 +6,7 @@ class Admin::PicturesController < ApplicationController
        @picture.photo = params[:file]
        @picture.pictureable_id = params[:pictureable_id]
        @picture.pictureable_type = params[:pictureable_type]
-       if @picture.save
+       if @picture.save(:validate => false)
          respond_to do |format|
            format.json {render :json => {:success => true, :message => '그림 업로드가 완료되었습니다.', :picture => picture_as_json(@picture)}}
          end
