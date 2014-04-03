@@ -6,7 +6,7 @@ gem 'rails', '3.2.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', '=0.3.11'
-gem 'paperclip'
+gem 'paperclip' '=2.7.0'
 gem 'will_paginate', '~> 3.0'
 
 # Gems used only for assets and not required
