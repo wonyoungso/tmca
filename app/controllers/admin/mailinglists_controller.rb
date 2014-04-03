@@ -26,15 +26,24 @@ class Admin::MailinglistsController < ApplicationController
     
     @template.save
     
-    @attachments = []
-    if params[:attachments].present?
-      params[:attachments].each do |attachment|
-        @attachments << attachment
+    @attachments = params[:attachments]
+    @attachment_filenames = []
+
+    @attachments.each_with_index do |attachment, idx|
+      File.open("#{Rails.root.to_s}/tmp/#{attachment.original_filename}", "wb") do |f|
+        f.write attachment.read
       end
+
+      @attachment_filenames <<  {
+        tempfile_path: "#{Rails.root.to_s}/tmp/#{attachment.original_filename}",
+        original_filename: attachment.original_filename,
+        content_type: attachment.content_type
+      }
     end
 
+
     Mailinglist.all.each do |user|
-      MalinglistMailer.delay.mailinglist_mail(user.email, @template, @attachments) if user.present? and user.email.present? and @template.present? and @attachments.present?
+      MalinglistMailer.delay.mailinglist_mail(user.email, @template, @attachment_filenames) if user.present? and user.email.present? and @template.present?
     end
      
     

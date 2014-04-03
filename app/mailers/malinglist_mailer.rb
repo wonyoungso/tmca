@@ -8,10 +8,10 @@ class MalinglistMailer < ActionMailer::Base
     
     if attachs.present?
       attachs.each do |attach|
-        if attach.content_type == 'image/png' || attach.content_type == 'image/gif' || attach.content_type == 'image_jpg'
-          attachments.inline[attach.original_filename] = File.read(attach.tempfile)
+        if attach[:content_type] == 'image/png' || attach[:content_type] == 'image/gif' || attach[:content_type] == 'image_jpg'
+          attachments.inline[attach[:original_filename]] = File.read(attach[:tempfile_path])
         else
-          attachments[attach.original_filename] = File.read(attach.tempfile)
+          attachments[attach[:original_filename]] = File.read(attach[:tempfile_path])
         end
       end
     end 

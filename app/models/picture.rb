@@ -6,7 +6,7 @@ class Picture < ActiveRecord::Base
     :thumb => '100x100#'
   }, 
   :url => '/system/photos/:id/:style/:filename',
-  :path => '/system/photos/:id/:style/:filename',
+  :path => 'public/system/photos/:id/:style/:filename',
 
   :dependent => :destroy 
    
