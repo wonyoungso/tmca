@@ -34,7 +34,7 @@ class Admin::MailinglistsController < ApplicationController
     end
 
     Mailinglist.all.each do |user|
-      MalinglistMailer.delay.mailinglist_mail(user.email, @template, @attachments)
+      MalinglistMailer.delay.mailinglist_mail(user.email, @template, @attachments) if user.present? and user.email.present? and @template.present? and @attachments.present?
     end
      
     
