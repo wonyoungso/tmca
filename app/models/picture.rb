@@ -10,6 +10,6 @@ class Picture < ActiveRecord::Base
 
   :dependent => :destroy 
    
-  validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+  validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "application/octet-stream"]
   belongs_to :pictureable, :polymorphic => true
 end
