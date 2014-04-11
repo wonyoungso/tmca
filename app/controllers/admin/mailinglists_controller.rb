@@ -13,6 +13,13 @@ class Admin::MailinglistsController < ApplicationController
     @mailinglists = Mailinglist.order('created_at DESC').paginate(:page => @page, :per_page => 10)
     
   end
+
+  def export_excel
+    @mailinglists = Mailinglist.all
+    
+    send_data Mailinglist.to_xlsx.to_stream.read, :filename => 'mailinglists.xlsx', :type => "application/vnd.openxmlformates-officedocument.spreadsheetml.sheet"
+  end
+  
   
   def new
   end

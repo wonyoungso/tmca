@@ -41,7 +41,12 @@ Tmca::Application.routes.draw do
       end
     end
     resources :informations
-    resources :mailinglists
+    resources :mailinglists do 
+      collection do 
+        get 'export_excel'
+      end
+    end
+
     resources :mailingtemplates
     
     resources :pictures do
