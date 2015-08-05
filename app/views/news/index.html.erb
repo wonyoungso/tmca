@@ -13,11 +13,7 @@
         <%= simple_format(@latest_news.description) %>
       </div>
       
-      <% if !@latest_news.attachment.url.match('missing.png') %>
-        <div class="attachment">
-          <%= link_to 'Download PDF', @latest_news.attachment.url, :class => 'downloadBtn' %>
-        </div>
-      <% end %>
+     
       <div class="CB"></div>
     <% else %>
       최근 뉴스가 없습니다.

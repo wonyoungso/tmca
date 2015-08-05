@@ -8,13 +8,19 @@
       <div class="date">
         <p><%= @news.created_at.strftime("%Y년 %m월 %d일 / %H시 %M분") %></p>
       </div>
+
+      <% @news.pictures.each do |picture| %>
+        <div>
+          <%= image_tag picture.photo.url(:original) %>
+        </div>
+      <% end %>
+
       <div class="description">
         <%= simple_format(@news.description) %>
       </div>
-      <% if !@news.attachment.url.match('missing.png') %>
-        <div class="attachment">
-          <%= link_to 'Download PDF', @news.attachment.url, :class => 'downloadBtn' %>
-        </div>
+
+      <% @news.pdfs.each do |pdf| %>
+        <%= link_to pdf.attachment_file_name, pdf.attachment.url, :class => 'downloadBtn' %>
       <% end %>
       <div class="CB"></div>
   </div>

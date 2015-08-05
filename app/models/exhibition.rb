@@ -14,7 +14,7 @@ class Exhibition < ActiveRecord::Base
     # def reprocess_bigphoto
     #   bigphoto.reprocess!  
     # end
-  CATEGORY = {1 => 'Exhibition', 2 => 'Education', 3 => 'Event'}
+  CATEGORY = {1 => 'Exhibition', 2 => 'Education', 3 => 'Event', 4 => 'News'}
     
   def currentPhoto(varient = nil)
     if self.pictures.first != nil

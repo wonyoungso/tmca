@@ -15,17 +15,35 @@
           <span class="HV category">exhibition</span>
         <% elsif current.exhibition.category_id == 2 %>
           <span class="HV category">education</span>
-        <% else %>
+        <% elsif current.exhibition.category_id == 3 %>
           <span class="HV category">event</span>
+        <% elsif current.exhibition.category_id == 4 %>
+          <span class="HV category">news</span>
         <% end %>  
         <h2 class="HV">
           <%= current.exhibition.title %>
         </h2>
+        <% unless current.exhibition.category_id == 4 %>
         <span class="date">
           <%= current.exhibition.start_date_rescued.strftime("%Y.%m.%d")%>-<%= current.exhibition.end_date_rescued.strftime("%Y.%m.%d")%>
         </span>
+        <% else %>
+         <span class="date">
+          <%= current.exhibition.created_at.strftime("%Y.%m.%d")%>
+        </span>        
+        <% end %>
+
         <div class="detailBtn">
-          <%= link_to '더 보기', exhibition_path(current.exhibition)%>
+          <% if current.exhibition.category_id == 1 %>
+            <%= link_to '더 보기', exhibition_path(current.exhibition)%>
+          <% elsif current.exhibition.category_id == 2 %>
+            <%= link_to '더 보기', education_path(current.exhibition)%>
+          <% elsif current.exhibition.category_id == 3 %>
+            <%= link_to '더 보기', event_path(current.exhibition)%>
+          <% elsif current.exhibition.category_id == 4 %>
+            <%= link_to '더 보기', news_path(current.exhibition)%>
+          <% end %>  
+
         </div>
       </div>
     </div>

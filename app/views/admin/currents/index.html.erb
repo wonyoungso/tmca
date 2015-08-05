@@ -18,6 +18,7 @@
             <th class="last">&nbsp;</th>
           </tr>
           <% @currents.each_with_index do |current, index| %>
+            <% if current.exhibition.present? %>
             <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %>">
               <td></td>
               <td>
@@ -30,6 +31,18 @@
               <td>         
                 <%= link_to '삭제', admin_current_path(current), :method => :delete, :confirm => '정말 메인을 삭제하시겠습니까?' %></td>
             </tr>
+            <% else %>
+              <tr class="<% if index % 2 == 1 %>odd<% else %>even<% end %>">
+              <td></td>
+              <td>
+                오류 컬럼(삭제요망)
+              </td>
+              <td>
+              </td>
+              <td>         
+                <%= link_to '삭제', admin_current_path(current), :method => :delete, :confirm => '정말 메인을 삭제하시겠습니까?' %></td>
+            </tr>
+            <% end %>
           <% end %>
         </tbody></table>
         
@@ -45,6 +58,7 @@
       e.preventDefault();
       if (confirm("정말 메인 순서를 변경하시겠습니까?"))
       {
+        // debugger;
         $.ajax({
           url: '/admin/currents/' + $(this).attr('rel') + '.json',
           type: 'PUT',

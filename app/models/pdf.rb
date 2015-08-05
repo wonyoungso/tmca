@@ -4,5 +4,8 @@ class Pdf < ActiveRecord::Base
   :url => '/system/attachments/:id/:style/:filename',
   :path => 'public/system/attachments/:id/:style/:filename',
   :dependent => :destroy
+
+  validates_attachment_content_type :attachment, :content_type => ["application/pdf", "application/octet-stream"]
+  
   belongs_to :pdfable, :polymorphic => true
 end

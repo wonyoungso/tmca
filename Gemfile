@@ -6,6 +6,7 @@ gem 'rails', '3.2.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', '=0.3.11'
+gem 'rubyzip',  "~> 0.9.9"
 gem 'paperclip'
 gem 'will_paginate', '~> 3.0'
 gem 'acts_as_xlsx'

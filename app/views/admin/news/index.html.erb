@@ -22,12 +22,24 @@
               <td><%= news.id %></td>
               <td><%= news.created_at.strftime("%Y/%m/%d") %></td>
               <td><%= news.title %></td>
-              <td><%= link_to '미리보기', news_path(news) %> | 
-             
+               <td>
+                 <% if news.is_main? %>
+                   현재 메인<br/>
+                   
+                 <%= link_to '취소', cancel_main_admin_currents_path(:exhibition_id => news.id), :method => :delete, :confirm => '메인 지정을 취소하시겠습니까?' %>
+                 <% else %>
+                   <%= link_to '메인으로 지정', admin_currents_path(:exhibition_id => news.id), :method => :post, :confirm => '메인으로 지정하시겠습니까?' %>
+                 <% end %>
+                 
+              </td>
+              <td><%= link_to '미리보기', news_path(news), :target => "_blank" %> | 
+              
+              
               <%= link_to '수정', edit_admin_news_path(news) %> | <%= link_to '삭제', admin_news_path(news), :method => :delete, :confirm => '정말 뉴스를 삭제하시겠습니까?' %></td>
             </tr>
           <% end %>
         </tbody></table>
+        <%= will_paginate @news_chucks %>
     </div>
   </div>
 </div>

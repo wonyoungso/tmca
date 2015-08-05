@@ -31,13 +31,15 @@ class Admin::CurrentsController < ApplicationController
     @current = Current.find(params[:id])
     @current.idex = params[:idex]
     
-    
-    if @current.save
-      redirect_to request.referer, :notice => '성공적으로 저장하였습니다.'
-    else
-      redirect_to request.referer, :alert => '오류가 발생하였습니다.'
+    respond_to do |format|
+      if @current.save
+        format.html { redirect_to request.referer, :notice => '성공적으로 저장하였습니다.' }
+        format.json { render :json => {:success => true} }
+      else
+        format.html { redirect_to request.referer, :alert => '오류가 발생하였습니다.' }
+        format.json { render :json => {:success => true }}
+      end
     end
-    
   end
   
   def destroy

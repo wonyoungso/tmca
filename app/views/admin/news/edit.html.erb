@@ -1,36 +1,118 @@
+<script>
+  var exhibition_id = <%= @news.id %>;
+</script>
 
 <div id="list" class="block">
   <%= render 'admin/news/tabs' %>
-  <div class="content">
+ <div class="content">
     <h2 class="title">
-      뉴스 수정
+      뉴스 수정하기
     </h2>
     <div class="inner">
-      <%= form_tag admin_news_path(@news), :multipart => true, :class => 'form' do %>
-        <%= hidden_field_tag '_method', 'put'%>
+      <%= form_tag admin_news_path(@news), :multipart => true, :class => 'form', :id => 'exhibitionEditForm' do %>
+        
+        <%= hidden_field_tag '_method', 'put' %>
           
         <div class="group">
-          <%= label_tag 'news[title]', '제목' %>
-          <%= text_field_tag 'news[title]', @news.title, :class => 'text_field' %>
+          <%= label_tag 'exhibition[title]', '제목' %>
+          <%= text_field_tag 'exhibition[title]', @news.title, :class => 'text_field' %>
         </div>
+      
         
         <div class="group">
-          <%= label_tag 'news[description]', '내용' %>
-          <%= text_area_tag 'news[description]', @news.description, :class => 'text_area', :id => 'newsNewTextArea' %>
+          <%= label_tag 'exhibition[description]', '내용' %>
+          <%= text_area_tag 'exhibition[description]', @news.description, :class => 'text_area', :id => 'exhibitionNewTextArea' %>
         </div>
+               
         
-        <div class="group" style="margin-top:20px">
-          <%= label_tag 'news[attachment]', 'PDF / Press Release 첨부' %>
-          <%= file_field_tag 'news[attachment]' %>
+      <h3 class="upload-title">
+        이미지 업로드
+      </h3>    
+        <div id="uploader_image" class="uploader">
+          <div class="docuUploaderTable">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="select span1"><%= check_box_tag 'descUploaderChkToggle', '1' %></th>
+                  <th class="title">파일이름</th>
+                  <th class="status span1">
+                    상태
+                  </th>
+                  <th class="size span2">사이즈</th>
+                </tr>
+              </thead>
+          
+              <tbody>
+
+                  <% @news.pictures.each do |picture| %>
+                    <tr>
+                      <td class="select"><%= check_box_tag 'picture_ids[]', 'picture-' + picture.id.to_s, false, :rel => picture.photo.url %>
+
+                      <td class="title"><%= picture.photo_file_name%></td>
+                      <td class="status">
+                        <%= image_tag 'validate_ok.gif' %>
+                      </td>
+                      <td class="size"><%= (picture.photo_file_size / 1000).floor %> KB</td>
+                    </tr>
+                  <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="control" id ="docuImgUploadContainer">
+             <%= link_to 'Browse…', '#', :class => 'btn btn-primary', :id => 'docuImgSelectBtn' %>
+            <%= link_to 'Delete Selected', '#', :class => 'btn', :id => 'docuImgDeleteBtn' %>
+          </div>
         </div>
+
+      
+      
+      <h3 class="upload-title">
+        PDF 업로드
+      </h3>
+      <div id="uploader_pdf" class="uploader">
+        <div class="docuPdfUploaderTable">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="select span1"><%= check_box_tag 'pdfUploaderChkToggle', '1' %></th>
+                <th class="title">파일 이름</th>
+                <th class="status span1">
+                  상태
+                </th>
+                <th class="size span2">사이즈</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+
+                <% @news.pdfs.each do |pdf| %>
+                  <tr>
+                    <td class="select"><%= check_box_tag 'pdf_ids[]', 'pdf-' + pdf.id.to_s, false, :rel => pdf.attachment.url %>
+
+                    <td class="title"><%= pdf.attachment_file_name%></td>
+                    <td class="status">
+                      <%= image_tag 'validate_ok.gif' %>
+                    </td>
+                    <td class="size"><%= (pdf.attachment_file_size / 1000).floor %> KB</td>
+                  </tr>
+                <% end %>
+            </tbody>
+          </table>
+        </div>
+        <div class="control" id ="docuPdfUploadContainer">
+          <%= link_to 'Browse...', '#', :class => 'btn btn-primary', :id => 'docuPdfSelectBtn' %>
+          <%= link_to 'Delete Selected', '#', :class => 'btn', :id => 'docuPdfDeleteBtn' %>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= button_tag '저장', :class => 'btn btn-primary' %>
+        <%= link_to '취소', admin_news_index_path %>
+      </div>
         
-        <div class="form-actions">
-          <%= button_tag '저장', :class => 'btn btn-primary' %>
-          <%= link_to '취소', admin_news_index_path %>
-        </div>
       <% end %>
     </div>
   </div>
 </div>
 
-<%= javascript_include_tag 'admin/news/new' %>
+<%= javascript_include_tag 'admin/news/edit' %>
