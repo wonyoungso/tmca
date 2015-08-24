@@ -20,7 +20,9 @@
       </div>
 
       <% @news.pdfs.each do |pdf| %>
-        <%= link_to pdf.attachment_file_name, pdf.attachment.url, :class => 'downloadBtn' %>
+        <%= link_to pdf.attachment_file_name, pdf.attachment.url, :class => 'downloadBtn' %> 
+        <%= pdf.attachment_file_name %>
+        <div style="margin-bottom:15px"></div>
       <% end %>
       <div class="CB"></div>
   </div>

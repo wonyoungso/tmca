@@ -104,7 +104,7 @@ class Admin::NewsController < ApplicationController
   def update
     @news = Exhibition.find(params[:id])      
     respond_to do |format|
-      if @news.update_attributes(params[:news])
+      if @news.update_attributes(params[:exhibition])
         format.html {redirect_to admin_news_index_path, :notice => '전시가 성공적으로 수정되었습니다.' }
       else
         format.html {redirect_to admin_news_index_path, :alert => '전시 수정 중 오류가 발생하였습니다.'}
