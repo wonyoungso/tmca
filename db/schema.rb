@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140330050100) do
+ActiveRecord::Schema.define(:version => 20150825050336) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20140330050100) do
 
   create_table "exhibitions", :force => true do |t|
     t.string   "title"
-    t.text     "description"
+    t.text     "description",           :limit => 2147483647
     t.integer  "bigphoto_file_size"
     t.string   "bigphoto_file_name"
     t.string   "bigphoto_content_type"
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(:version => 20140330050100) do
     t.datetime "updated_at"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.boolean  "published",             :default => false
-    t.boolean  "current",               :default => false
-    t.boolean  "upcoming",              :default => false
+    t.boolean  "published",                                   :default => false
+    t.boolean  "current",                                     :default => false
+    t.boolean  "upcoming",                                    :default => false
     t.string   "x1medium"
     t.string   "y1medium"
     t.string   "widthmedium"
