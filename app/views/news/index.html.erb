@@ -13,7 +13,11 @@
         <%= simple_format(@latest_news.description) %>
       </div>
       
-     
+       <% @latest_news.pdfs.each do |pdf| %>
+        <%= link_to pdf.attachment_file_name, pdf.attachment.url, :class => 'downloadBtn', :style => 'width:27px' %> 
+        <%= pdf.attachment_file_name %>
+        <div style="margin-bottom:15px"></div>
+      <% end %>
       <div class="CB"></div>
     <% else %>
       최근 뉴스가 없습니다.
