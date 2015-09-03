@@ -7,11 +7,11 @@ class Admin::PdfsController < ApplicationController
        @pdf.pdfable_type = params[:pdfable_type]
        if @pdf.save
          respond_to do |format|
-           format.json {render :json => {:success => true, :message => 'PDF 업로드가 완료되었습니다.', :pdf => pdf_as_json(@pdf)}}
+           format.json {render :json => {:success => true, :message => 'PDF, HWP 업로드가 완료되었습니다.', :pdf => pdf_as_json(@pdf)}}
          end
        else
          respond_to do |format|
-           format.json {render :json => {:success => false, :message => 'PDF 업로드가 실패하였습니다.'}}
+           format.json {render :json => {:success => false, :message => 'PDF, HWP 업로드가 실패하였습니다.'}}
          end
        end
 
