@@ -217,7 +217,8 @@ $(document).ready(function(e){
 
       //Specify what files to browse for
       filters : [
-        {title: "PDF files", extensions: "pdf"}
+        {title: "PDF files", extensions: "pdf"},
+        {title: "HWP files", extensions: "hwp"},
       ],
 
 
